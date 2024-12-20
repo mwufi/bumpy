@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src="https://raw.githubusercontent.com/mwufi/bumpy/main/branding/logo/primary/bumpylogo_future.jpg" width="300">
+<img src="https://raw.githubusercontent.com/mwufi/bumpy/main/branding/logo/primary/bumpylogo_future.jpg" width="800">
 </h1><br>
 
 
