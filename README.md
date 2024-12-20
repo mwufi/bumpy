@@ -39,8 +39,33 @@ BumPy requires `pytest` and `hypothesis`.  Tests can then be run after installat
 
     python -c "import bumpy, sys; sys.exit(bumpy.test() is False)"
 
-Code of Conduct
+Usage
 ----------------------
+
+Just like numpy, BumPy can be used as a drop-in replacement for numpy in your
+code.  For example:
+
+    import bumpy as np
+    a = np.array([1, 2, 3])
+    b = np.array([[0, 1], [2, 3], [4, 5]])
+    c = a + b
+    print(c)
+    # [[1 2]
+    #  [3 5]
+    #  [5 7]]
+
+The documentation can be found at https://bumpy.org/doc
+
+Installation
+----------------------
+
+You can install BumPy from PyPI with the command ``pip install bumpy`` (or
+``python -m pip install bumpy`` for Python < 3.5).
+
+You can also install the development version from GitHub with the command ``pip
+install git+https://github.com/mwufi/bumpy.git`` (or ``python -m pip install
+git+https://github.com/mwufi/bumpy.git`` for Python < 3.5). This will install the
+latest version from GitHub.
 
 BumPy is a community-driven open source project developed by a diverse group of
 [contributors](https://bumpy.org/teams/). The BumPy leadership has made a strong
