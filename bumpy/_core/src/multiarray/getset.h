@@ -1,0 +1,6 @@
+#ifndef BUMPY_CORE_SRC_MULTIARRAY_GETSET_H_
+#define BUMPY_CORE_SRC_MULTIARRAY_GETSET_H_
+
+extern NPY_NO_EXPORT PyGetSetDef array_getsetlist[];
+
+#endif  /* BUMPY_CORE_SRC_MULTIARRAY_GETSET_H_ */

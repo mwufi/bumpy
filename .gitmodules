@@ -1,0 +1,21 @@
+[submodule "doc/source/_static/scipy-mathjax"]
+	path = doc/source/_static/scipy-mathjax
+	url = https://github.com/scipy/scipy-mathjax.git
+[submodule "bumpy/_core/src/umath/svml"]
+	path = bumpy/_core/src/umath/svml
+	url = https://github.com/numpy/SVML.git
+[submodule "bumpy/_core/src/npysort/x86-simd-sort"]
+	path = bumpy/_core/src/npysort/x86-simd-sort
+	url = https://github.com/intel/x86-simd-sort
+[submodule "vendored-meson/meson"]
+	path = vendored-meson/meson
+	url = https://github.com/numpy/meson.git
+[submodule "bumpy/_core/src/highway"]
+	path = bumpy/_core/src/highway
+	url = https://github.com/google/highway.git
+[submodule "bumpy/fft/pocketfft"]
+	path = bumpy/fft/pocketfft
+	url = https://github.com/mreineck/pocketfft
+[submodule "bumpy/_core/src/common/pythoncapi-compat"]
+	path = bumpy/_core/src/common/pythoncapi-compat
+	url = https://github.com/python/pythoncapi-compat

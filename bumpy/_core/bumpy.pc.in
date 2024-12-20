@@ -1,0 +1,7 @@
+prefix=${pcfiledir}/../..
+includedir=${prefix}/include
+
+Name: bumpy
+Description: BumPy is the fundamental package for scientific computing with Python.
+Version: @version@
+Cflags: -I${includedir}

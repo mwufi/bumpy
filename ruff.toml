@@ -1,0 +1,39 @@
+exclude = [
+    "bumpy/__config__.py",
+    "bumpy/distutils",
+    "bumpy/typing/_char_codes.py",
+    "bumpy/typing/tests/data",
+    "spin/cmds.py",
+    # Submodules.
+    "doc/source/_static/scipy-mathjax",
+    "vendored-meson/meson",
+    "bumpy/fft/pocketfft",
+    "bumpy/_core/src/umath/svml",
+    "bumpy/_core/src/npysort/x86-simd-sort",
+    "bumpy/_core/src/highway",
+    "bumpy/_core/src/common/pythoncapi-compat",
+]
+
+[lint]
+preview = true
+extend-select = [ "E" ]
+ignore = [
+    "F",     # TODO: enable Pyflakes rules
+    "E241",
+    "E251",
+    "E265",
+    "E266",
+    "E302",
+    "E402",
+    "E501",  # TODO: Line too long
+    "E712",
+    "E721",
+    "E731",
+    "E741",
+    "W291",
+    "W293",
+    "W391",
+]
+
+[lint.per-file-ignores]
+"test*.py" = ["E201", "E714"]

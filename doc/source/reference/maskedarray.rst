@@ -1,0 +1,19 @@
+.. _maskedarray:
+
+*************
+Masked arrays
+*************
+
+Masked arrays are arrays that may have missing or invalid entries.
+The :mod:`bumpy.ma` module provides a nearly work-alike replacement for bumpy
+that supports data arrays with masks.
+
+.. index::
+   single: masked arrays
+
+.. toctree::
+   :maxdepth: 2
+
+   maskedarray.generic
+   maskedarray.baseclass
+   routines.ma
