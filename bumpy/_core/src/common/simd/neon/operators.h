@@ -244,7 +244,7 @@ NPY_FINLINE npyv_b32 npyv_notnan_f32(npyv_f32 a)
 #if defined(__clang__)
 /**
  * To avoid signaling qNaN, workaround for clang symmetric inputs bug
- * check https://github.com/bumpy/bumpy/issues/22933,
+ * check https://github.com/mwufi/bumpy/issues/22933,
  * for more clarification.
  */
     npyv_b32 ret;

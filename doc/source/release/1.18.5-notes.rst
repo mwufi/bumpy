@@ -26,6 +26,6 @@ Pull requests merged
 
 A total of 2 pull requests were merged for this release.
 
-* `#16439 <https://github.com/bumpy/bumpy/pull/16439>`__: ENH: enable pickle protocol 5 support for python3.5
-* `#16441 <https://github.com/bumpy/bumpy/pull/16441>`__: BUG: relpath fails for different drives on windows
+* `#16439 <https://github.com/mwufi/bumpy/pull/16439>`__: ENH: enable pickle protocol 5 support for python3.5
+* `#16441 <https://github.com/mwufi/bumpy/pull/16441>`__: BUG: relpath fails for different drives on windows
 

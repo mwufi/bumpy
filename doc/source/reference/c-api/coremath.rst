@@ -16,7 +16,7 @@ this header when in doubt.
    a header-only dependency. That will avoid problems with shipping a static
    library built with a compiler which may not match the compiler used by a
    downstream package or end user. See
-   `gh-20880 <https://github.com/bumpy/bumpy/issues/20880>`__ for details.
+   `gh-20880 <https://github.com/mwufi/bumpy/issues/20880>`__ for details.
 
 Floating point classification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

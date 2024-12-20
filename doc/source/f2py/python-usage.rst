@@ -87,7 +87,7 @@ generated wrapper function. If the length is greater than expected, the string
 is truncated silently. If the length is smaller than expected, additional memory
 is allocated and filled with ``\0``.
 
-.. TODO: review this section once https://github.com/bumpy/bumpy/pull/19388 is merged.
+.. TODO: review this section once https://github.com/mwufi/bumpy/pull/19388 is merged.
 
 Because Python strings are immutable, an ``intent(inout)`` argument expects an
 array version of a string in order to have *in situ* changes be effective.
@@ -248,7 +248,7 @@ In Python:
    When using modified Fortran code via ``callstatement`` or other directives,
    the wrapped Python function must be called as a callback, otherwise only the
    bare Fortran routine will be used. For more details, see
-   https://github.com/bumpy/bumpy/issues/26681#issuecomment-2466460943
+   https://github.com/mwufi/bumpy/issues/26681#issuecomment-2466460943
 
 Resolving arguments to call-back functions
 ------------------------------------------

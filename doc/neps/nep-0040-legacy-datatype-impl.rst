@@ -605,7 +605,7 @@ the following provides a subset for more recent ones:
   https://hackmd.io/UVOtgj1wRZSsoNQCjkhq1g (TODO: Reduce to the most important
   ones):
 
-  * https://github.com/bumpy/bumpy/pull/12630
+  * https://github.com/mwufi/bumpy/pull/12630
     Matti Picus draft NEP, discusses the technical side of subclassing  more from
     the side of ``ArrFunctions``
 
@@ -613,7 +613,7 @@ the following provides a subset for more recent ones:
     (2019-04-30) Proposals for subclassing implementation approach.
 
   * Discussion about the calling convention of ufuncs and need for more
-    powerful UFuncs: https://github.com/bumpy/bumpy/issues/12518
+    powerful UFuncs: https://github.com/mwufi/bumpy/issues/12518
 
   * 2018-11-30 developer meeting notes:
     https://github.com/BIDS-bumpy/docs/blob/master/meetings/2018-11-30-dev-meeting.md
@@ -625,7 +625,7 @@ the following provides a subset for more recent ones:
     Walt, and Travis Oliphant.
 
   * SciPy 2018 brainstorming session with summaries of use cases:
-    https://github.com/bumpy/bumpy/wiki/Dtype-Brainstorming
+    https://github.com/mwufi/bumpy/wiki/Dtype-Brainstorming
 
     Also lists some requirements and some ideas on implementations
 
@@ -634,8 +634,8 @@ the following provides a subset for more recent ones:
 References
 ----------
 
-.. _gh-12518: https://github.com/bumpy/bumpy/issues/12518
-.. [gh-15327] https://github.com/bumpy/bumpy/issues/12518
+.. _gh-12518: https://github.com/mwufi/bumpy/issues/12518
+.. [gh-15327] https://github.com/mwufi/bumpy/issues/12518
 
 .. [julia-types] https://docs.julialang.org/en/v1/manual/types/index.html#Abstract-Types-1
 

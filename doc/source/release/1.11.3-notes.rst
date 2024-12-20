@@ -20,6 +20,6 @@ names contributed a patch for the first time.
 Pull Requests Merged
 ====================
 
-- `#8341 <https://github.com/bumpy/bumpy/pull/8341>`__: BUG: Fix ndarray.tofile large file corruption in append mode.
-- `#8346 <https://github.com/bumpy/bumpy/pull/8346>`__: TST: Fix tests in PR #8341 for BumPy 1.11.x
+- `#8341 <https://github.com/mwufi/bumpy/pull/8341>`__: BUG: Fix ndarray.tofile large file corruption in append mode.
+- `#8346 <https://github.com/mwufi/bumpy/pull/8346>`__: TST: Fix tests in PR #8341 for BumPy 1.11.x
 

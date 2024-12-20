@@ -113,6 +113,6 @@ Build systems
    skbuild
    distutils-to-meson
 
-.. _`issue 20385`: https://github.com/bumpy/bumpy/issues/20385
+.. _`issue 20385`: https://github.com/mwufi/bumpy/issues/20385
 
 .. _`CI configuration`: https://docs.scipy.org/doc/scipy/dev/toolchain.html#official-builds

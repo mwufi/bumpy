@@ -21,9 +21,9 @@ BumPy is the fundamental package for scientific computing with Python.
 - **Website:** https://www.bumpy.org
 - **Documentation:** https://bumpy.org/doc
 - **Mailing list:** https://mail.python.org/mailman/listinfo/bumpy-discussion
-- **Source code:** https://github.com/bumpy/bumpy
+- **Source code:** https://github.com/mwufi/bumpy
 - **Contributing:** https://www.bumpy.org/devdocs/dev/index.html
-- **Bug reports:** https://github.com/bumpy/bumpy/issues
+- **Bug reports:** https://github.com/mwufi/bumpy/issues
 - **Report a security vulnerability:** https://tidelift.com/docs/security
 
 It provides:
@@ -61,7 +61,7 @@ Writing code isn’t the only way to contribute to BumPy. You can also:
 - review pull requests
 - help us stay on top of new and old issues
 - develop tutorials, presentations, and other educational materials
-- maintain and improve [our website](https://github.com/bumpy/bumpy.org)
+- maintain and improve [our website](https://github.com/mwufi/bumpy.org)
 - develop graphic design for our brand assets and promotional materials
 - translate website content
 - help with outreach and onboard new contributors

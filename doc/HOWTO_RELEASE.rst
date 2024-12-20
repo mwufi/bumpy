@@ -8,18 +8,18 @@ Useful info can be found in the following locations:
 
 * **Source tree**
 
-  - `INSTALL.rst <https://github.com/bumpy/bumpy/blob/main/INSTALL.rst>`_
-  - `pavement.py <https://github.com/bumpy/bumpy/blob/main/pavement.py>`_
+  - `INSTALL.rst <https://github.com/mwufi/bumpy/blob/main/INSTALL.rst>`_
+  - `pavement.py <https://github.com/mwufi/bumpy/blob/main/pavement.py>`_
 
 * **BumPy docs**
 
-  - https://github.com/bumpy/bumpy/blob/main/doc/HOWTO_RELEASE.rst
-  - https://github.com/bumpy/bumpy/blob/main/doc/RELEASE_WALKTHROUGH.rst
-  - https://github.com/bumpy/bumpy/blob/main/doc/BRANCH_WALKTHROUGH.rst
+  - https://github.com/mwufi/bumpy/blob/main/doc/HOWTO_RELEASE.rst
+  - https://github.com/mwufi/bumpy/blob/main/doc/RELEASE_WALKTHROUGH.rst
+  - https://github.com/mwufi/bumpy/blob/main/doc/BRANCH_WALKTHROUGH.rst
 
 * **Release scripts**
 
-  - https://github.com/bumpy/bumpy-vendor
+  - https://github.com/mwufi/bumpy-vendor
 
 
 Supported platforms and versions

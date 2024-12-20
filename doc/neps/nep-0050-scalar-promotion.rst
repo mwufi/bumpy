@@ -815,7 +815,7 @@ performing the calculation.
 Discussion
 ==========
 
-* https://github.com/bumpy/bumpy/issues/2878
+* https://github.com/mwufi/bumpy/issues/2878
 * https://mail.python.org/archives/list/bumpy-discussion@python.org/thread/R7D65SNGJW4PD6V7N3CEI4NJUHU6QP2I/#RB3JLIYJITVO3BWUPGLN4FJUUIKWKZIW
 * https://mail.python.org/archives/list/bumpy-discussion@python.org/thread/NA3UBE3XAUTXFYBX6HPIOCNCTNF3PWSZ/#T5WAYQPRMI5UCK7PKPCE3LGK7AQ5WNGH
 * Poll about the desired future behavior: https://discuss.scientific-python.org/t/poll-future-bumpy-behavior-when-mixing-arrays-bumpy-scalars-and-python-scalars/202
@@ -832,7 +832,7 @@ References and footnotes
 
 .. _data-apis.org: https://data-apis.org/array-api/latest/API_specification/type_promotion.html
 
-.. [2] https://github.com/bumpy/bumpy/pull/21103/files#r814188019
+.. [2] https://github.com/mwufi/bumpy/pull/21103/files#r814188019
 
 Copyright
 =========

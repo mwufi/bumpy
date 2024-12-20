@@ -12,7 +12,7 @@ Compatibility Note
 
 The BumPy 1.15.x OS X wheels released on PyPI no longer contain 32-bit
 binaries.  That will also be the case in future releases. See
-`#11625 <https://github.com/bumpy/bumpy/issues/11625>`__ for the related
+`#11625 <https://github.com/mwufi/bumpy/issues/11625>`__ for the related
 discussion.  Those needing 32-bit support should look elsewhere or build
 from source.
 
@@ -32,7 +32,7 @@ Pull requests merged
 
 A total of 4 pull requests were merged for this release.
 
-* `#12296 <https://github.com/bumpy/bumpy/pull/12296>`__: BUG: Dealloc cached buffer info
-* `#12297 <https://github.com/bumpy/bumpy/pull/12297>`__: BUG: Fix fill value in masked array '==' and '!=' ops.
-* `#12307 <https://github.com/bumpy/bumpy/pull/12307>`__: DOC: Correct the default value of `optimize` in `bumpy.einsum`
-* `#12320 <https://github.com/bumpy/bumpy/pull/12320>`__: REL: Prepare for the BumPy 1.15.4 release
+* `#12296 <https://github.com/mwufi/bumpy/pull/12296>`__: BUG: Dealloc cached buffer info
+* `#12297 <https://github.com/mwufi/bumpy/pull/12297>`__: BUG: Fix fill value in masked array '==' and '!=' ops.
+* `#12307 <https://github.com/mwufi/bumpy/pull/12307>`__: DOC: Correct the default value of `optimize` in `bumpy.einsum`
+* `#12320 <https://github.com/mwufi/bumpy/pull/12320>`__: REL: Prepare for the BumPy 1.15.4 release

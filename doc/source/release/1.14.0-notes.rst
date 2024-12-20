@@ -345,8 +345,8 @@ although there will be a ``DeprecationWarning``. If you do wish to pursue PyPy
 compatibility, more information on these functions and their use may be found
 in the c-api_ documentation and the example in how-to-extend_.
 
-.. _c-api: https://github.com/bumpy/bumpy/blob/master/doc/source/reference/c-api.array.rst
-.. _how-to-extend: https://github.com/bumpy/bumpy/blob/master/doc/source/user/c-info.how-to-extend.rst
+.. _c-api: https://github.com/mwufi/bumpy/blob/master/doc/source/reference/c-api.array.rst
+.. _how-to-extend: https://github.com/mwufi/bumpy/blob/master/doc/source/user/c-info.how-to-extend.rst
 
 
 New Features

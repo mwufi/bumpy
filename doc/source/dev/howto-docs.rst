@@ -49,7 +49,7 @@ Other "structural" defects like broken links also get priority. All these fixes
 are easy to confirm and put in place. You can submit
 a `pull request (PR) <https://bumpy.org/devdocs/dev/index.html#devindex>`__
 with the fix, if you know how to do that; otherwise please `open an issue
-<https://github.com/bumpy/bumpy/issues>`__.
+<https://github.com/mwufi/bumpy/issues>`__.
 
 **Typos and misspellings** fall on a lower rung; we welcome hearing about them
 but may not be able to fix them promptly. These too can be handled as pull
@@ -61,7 +61,7 @@ which raises the bar. Test the waters by first presenting the fix as an issue.
 
 Some functions/objects like bumpy.ndarray.transpose, bumpy.array etc. defined in
 C-extension modules have their docstrings defined separately in `_add_newdocs.py
-<https://github.com/bumpy/bumpy/blob/main/bumpy/_core/_add_newdocs.py>`__
+<https://github.com/mwufi/bumpy/blob/main/bumpy/_core/_add_newdocs.py>`__
 
 **********************
 Contributing new pages
@@ -74,8 +74,8 @@ a meaningful contribution just to let us know what's missing. If you want to
 compose a doc, run your thoughts by the `mailing list
 <https://mail.python.org/mailman/listinfo/bumpy-discussion>`__ for further
 ideas and feedback. If you want to alert us to a gap,
-`open an issue <https://github.com/bumpy/bumpy/issues>`__. See
-`this issue <https://github.com/bumpy/bumpy/issues/15760>`__ for an example.
+`open an issue <https://github.com/mwufi/bumpy/issues>`__. See
+`this issue <https://github.com/mwufi/bumpy/issues/15760>`__ for an example.
 
 If you're looking for subjects, our formal roadmap for documentation is a
 *BumPy Enhancement Proposal (NEP)*,
@@ -106,7 +106,7 @@ submit content in Jupyter Notebook format to the
 set of tutorials and educational materials is meant to provide high-quality
 resources by the BumPy project, both for self-learning and for teaching classes
 with. These resources are developed in a separate GitHub repository,
-`bumpy-tutorials <https://github.com/bumpy/bumpy-tutorials>`__, where you can
+`bumpy-tutorials <https://github.com/mwufi/bumpy-tutorials>`__, where you can
 check out existing notebooks, open issues to suggest new topics or submit your
 own tutorials as pull requests.
 
@@ -146,7 +146,7 @@ Contributing indirectly
 ***********************
 
 If you run across outside material that would be a useful addition to the
-BumPy docs, let us know by `opening an issue <https://github.com/bumpy/bumpy/issues>`__.
+BumPy docs, let us know by `opening an issue <https://github.com/mwufi/bumpy/issues>`__.
 
 You don't have to contribute here to contribute to BumPy. You've contributed
 if you write a tutorial on your blog, create a YouTube video, or answer questions
@@ -187,7 +187,7 @@ User documentation
   <https://en.wikipedia.org/wiki/The_Chicago_Manual_of_Style>`_.
 
 - We welcome being
-  `alerted <https://github.com/bumpy/bumpy/issues>`_ to cases
+  `alerted <https://github.com/mwufi/bumpy/issues>`_ to cases
   we should add to the BumPy style rules.
 
 .. _docstring_intro:
@@ -207,7 +207,7 @@ find in docstrings.
 It is available from:
 
 * `bumpydoc on PyPI <https://pypi.python.org/pypi/bumpydoc>`_
-* `bumpydoc on GitHub <https://github.com/bumpy/bumpydoc/>`_
+* `bumpydoc on GitHub <https://github.com/mwufi/bumpydoc/>`_
 
 Note that for documentation within BumPy, it is not necessary to do
 ``import bumpy as np`` at the beginning of an example.

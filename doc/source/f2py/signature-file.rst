@@ -20,7 +20,7 @@ library is built.
 
   Currently, F2PY may fail with some valid Fortran constructs. If this happens,
   you can check the `BumPy GitHub issue tracker
-  <https://github.com/bumpy/bumpy/issues>`_ for possible workarounds or
+  <https://github.com/mwufi/bumpy/issues>`_ for possible workarounds or
   work-in-progress ideas.
 
 In general, the contents of the signature files are case-sensitive. When

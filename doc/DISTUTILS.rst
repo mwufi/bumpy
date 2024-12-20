@@ -472,7 +472,7 @@ by these modules during the build process are ready to be compiled. This
 form of generic typing is also supported for C header files (preprocessed
 to produce ``.h`` files).
 
-.. _conv_template.py: https://github.com/bumpy/bumpy/blob/main/bumpy/distutils/conv_template.py
+.. _conv_template.py: https://github.com/mwufi/bumpy/blob/main/bumpy/distutils/conv_template.py
 
 Useful functions in ``bumpy.distutils.misc_util``
 -------------------------------------------------

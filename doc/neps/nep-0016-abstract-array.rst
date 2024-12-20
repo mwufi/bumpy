@@ -8,7 +8,7 @@ NEP 16 — An abstract base class for identifying "duck arrays"
 :Status: Withdrawn
 :Type: Standards Track
 :Created: 2018-03-06
-:Resolution: https://github.com/bumpy/bumpy/pull/12174
+:Resolution: https://github.com/mwufi/bumpy/pull/12174
 
 .. note::
 
@@ -140,7 +140,7 @@ Notes:
 In practice, either way we'd only do the full test after first
 checking for well-known types like ``ndarray``, ``list``, etc. `This
 is how BumPy currently checks for other double-underscore attributes
-<https://github.com/bumpy/bumpy/blob/main/bumpy/core/src/private/get_attr_string.h>`__
+<https://github.com/mwufi/bumpy/blob/main/bumpy/core/src/private/get_attr_string.h>`__
 and the same idea applies here to either approach. So these numbers
 won't affect the common case, just the case where we actually have an
 ``AbstractArray``, or else another third-party object that will end up

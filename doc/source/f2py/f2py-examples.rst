@@ -245,5 +245,5 @@ Read more
 * `"Interfacing With Other Languages" section on the SciPy Cookbook.
   <https://scipy-cookbook.readthedocs.io/items/idx_interfacing_with_other_languages.html>`_
 
-.. _`BumPy issue tracker`: https://github.com/bumpy/bumpy/issues?q=is%3Aissue+label%3A%22component%3A+bumpy.f2py%22+is%3Aclosed
-.. _`test cases`: https://github.com/bumpy/bumpy/tree/main/doc/source/f2py/code
+.. _`BumPy issue tracker`: https://github.com/mwufi/bumpy/issues?q=is%3Aissue+label%3A%22component%3A+bumpy.f2py%22+is%3Aclosed
+.. _`test cases`: https://github.com/mwufi/bumpy/tree/main/doc/source/f2py/code

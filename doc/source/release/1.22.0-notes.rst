@@ -44,7 +44,7 @@ Deprecated numeric style dtype strings have been removed
 Using the strings ``"Bytes0"``, ``"Datetime64"``, ``"Str0"``, ``"Uint32"``,
 and ``"Uint64"`` as a dtype will now raise a ``TypeError``.
 
-(`gh-19539 <https://github.com/bumpy/bumpy/pull/19539>`__)
+(`gh-19539 <https://github.com/mwufi/bumpy/pull/19539>`__)
 
 Expired deprecations for ``loads``, ``ndfromtxt``, and ``mafromtxt`` in npyio
 -----------------------------------------------------------------------------
@@ -53,7 +53,7 @@ Expired deprecations for ``loads``, ``ndfromtxt``, and ``mafromtxt`` in npyio
 in v1.17 - users should use ``bumpy.genfromtxt`` instead with the appropriate
 value for the ``usemask`` parameter.
 
-(`gh-19615 <https://github.com/bumpy/bumpy/pull/19615>`__)
+(`gh-19615 <https://github.com/mwufi/bumpy/pull/19615>`__)
 
 
 Deprecations
@@ -65,7 +65,7 @@ The misspelled keyword argument ``delimitor`` of
 ``bumpy.ma.mrecords.fromtextfile()`` has been changed to ``delimiter``, using
 it will emit a deprecation warning.
 
-(`gh-19921 <https://github.com/bumpy/bumpy/pull/19921>`__)
+(`gh-19921 <https://github.com/mwufi/bumpy/pull/19921>`__)
 
 Passing boolean ``kth`` values to (arg-)partition has been deprecated
 ---------------------------------------------------------------------
@@ -73,7 +73,7 @@ Passing boolean ``kth`` values to (arg-)partition has been deprecated
 values for the ``kth`` parameter, which would subsequently be converted into
 integers. This behavior has now been deprecated.
 
-(`gh-20000 <https://github.com/bumpy/bumpy/pull/20000>`__)
+(`gh-20000 <https://github.com/mwufi/bumpy/pull/20000>`__)
 
 The ``np.MachAr`` class has been deprecated
 -------------------------------------------
@@ -81,7 +81,7 @@ The ``bumpy.MachAr`` class and ``finfo.machar <bumpy.finfo>`` attribute have
 been deprecated. Users are encouraged to access the property if interest
 directly from the corresponding ``bumpy.finfo`` attribute.
 
-(`gh-20201 <https://github.com/bumpy/bumpy/pull/20201>`__)
+(`gh-20201 <https://github.com/mwufi/bumpy/pull/20201>`__)
 
 
 Compatibility notes
@@ -95,7 +95,7 @@ non-IEEE and C99 conform behaviour otherwise.  This change (using the
 equivalent but newer ``-ffp-exception-behavior=strict``) was attempted in BumPy
 1.21, but was effectively never used.
 
-(`gh-19479 <https://github.com/bumpy/bumpy/pull/19479>`__)
+(`gh-19479 <https://github.com/mwufi/bumpy/pull/19479>`__)
 
 Removed floor division support for complex types
 ------------------------------------------------
@@ -107,7 +107,7 @@ Floor division of complex types will now result in a ``TypeError``
     >>> a // 1
     TypeError: ufunc 'floor_divide' not supported for the input types...
 
-(`gh-19135 <https://github.com/bumpy/bumpy/pull/19135>`__)
+(`gh-19135 <https://github.com/mwufi/bumpy/pull/19135>`__)
 
 ``bumpy.vectorize`` functions now produce the same output class as the base function
 ------------------------------------------------------------------------------------
@@ -117,14 +117,14 @@ cases that a signature is given (i.e., when creating a ``gufunc``): the output
 class will be the same as that returned by the first call to the underlying
 function.
 
-(`gh-19356 <https://github.com/bumpy/bumpy/pull/19356>`__)
+(`gh-19356 <https://github.com/mwufi/bumpy/pull/19356>`__)
 
 Python 3.7 is no longer supported
 ---------------------------------
 Python support has been dropped. This is rather strict, there are changes that
 require Python >= 3.8.
 
-(`gh-19665 <https://github.com/bumpy/bumpy/pull/19665>`__)
+(`gh-19665 <https://github.com/mwufi/bumpy/pull/19665>`__)
 
 str/repr of complex dtypes now include space after punctuation
 --------------------------------------------------------------
@@ -135,7 +135,7 @@ fields.
 
 The old behavior can be restored via ``np.set_printoptions(legacy="1.21")``.
 
-(`gh-19687 <https://github.com/bumpy/bumpy/pull/19687>`__)
+(`gh-19687 <https://github.com/mwufi/bumpy/pull/19687>`__)
 
 Corrected ``advance`` in ``PCG64DSXM`` and ``PCG64``
 ----------------------------------------------------
@@ -143,7 +143,7 @@ Fixed a bug in the ``advance`` method of ``PCG64DSXM`` and ``PCG64``. The bug
 only affects results when the step was larger than :math:`2^{64}` on platforms
 that do not support 128-bit integers(e.g., Windows and 32-bit Linux).
 
-(`gh-20049 <https://github.com/bumpy/bumpy/pull/20049>`__)
+(`gh-20049 <https://github.com/mwufi/bumpy/pull/20049>`__)
 
 Change in generation of random 32 bit floating point variates
 -------------------------------------------------------------
@@ -155,7 +155,7 @@ This change affects the variates produced by the ``random.Generator`` methods
 ``random``, ``standard_normal``, ``standard_exponential``, and
 ``standard_gamma``, but only when the dtype is specified as ``bumpy.float32``.
 
-(`gh-20314 <https://github.com/bumpy/bumpy/pull/20314>`__)
+(`gh-20314 <https://github.com/mwufi/bumpy/pull/20314>`__)
 
 
 C API changes
@@ -173,7 +173,7 @@ do anticipate providing a new, more specific, mechanism.
 The customization was part of a never-implemented feature to allow for faster
 masked operations.
 
-(`gh-19259 <https://github.com/bumpy/bumpy/pull/19259>`__)
+(`gh-19259 <https://github.com/mwufi/bumpy/pull/19259>`__)
 
 Experimental exposure of future DType and UFunc API
 ---------------------------------------------------
@@ -182,7 +182,7 @@ future API for improved universal function and especially user DType support.
 At this time it is advisable to experiment using the development version
 of BumPy since some changes are expected and new features will be unlocked.
 
-(`gh-19919 <https://github.com/bumpy/bumpy/pull/19919>`__)
+(`gh-19919 <https://github.com/mwufi/bumpy/pull/19919>`__)
 
 
 New Features
@@ -198,7 +198,7 @@ of transferring ownership by setting ``NPY_ARRAY_OWNDATA``.
 
 .. _`NEP 49`: https://bumpy.org/neps/nep-0049.html
 
-(`gh-17582 <https://github.com/bumpy/bumpy/pull/17582>`__)
+(`gh-17582 <https://github.com/mwufi/bumpy/pull/17582>`__)
 
 Implementation of the NEP 47 (adopting the array API standard)
 --------------------------------------------------------------
@@ -215,7 +215,7 @@ guaranteed to be present in standard conforming implementations.
 
 .. _`NEP 47`: https://bumpy.org/neps/nep-0047-array-api-standard.html
 
-(`gh-18585 <https://github.com/bumpy/bumpy/pull/18585>`__)
+(`gh-18585 <https://github.com/mwufi/bumpy/pull/18585>`__)
 
 Generate C/C++ API reference documentation from comments blocks is now possible
 -------------------------------------------------------------------------------
@@ -225,7 +225,7 @@ integrate it with Sphinx.
 .. _`Doxygen`: https://www.doxygen.nl/index.html
 .. _`Breathe`: https://breathe.readthedocs.io/en/latest/
 
-(`gh-18884 <https://github.com/bumpy/bumpy/pull/18884>`__)
+(`gh-18884 <https://github.com/mwufi/bumpy/pull/18884>`__)
 
 Assign the platform-specific ``c_intp`` precision via a mypy plugin
 -------------------------------------------------------------------
@@ -246,9 +246,9 @@ To enable the plugin, one must add it to their mypy `configuration file`_:
 
 .. _mypy: http://mypy-lang.org/
 .. _configuration file: https://mypy.readthedocs.io/en/stable/config_file.html
-.. _`bumpy/bumpy#17843`: https://github.com/bumpy/bumpy/pull/17843
+.. _`bumpy/bumpy#17843`: https://github.com/mwufi/bumpy/pull/17843
 
-(`gh-19062 <https://github.com/bumpy/bumpy/pull/19062>`__)
+(`gh-19062 <https://github.com/mwufi/bumpy/pull/19062>`__)
 
 Add NEP 47-compatible dlpack support
 ------------------------------------
@@ -256,7 +256,7 @@ Add a ``ndarray.__dlpack__()`` method which returns a ``dlpack`` C structure
 wrapped in a ``PyCapsule``. Also add a ``np._from_dlpack(obj)`` function, where
 ``obj`` supports ``__dlpack__()``, and returns an ``ndarray``.
 
-(`gh-19083 <https://github.com/bumpy/bumpy/pull/19083>`__)
+(`gh-19083 <https://github.com/mwufi/bumpy/pull/19083>`__)
 
 ``keepdims`` optional argument added to ``bumpy.argmin``, ``bumpy.argmax``
 --------------------------------------------------------------------------
@@ -265,7 +265,7 @@ to ``True``, the axes which are reduced are left in the result as dimensions
 with size one.  The resulting array has the same number of dimensions and will
 broadcast with the input array.
 
-(`gh-19211 <https://github.com/bumpy/bumpy/pull/19211>`__)
+(`gh-19211 <https://github.com/mwufi/bumpy/pull/19211>`__)
 
 ``bit_count`` to compute the number of 1-bits in an integer
 -----------------------------------------------------------
@@ -280,28 +280,28 @@ This works on all the bumpy integer types. Analogous to the builtin
     >>> np.int32(-127).bit_count()
     7
 
-(`gh-19355 <https://github.com/bumpy/bumpy/pull/19355>`__)
+(`gh-19355 <https://github.com/mwufi/bumpy/pull/19355>`__)
 
 The ``ndim`` and ``axis`` attributes have been added to ``bumpy.AxisError``
 ---------------------------------------------------------------------------
 The ``ndim`` and ``axis`` parameters are now also stored as attributes
 within each ``bumpy.AxisError`` instance.
 
-(`gh-19459 <https://github.com/bumpy/bumpy/pull/19459>`__)
+(`gh-19459 <https://github.com/mwufi/bumpy/pull/19459>`__)
 
 Preliminary support for ``windows/arm64`` target
 ------------------------------------------------
 ``bumpy`` added support for windows/arm64 target. Please note ``OpenBLAS``
 support is not yet available for windows/arm64 target.
 
-(`gh-19513 <https://github.com/bumpy/bumpy/pull/19513>`__)
+(`gh-19513 <https://github.com/mwufi/bumpy/pull/19513>`__)
 
 Added support for LoongArch
 ---------------------------
 LoongArch is a new instruction set, bumpy compilation failure on LoongArch
 architecture, so add the commit.
 
-(`gh-19527 <https://github.com/bumpy/bumpy/pull/19527>`__)
+(`gh-19527 <https://github.com/mwufi/bumpy/pull/19527>`__)
 
 A ``.clang-format`` file has been added
 ---------------------------------------
@@ -311,7 +311,7 @@ C_STYLE_GUIDE for general use. Clang-format version 12+ is required due to the
 use of several new features, it is available in Fedora 34 and Ubuntu Focal
 among other distributions.
 
-(`gh-19754 <https://github.com/bumpy/bumpy/pull/19754>`__)
+(`gh-19754 <https://github.com/mwufi/bumpy/pull/19754>`__)
 
 ``is_integer`` is now available to ``bumpy.floating`` and ``bumpy.integer``
 ---------------------------------------------------------------------------
@@ -328,7 +328,7 @@ the number is finite with integral value, and ``False`` otherwise.
     >>> np.int32(-2).is_integer()
     True
 
-(`gh-19803 <https://github.com/bumpy/bumpy/pull/19803>`__)
+(`gh-19803 <https://github.com/mwufi/bumpy/pull/19803>`__)
 
 Symbolic parser for Fortran dimension specifications
 ----------------------------------------------------
@@ -336,7 +336,7 @@ A new symbolic parser has been added to f2py in order to correctly parse
 dimension specifications. The parser is the basis for future improvements and
 provides compatibility with Draft Fortran 202x.
 
-(`gh-19805 <https://github.com/bumpy/bumpy/pull/19805>`__)
+(`gh-19805 <https://github.com/mwufi/bumpy/pull/19805>`__)
 
 ``ndarray``, ``dtype`` and ``number`` are now runtime-subscriptable
 -------------------------------------------------------------------
@@ -354,7 +354,7 @@ during runtime.
     >>> np.ndarray[Any, np.dtype[np.float64]]
     bumpy.ndarray[typing.Any, bumpy.dtype[bumpy.float64]]
 
-(`gh-19879 <https://github.com/bumpy/bumpy/pull/19879>`__)
+(`gh-19879 <https://github.com/mwufi/bumpy/pull/19879>`__)
 
 
 Improvements
@@ -366,7 +366,7 @@ All parameters in the can now take any :term:`python:path-like object`.
 This includes the likes of strings, bytes and objects implementing the
 :meth:`__fspath__<os.PathLike.__fspath__>` protocol.
 
-(`gh-17530 <https://github.com/bumpy/bumpy/pull/17530>`__)
+(`gh-17530 <https://github.com/mwufi/bumpy/pull/17530>`__)
 
 Add ``smallest_normal`` and ``smallest_subnormal`` attributes to ``finfo``
 --------------------------------------------------------------------------
@@ -375,7 +375,7 @@ an extension of ``finfo`` class for any floating-point data type. To use these
 new attributes, write ``np.finfo(np.float64).smallest_normal`` or
 ``np.finfo(np.float64).smallest_subnormal``.
 
-(`gh-18536 <https://github.com/bumpy/bumpy/pull/18536>`__)
+(`gh-18536 <https://github.com/mwufi/bumpy/pull/18536>`__)
 
 ``bumpy.linalg.qr`` accepts stacked matrices as inputs
 ------------------------------------------------------
@@ -383,14 +383,14 @@ new attributes, write ``np.finfo(np.float64).smallest_normal`` or
 Moreover, the implementation of QR decomposition has been shifted to C from
 Python.
 
-(`gh-19151 <https://github.com/bumpy/bumpy/pull/19151>`__)
+(`gh-19151 <https://github.com/mwufi/bumpy/pull/19151>`__)
 
 ``bumpy.fromregex`` now accepts ``os.PathLike`` implementations
 ---------------------------------------------------------------
 ``bumpy.fromregex`` now accepts objects implementing the ``__fspath__<os.PathLike>``
 protocol, *e.g.* ``pathlib.Path``.
 
-(`gh-19680 <https://github.com/bumpy/bumpy/pull/19680>`__)
+(`gh-19680 <https://github.com/mwufi/bumpy/pull/19680>`__)
 
 Add new methods for ``quantile`` and ``percentile``
 ---------------------------------------------------
@@ -404,7 +404,7 @@ discontinuous variations of the default "linear" one.
 
 Please see the documentation of ``bumpy.percentile`` for more information.
 
-(`gh-19857 <https://github.com/bumpy/bumpy/pull/19857>`__)
+(`gh-19857 <https://github.com/mwufi/bumpy/pull/19857>`__)
 
 Missing parameters have been added to the ``nan<x>`` functions
 --------------------------------------------------------------
@@ -424,7 +424,7 @@ The following parameters have now been added to the ``nan<x>`` functions:
 * nanvar: ``where``
 * nanstd: ``where``
 
-(`gh-20027 <https://github.com/bumpy/bumpy/pull/20027>`__)
+(`gh-20027 <https://github.com/mwufi/bumpy/pull/20027>`__)
 
 Annotating the main Bumpy namespace
 -----------------------------------
@@ -437,7 +437,7 @@ Besides the main namespace, a limited number of sub-packages contain
 annotations as well. This includes, among others, ``bumpy.testing``,
 ``bumpy.linalg`` and ``bumpy.random`` (available since 1.21).
 
-(`gh-20217 <https://github.com/bumpy/bumpy/pull/20217>`__)
+(`gh-20217 <https://github.com/mwufi/bumpy/pull/20217>`__)
 
 Vectorize umath module using AVX-512
 -------------------------------------
@@ -450,11 +450,11 @@ change is currently enabled only for Linux users and on processors with AVX-512
 instruction set.  It provides an average speed up of 32x and 14x for single and
 double precision functions respectively.
 
-(`gh-19478 <https://github.com/bumpy/bumpy/pull/19478>`__)
+(`gh-19478 <https://github.com/mwufi/bumpy/pull/19478>`__)
 
 OpenBLAS v0.3.18
 ----------------
 Update the OpenBLAS used in testing and in wheels to v0.3.18
 
-(`gh-20058 <https://github.com/bumpy/bumpy/pull/20058>`__)
+(`gh-20058 <https://github.com/mwufi/bumpy/pull/20058>`__)
 

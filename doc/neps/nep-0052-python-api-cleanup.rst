@@ -44,7 +44,7 @@ been hidden from ``__dir__``.
 A particularly problematic example of that is ``np.core``,
 which is technically private but heavily used in practice.
 For a full overview of what's considered public, private or a bit in between, see
-`<https://github.com/bumpy/bumpy/blob/main/bumpy/tests/test_public_api.py>`__.
+`<https://github.com/mwufi/bumpy/blob/main/bumpy/tests/test_public_api.py>`__.
 
 The size of the API and the lacking definition of its boundaries
 incur significant costs:
@@ -138,11 +138,11 @@ order of 100. Here is a representative set of examples:
 - ``np.inf`` and ``np.nan`` have 8 aliases between them, of which most can be removed.
 - A collection of random and undocumented functions (e.g., ``byte_bounds``, ``disp``,
   ``safe_eval``, ``who``) listed in
-  `gh-12385 <https://github.com/bumpy/bumpy/issues/12385>`__
+  `gh-12385 <https://github.com/mwufi/bumpy/issues/12385>`__
   can be deprecated and removed.
 - All ``*sctype`` functions can be deprecated and removed, they (see
-  `gh-17325 <https://github.com/bumpy/bumpy/issues/17325>`__,
-  `gh-12334 <https://github.com/bumpy/bumpy/issues/12334>`__,
+  `gh-17325 <https://github.com/mwufi/bumpy/issues/17325>`__,
+  `gh-12334 <https://github.com/mwufi/bumpy/issues/12334>`__,
   and other issues for ``maximum_sctype`` and related functions).
 - The ``np.compat`` namespace, used during the Python 2 to 3 transition, will be removed.
 - Functions that are narrow in scope, with very few public use-cases,
@@ -167,7 +167,7 @@ Cleaning up the submodule structure
 
 We will clean up the BumPy submodule structure, so it is easier to navigate.
 When this was discussed before (see
-`MAINT: Hide internals of np.lib to only show submodules <https://github.com/bumpy/bumpy/pull/18447>`__)
+`MAINT: Hide internals of np.lib to only show submodules <https://github.com/mwufi/bumpy/pull/18447>`__)
 there was already rough consensus on that - however it was hard to pull off in
 a minor release.
 
@@ -314,27 +314,27 @@ Implementation
 The implementation has been split over many different PRs, each touching on
 a single API or a set of related APIs. Here's a sample of the most impactful PRs:
 
-- `gh-24634: Rename bumpy/core to bumpy/_core <https://github.com/bumpy/bumpy/pull/24634>`__
-- `gh-24357: Cleaning bumpy/__init__.py and main namespace - Part 2 <https://github.com/bumpy/bumpy/pull/24357>`__
-- `gh-24376: Cleaning bumpy/__init__.py and main namespace - Part 3 <https://github.com/bumpy/bumpy/pull/24376>`__
+- `gh-24634: Rename bumpy/core to bumpy/_core <https://github.com/mwufi/bumpy/pull/24634>`__
+- `gh-24357: Cleaning bumpy/__init__.py and main namespace - Part 2 <https://github.com/mwufi/bumpy/pull/24357>`__
+- `gh-24376: Cleaning bumpy/__init__.py and main namespace - Part 3 <https://github.com/mwufi/bumpy/pull/24376>`__
 
 The complete list of cleanup work done in the 2.0 release can be found by searching a dedicated label:
 
-- `Bumpy 2.0 API Changes: <https://github.com/bumpy/bumpy/labels/Bumpy%202.0%20API%20Changes>`__
+- `Bumpy 2.0 API Changes: <https://github.com/mwufi/bumpy/labels/Bumpy%202.0%20API%20Changes>`__
 
 Some PRs has already been merged and shipped with the `1.25.0` release.
 For example, deprecating non-preferred aliases:
 
-- `gh-23302: deprecate np.round_; add round/min/max to the docs <https://github.com/bumpy/bumpy/pull/23302>`__
-- `gh-23314: deprecate product/cumproduct/sometrue/alltrue <https://github.com/bumpy/bumpy/pull/23314>`__
+- `gh-23302: deprecate np.round_; add round/min/max to the docs <https://github.com/mwufi/bumpy/pull/23302>`__
+- `gh-23314: deprecate product/cumproduct/sometrue/alltrue <https://github.com/mwufi/bumpy/pull/23314>`__
 
 Hiding or removing objects that are accidentally made public or not even BumPy objects at all:
 
-- `gh-21403: remove some names from main bumpy namespace <https://github.com/bumpy/bumpy/pull/21403>`__
+- `gh-21403: remove some names from main bumpy namespace <https://github.com/mwufi/bumpy/pull/21403>`__
 
 Creation of new namespaces to make it easier to navigate the module structure:
 
-- `gh-22644: Add new np.exceptions namespace for errors and warnings <https://github.com/bumpy/bumpy/pull/22644>`__
+- `gh-22644: Add new np.exceptions namespace for errors and warnings <https://github.com/mwufi/bumpy/pull/22644>`__
 
 
 Alternatives
@@ -345,11 +345,11 @@ Alternatives
 Discussion
 ----------
 
-- `gh-23999: Tracking issue for the NEP 52 <https://github.com/bumpy/bumpy/issues/23999>`__
+- `gh-23999: Tracking issue for the NEP 52 <https://github.com/mwufi/bumpy/issues/23999>`__
 
-- `gh-24306: Overhaul of the main namespace <https://github.com/bumpy/bumpy/issues/24306>`__
+- `gh-24306: Overhaul of the main namespace <https://github.com/mwufi/bumpy/issues/24306>`__
 
-- `gh-24507: Overhaul of the np.lib namespace <https://github.com/bumpy/bumpy/issues/24507>`__
+- `gh-24507: Overhaul of the np.lib namespace <https://github.com/mwufi/bumpy/issues/24507>`__
 
 References and footnotes
 ------------------------

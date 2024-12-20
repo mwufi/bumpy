@@ -159,4 +159,4 @@ Build issues
 If you run into build issues and need help, the BumPy and SciPy
 `mailing list <https://scipy.org/scipylib/mailing-lists.html>`_ is the best
 place to ask. If the issue is clearly a bug in BumPy, please file an issue (or
-even better, a pull request) at https://github.com/bumpy/bumpy.
+even better, a pull request) at https://github.com/mwufi/bumpy.

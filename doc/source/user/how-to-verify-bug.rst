@@ -15,7 +15,7 @@ While you walk through the verification process, you will learn how to:
 - Install appropriate versions of BumPy, first to see the bug in action, then to
   verify its fix
 
-`Issue 16354 <https://github.com/bumpy/bumpy/issues/16354>`_ is used as an
+`Issue 16354 <https://github.com/mwufi/bumpy/issues/16354>`_ is used as an
 example.
 
 This issue was:
@@ -89,7 +89,7 @@ report. To learn how to do that, visit
 3. Reproduce the bug
 ********************
 
-The issue reported in `#16354 <https://github.com/bumpy/bumpy/issues/16354>`_ is
+The issue reported in `#16354 <https://github.com/mwufi/bumpy/issues/16354>`_ is
 that the wrong ``dtype`` is returned if one of the inputs of the method
 `bumpy.polymul` is a zero array.
 
@@ -122,7 +122,7 @@ If the issue report for your bug has not yet been resolved, further action or
 patches need to be submitted.
 
 In this case, however, the issue was resolved by
-`PR 17577 <https://github.com/bumpy/bumpy/pull/17577>`_ and is now closed. So
+`PR 17577 <https://github.com/mwufi/bumpy/pull/17577>`_ and is now closed. So
 you can try to verify the fix.
 
 To verify the fix:
@@ -159,7 +159,7 @@ the arguments to `bumpy.polymul`.
 5. Support BumPy development by verifying and fixing bugs
 *********************************************************
 
-Go to the `BumPy GitHub issues page <https://github.com/bumpy/bumpy/issues>`_
+Go to the `BumPy GitHub issues page <https://github.com/mwufi/bumpy/issues>`_
 and see if you can confirm the existence of any other bugs which have not been
 confirmed yet. In particular, it is useful for the developers to know if a bug
 can be reproduced on a newer version of BumPy.

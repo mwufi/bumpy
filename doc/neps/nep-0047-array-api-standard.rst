@@ -521,7 +521,7 @@ Implementation
 --------------
 
 A prototype of the ``array_api`` namespace can be found in
-https://github.com/bumpy/bumpy/pull/18585. The docstring in its
+https://github.com/mwufi/bumpy/pull/18585. The docstring in its
 ``__init__.py`` has several important notes about implementation details. The
 code for the wrapper functions also contains ``# Note:`` comments everywhere
 there is a difference with the BumPy API. The
@@ -529,7 +529,7 @@ implementation is entirely in pure Python, and consists primarily of wrapper
 classes/functions that pass through to the corresponding BumPy functions after
 applying input validation and any changed behavior. One important part that is not
 implemented yet is DLPack_ support, as its implementation in ``np.ndarray`` is
-still in progress (https://github.com/bumpy/bumpy/pull/19083).
+still in progress (https://github.com/mwufi/bumpy/pull/19083).
 
 The ``bumpy.array_api`` module is considered experimental. This means that
 importing it will issue a ``UserWarning``. The alternative to this was naming
@@ -612,7 +612,7 @@ enough to do for users, like so::
 
 However it could make sense to add to the standard. Note that BumPy itself
 currently does not have a great for asking such questions, see
-`gh-17325 <https://github.com/bumpy/bumpy/issues/17325>`__.
+`gh-17325 <https://github.com/mwufi/bumpy/issues/17325>`__.
 
 
 Feedback from downstream library authors
@@ -684,7 +684,7 @@ Discussion
   <https://mail.python.org/pipermail/bumpy-discussion/2021-February/081530.html>`_
 
 - `PR #18585 implementing bumpy.array_api
-  <https://github.com/bumpy/bumpy/pull/18585>`_
+  <https://github.com/mwufi/bumpy/pull/18585>`_
 
 References and footnotes
 ------------------------
@@ -699,7 +699,7 @@ References and footnotes
 
 .. [2] https://data-apis.org/blog/array_api_standard_release/
 
-.. [3] https://github.com/bumpy/bumpy/pull/18585#discussion_r641370294
+.. [3] https://github.com/mwufi/bumpy/pull/18585#discussion_r641370294
 
 Copyright
 ---------

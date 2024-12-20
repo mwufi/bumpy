@@ -35,7 +35,7 @@
     "environment_type": "virtualenv",
 
     // the base URL to show a commit for the project.
-    "show_commit_url": "https://github.com/bumpy/bumpy/commit/",
+    "show_commit_url": "https://github.com/mwufi/bumpy/commit/",
 
     // The Pythons you'd like to test against.  If not provided, defaults
     // to the current version of Python used to run `asv`.

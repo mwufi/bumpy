@@ -73,13 +73,13 @@ present in ``setuptools``:
 - Support for a few other scientific libraries, like FFTW and UMFPACK
 - Better MinGW support
 - Per-compiler build flag customization (e.g. `-O3` and `SSE2` flags are default)
-- a simple user build config system, see `site.cfg.example <https://github.com/bumpy/bumpy/blob/master/site.cfg.example>`__
+- a simple user build config system, see `site.cfg.example <https://github.com/mwufi/bumpy/blob/master/site.cfg.example>`__
 - SIMD intrinsics support
 - Support for the BumPy-specific ``.src`` templating format for ``.c``/``.h`` files
 
 The most widely used feature is nested ``setup.py`` files. This feature may
 perhaps still be ported to ``setuptools`` in the future (it needs a volunteer
-though, see `gh-18588 <https://github.com/bumpy/bumpy/issues/18588>`__ for
+though, see `gh-18588 <https://github.com/mwufi/bumpy/issues/18588>`__ for
 status). Projects only using that feature could move to ``setuptools`` after
 that is done. In case a project uses only a couple of ``setup.py`` files, it
 also could make sense to simply aggregate all the content of those files into a

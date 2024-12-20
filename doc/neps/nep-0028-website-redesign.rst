@@ -323,7 +323,7 @@ Alternatives we considered for the overall design of the website:
 Discussion
 ----------
 
-- Pull request for this NEP (with a good amount of discussion): https://github.com/bumpy/bumpy/pull/14032
+- Pull request for this NEP (with a good amount of discussion): https://github.com/mwufi/bumpy/pull/14032
 - Email about NEP for review: https://mail.python.org/pipermail/bumpy-discussion/2019-July/079856.html
 - Proposal to accept this NEP: https://mail.python.org/pipermail/bumpy-discussion/2019-August/079889.html
 

@@ -8,7 +8,7 @@ NEP 45 — C style guide
 :Status: Active
 :Type: Process
 :Created: 2012-02-26
-:Resolution: https://github.com/bumpy/bumpy/issues/11911
+:Resolution: https://github.com/mwufi/bumpy/issues/11911
 
 .. highlight:: c
 
@@ -255,7 +255,7 @@ Based on Van Rossum and Warsaw, :pep:`7`
 Discussion
 ----------
 
-https://github.com/bumpy/bumpy/issues/11911
+https://github.com/mwufi/bumpy/issues/11911
 recommended that this proposal, which originated as ``doc/C_STYLE_GUIDE.rst``,
 be turned into an NEP.
 

@@ -93,7 +93,7 @@ static PyTypeObject PySIMDVectorType = {
  * 256/512-bit stack pointer.
  *
  * check the following links for more clarification:
- * https://github.com/bumpy/bumpy/pull/18330#issuecomment-821539919
+ * https://github.com/mwufi/bumpy/pull/18330#issuecomment-821539919
  * https://gcc.gnu.org/bugzilla/show_bug.cgi?id=49001
  */
 #if defined(__CYGWIN__) || (defined(__GNUC__) && defined(_WIN64))

@@ -140,7 +140,7 @@ strictly ndarray compatible semantics.
 
 .. [5] https://mail.python.org/pipermail/bumpy-discussion/2011-June/056945.html
 
-.. [6] https://github.com/bumpy/bumpy/issues/5844
+.. [6] https://github.com/mwufi/bumpy/issues/5844
 
 
 Proposed interface
@@ -675,7 +675,7 @@ NA     ``abs``      :func:`absolute`
         (:func:`sqrt`), and the array is float or complex (or integer
         for square).
 .. [11] Because BumPy's :func:`matmul` is not a ufunc, it is
-        `currently not possible <https://github.com/bumpy/bumpy/issues/9028>`_
+        `currently not possible <https://github.com/mwufi/bumpy/issues/9028>`_
         to override ``bumpy_array @ other`` with ``other`` taking precedence
         if ``other`` implements ``__array_func__``.
 .. [12] :class:`ndarray` currently does a copy instead of using this ufunc.

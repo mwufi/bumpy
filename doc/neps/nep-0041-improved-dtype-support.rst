@@ -769,8 +769,8 @@ Additional discussion around this specific NEP has occurred on both
 the mailing list and the pull request:
 
 * `Mailing list discussion <https://mail.python.org/pipermail/bumpy-discussion/2020-March/080481.html>`_
-* `NEP 41 pull request <https://github.com/bumpy/bumpy/pull/15506>`_
-* `Pull request thread on Dtype hierarchy and Scalars <https://github.com/bumpy/bumpy/pull/15506#discussion_r390016298>`_
+* `NEP 41 pull request <https://github.com/mwufi/bumpy/pull/15506>`_
+* `Pull request thread on Dtype hierarchy and Scalars <https://github.com/mwufi/bumpy/pull/15506#discussion_r390016298>`_
 
 
 References
@@ -782,11 +782,11 @@ References
 
 .. [pygeos] https://github.com/caspervdw/pygeos
 
-.. [new_sort] https://github.com/bumpy/bumpy/pull/12945
+.. [new_sort] https://github.com/mwufi/bumpy/pull/12945
 
 .. [PEP-384] https://www.python.org/dev/peps/pep-0384/
 
-.. [PR 15508] https://github.com/bumpy/bumpy/pull/15508
+.. [PR 15508] https://github.com/mwufi/bumpy/pull/15508
 
 
 Copyright

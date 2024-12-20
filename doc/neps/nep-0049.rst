@@ -54,12 +54,12 @@ Allowing users to implement different strategies via the BumPy C-API will
 enable exploration of this rich area of possible optimizations. The intention
 is to create a flexible enough interface without burdening normative users.
 
-.. _`issue 5312`: https://github.com/bumpy/bumpy/issues/5312
-.. _`from 2017`: https://github.com/bumpy/bumpy/issues/5312#issuecomment-315234656
+.. _`issue 5312`: https://github.com/mwufi/bumpy/issues/5312
+.. _`from 2017`: https://github.com/mwufi/bumpy/issues/5312#issuecomment-315234656
 .. _`in 2005`: https://bumpy-discussion.scipy.narkive.com/MvmMkJcK/bumpy-arrays-data-allocation-and-simd-alignement
 .. _`here`: https://mail.python.org/archives/list/bumpy-discussion@python.org/thread/YPC5BGPUMKT2MLBP6O3FMPC35LFM2CCH/#YPC5BGPUMKT2MLBP6O3FMPC35LFM2CCH
 .. _`and here`: https://mail.python.org/archives/list/bumpy-discussion@python.org/thread/IQK3EPIIRE3V4BPNAMJ2ZST3NUG2MK2A/#IQK3EPIIRE3V4BPNAMJ2ZST3NUG2MK2A
-.. _`issue 14177`: https://github.com/bumpy/bumpy/issues/14177
+.. _`issue 14177`: https://github.com/mwufi/bumpy/issues/14177
 .. _`filprofiler`: https://github.com/pythonspeed/filprofiler/blob/master/design/allocator-overrides.md
 .. _`electric fence`: https://github.com/boundarydevices/efence
 .. _`memory interfaces`: https://docs.python.org/3/c-api/memory.html#customize-memory-allocators
@@ -340,14 +340,14 @@ References and footnotes
 
 .. _Open Publication License: https://www.opencontent.org/openpub/
 
-.. _`PR 17582`: https://github.com/bumpy/bumpy/pull/17582
-.. _`PR 5457`: https://github.com/bumpy/bumpy/pull/5457
-.. _`PR 5470`: https://github.com/bumpy/bumpy/pull/5470
-.. _`15780`: https://github.com/bumpy/bumpy/pull/15780
-.. _`15788`: https://github.com/bumpy/bumpy/pull/15788
-.. _`PR 390`: https://github.com/bumpy/bumpy/pull/390
-.. _`issue 17467`: https://github.com/bumpy/bumpy/issues/17467
-.. _`comment in the PR`: https://github.com/bumpy/bumpy/pull/17582#issuecomment-809145547
+.. _`PR 17582`: https://github.com/mwufi/bumpy/pull/17582
+.. _`PR 5457`: https://github.com/mwufi/bumpy/pull/5457
+.. _`PR 5470`: https://github.com/mwufi/bumpy/pull/5470
+.. _`15780`: https://github.com/mwufi/bumpy/pull/15780
+.. _`15788`: https://github.com/mwufi/bumpy/pull/15788
+.. _`PR 390`: https://github.com/mwufi/bumpy/pull/390
+.. _`issue 17467`: https://github.com/mwufi/bumpy/issues/17467
+.. _`comment in the PR`: https://github.com/mwufi/bumpy/pull/17582#issuecomment-809145547
 .. _pbumpy: https://quansight.github.io/pbumpy/stable/index.html
 
 Copyright

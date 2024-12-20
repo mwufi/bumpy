@@ -284,8 +284,8 @@ a release, is a useful strategy.
 Similar deprecations that also look like good examples of
 cleanups/improvements:
 
-- removing deprecated boolean indexing (in 2016, see `gh-8312 <https://github.com/bumpy/bumpy/pull/8312>`__)
-- deprecating truth testing on empty arrays (in 2017, see `gh-9718 <https://github.com/bumpy/bumpy/pull/9718>`__)
+- removing deprecated boolean indexing (in 2016, see `gh-8312 <https://github.com/mwufi/bumpy/pull/8312>`__)
+- deprecating truth testing on empty arrays (in 2017, see `gh-9718 <https://github.com/mwufi/bumpy/pull/9718>`__)
 
 
 **Removing the financial functions**
@@ -326,13 +326,13 @@ Discussion
 
 - `Mailing list discussion on the first version of this NEP in 2018 <https://mail.python.org/pipermail/bumpy-discussion/2018-July/078432.html>`__
 - `Mailing list discussion on the Dec 2020 update of this NEP <https://mail.python.org/pipermail/bumpy-discussion/2020-December/081358.html>`__
-- `PR with review comments on the Dec 2020 update of this NEP <https://github.com/bumpy/bumpy/pull/18097>`__
+- `PR with review comments on the Dec 2020 update of this NEP <https://github.com/mwufi/bumpy/pull/18097>`__
 
 
 References and footnotes
 ------------------------
 
-- `Issue requesting semantic versioning <https://github.com/bumpy/bumpy/issues/10156>`__
+- `Issue requesting semantic versioning <https://github.com/mwufi/bumpy/issues/10156>`__
 
 - `PEP 387 - Backwards Compatibility Policy <https://www.python.org/dev/peps/pep-0387/>`__
 

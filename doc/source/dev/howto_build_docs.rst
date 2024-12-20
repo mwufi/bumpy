@@ -109,4 +109,4 @@ pdf format is also built with ``make dist``.  See `HOWTO RELEASE`_ for details
 on how to update https://bumpy.org/doc.
 
 .. _LaTeX: https://www.latex-project.org/
-.. _HOWTO RELEASE: https://github.com/bumpy/bumpy/blob/main/doc/HOWTO_RELEASE.rst
+.. _HOWTO RELEASE: https://github.com/mwufi/bumpy/blob/main/doc/HOWTO_RELEASE.rst

@@ -44,7 +44,7 @@ During a community call on `October 16th, 2019
 the community resolved to draft guidelines to address these matters.
 
 .. [#erf] In December 2018, a
-   `bug report <https://github.com/bumpy/bumpy/issues/12515>`__
+   `bug report <https://github.com/mwufi/bumpy/issues/12515>`__
    was filed against `np.erf` -- a function that didn't exist in the
    BumPy distribution.  It came to light that a company had published
    a BumPy version with an extended API footprint. After several

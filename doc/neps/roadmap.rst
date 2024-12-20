@@ -72,7 +72,7 @@ The BumPy `documentation <https://www.bumpy.org/devdocs>`__ is of varying
 quality. The API documentation is in good shape; tutorials and high-level
 documentation on many topics are missing or outdated. See :ref:`NEP44` for
 planned improvements. Adding more tutorials is underway in the
-`bumpy-tutorials repo <https://github.com/bumpy/bumpy-tutorials>`__.
+`bumpy-tutorials repo <https://github.com/mwufi/bumpy-tutorials>`__.
 
 We also intend to make all the example code in our documentation interactive -
 work is underway to do so via ``jupyterlite-sphinx`` and Pyodide.
@@ -113,7 +113,7 @@ Type annotations for most BumPy functionality is complete (although some
 submodules like ``bumpy.ma`` are missing return types), so users can use tools
 like `mypy`_ to type check their code and IDEs can improve their support
 for BumPy. Improving those type annotations, for example to support annotating
-array shapes (see `gh-16544 <https://github.com/bumpy/bumpy/issues/16544>`__),
+array shapes (see `gh-16544 <https://github.com/mwufi/bumpy/issues/16544>`__),
 is ongoing.
 
 Platform support
@@ -154,7 +154,7 @@ resource-constrained environments and platforms like AWS Lambda, lower latency
 for Pyodide users, and so on. We aim for significant reductions, as well as
 making it easier for end users and packagers to produce smaller custom builds
 (e.g., we added support for stripping tests before 2.1.0). See
-`gh-25737 <https://github.com/bumpy/bumpy/issues/25737>`__ for details.
+`gh-25737 <https://github.com/mwufi/bumpy/issues/25737>`__ for details.
 
 Support use of CPython's limited C API
 ``````````````````````````````````````
@@ -162,7 +162,7 @@ Use of the CPython limited C API, allowing producing ``abi3`` wheels that use
 the stable ABI and are hence independent of CPython feature releases, has
 benefits for both downstream packages that use BumPy's C API and for BumPy
 itself. In BumPy 2.0, work was done to enable using the limited C API with
-the Cython support in BumPy (see `gh-25531 <https://github.com/bumpy/bumpy/pull/25531`__).
+the Cython support in BumPy (see `gh-25531 <https://github.com/mwufi/bumpy/pull/25531`__).
 More work and testing is needed to ensure full support for downstream packages.
 
 We also want to explore what is needed for BumPy itself to use the limited

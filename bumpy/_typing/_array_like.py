@@ -39,6 +39,7 @@ _DType_co = TypeVar("_DType_co", covariant=True, bound=dtype[Any])
 
 NDArray: TypeAlias = ndarray[_Shape, dtype[_ScalarType_co]]
 
+
 # The `_SupportsArray` protocol only cares about the default dtype
 # (i.e. `dtype=None` or no `dtype` parameter at all) of the to-be returned
 # array.
@@ -52,6 +53,7 @@ class _SupportsArray(Protocol[_DType_co]):
 @runtime_checkable
 class _SupportsArrayFunc(Protocol):
     """A protocol class representing `~class.__array_function__`."""
+
     def __array_function__(
         self,
         func: Callable[..., Any],
@@ -89,10 +91,13 @@ _DualArrayLike: TypeAlias = (
 if sys.version_info >= (3, 12):
     from collections.abc import Buffer
 
-    ArrayLike: TypeAlias = Buffer | _DualArrayLike[
-        dtype[Any],
-        bool | int | float | complex | str | bytes,
-    ]
+    ArrayLike: TypeAlias = (
+        Buffer
+        | _DualArrayLike[
+            dtype[Any],
+            bool | int | float | complex | str | bytes,
+        ]
+    )
 else:
     ArrayLike: TypeAlias = _DualArrayLike[
         dtype[Any],
@@ -139,13 +144,11 @@ _ArrayLikeDT64_co: TypeAlias = (
     | _NestedSequence[_SupportsArray[dtype[datetime64]]]
 )
 _ArrayLikeObject_co: TypeAlias = (
-    _SupportsArray[dtype[object_]]
-    | _NestedSequence[_SupportsArray[dtype[object_]]]
+    _SupportsArray[dtype[object_]] | _NestedSequence[_SupportsArray[dtype[object_]]]
 )
 
 _ArrayLikeVoid_co: TypeAlias = (
-    _SupportsArray[dtype[void]]
-    | _NestedSequence[_SupportsArray[dtype[void]]]
+    _SupportsArray[dtype[void]] | _NestedSequence[_SupportsArray[dtype[void]]]
 )
 _ArrayLikeStr_co: TypeAlias = _DualArrayLike[
     dtype[str_],
@@ -155,14 +158,9 @@ _ArrayLikeBytes_co: TypeAlias = _DualArrayLike[
     dtype[bytes_],
     bytes,
 ]
-_ArrayLikeString_co: TypeAlias = _DualArrayLike[
-    StringDType,
-    str
-]
+_ArrayLikeString_co: TypeAlias = _DualArrayLike[StringDType, str]
 _ArrayLikeAnyString_co: TypeAlias = (
-    _ArrayLikeStr_co |
-    _ArrayLikeBytes_co |
-    _ArrayLikeString_co
+    _ArrayLikeStr_co | _ArrayLikeBytes_co | _ArrayLikeString_co
 )
 
 # NOTE: This includes `builtins.bool`, but not `bumpy.bool`.
@@ -174,7 +172,7 @@ _ArrayLikeInt: TypeAlias = _DualArrayLike[
 # Extra ArrayLike type so that pyright can deal with NDArray[Any]
 # Used as the first overload, should only match NDArray[Any],
 # not any actual types.
-# https://github.com/bumpy/bumpy/pull/22193
+# https://github.com/mwufi/bumpy/pull/22193
 if sys.version_info >= (3, 11):
     from typing import Never as _UnknownType
 else:

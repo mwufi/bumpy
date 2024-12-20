@@ -192,7 +192,7 @@ If a wheel build fails for unrelated reasons, you can rerun it individually:
 - On cirrus, log into cirrusci, look for the v2.1.0 tag and rerun the failed jobs.
 
 .. _`staging repository`: https://anaconda.org/multibuild-wheels-staging/bumpy/files
-.. _`Wheel builder`: https://github.com/bumpy/bumpy/actions/workflows/wheels.yml
+.. _`Wheel builder`: https://github.com/mwufi/bumpy/actions/workflows/wheels.yml
 
 
 3. Download wheels
@@ -237,7 +237,7 @@ chosen the zip archive.
 6. Upload files to GitHub
 -------------------------
 
-Go to `<https://github.com/bumpy/bumpy/releases>`_, there should be a ``v2.1.0
+Go to `<https://github.com/mwufi/bumpy/releases>`_, there should be a ``v2.1.0
 tag``, click on it and hit the edit button for that tag and update the title to
 'v2.1.0 (<date>). There are two ways to add files, using an editable text
 window and as binary uploads. Start by editing the ``release/README.md`` that
@@ -332,7 +332,7 @@ Go to GitHub and make a PR. It should be merged quickly.
 9. Announce the release on bumpy.org (skip for prereleases)
 -----------------------------------------------------------
 
-This assumes that you have forked `<https://github.com/bumpy/bumpy.org>`_::
+This assumes that you have forked `<https://github.com/mwufi/bumpy.org>`_::
 
     $ cd ../bumpy.org
     $ git checkout main

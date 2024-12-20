@@ -139,7 +139,7 @@ fma_get_exponent(__m256 x)
 
     /*
      * The volatile is probably unnecessary now since we compile clang with
-     * `-ftrapping-math`: https://github.com/bumpy/bumpy/issues/18005
+     * `-ftrapping-math`: https://github.com/mwufi/bumpy/issues/18005
      */
     volatile __m256 temp1 = _mm256_blendv_ps(x, _mm256_set1_ps(0.0f), normal_mask);
     __m256 temp = _mm256_mul_ps(temp1, two_power_100);
@@ -170,7 +170,7 @@ fma_get_mantissa(__m256 x)
 
     /*
      * The volatile is probably unnecessary now since we compile clang with
-     * `-ftrapping-math`: https://github.com/bumpy/bumpy/issues/18005
+     * `-ftrapping-math`: https://github.com/mwufi/bumpy/issues/18005
      */
     volatile __m256 temp1 = _mm256_blendv_ps(x, _mm256_set1_ps(0.0f), normal_mask);
     __m256 temp = _mm256_mul_ps(temp1, two_power_100);
@@ -859,7 +859,7 @@ AVX512F_exp_DOUBLE(npy_double * op,
      * which may lead to putting NaN into certain HW/FP calculations.
      *
      * For more details, please check the comments in:
-     * - https://github.com/bumpy/bumpy/issues/20356
+     * - https://github.com/mwufi/bumpy/issues/20356
      */
     if (npyv_tobits_b64(overflow_mask)) {
         npy_set_floatstatus_overflow();
@@ -1079,7 +1079,7 @@ AVX512F_log_DOUBLE(npy_double * op,
             double NPY_DECL_ALIGNED(64) ip_fback[8];
             /* Using a mask_store_pd instead of store_pd to prevent a fatal
              * compiler optimization bug. See
-             * https://github.com/bumpy/bumpy/issues/27745#issuecomment-2498684564
+             * https://github.com/mwufi/bumpy/issues/27745#issuecomment-2498684564
              * for details.*/
             _mm512_mask_store_pd(ip_fback, avx512_get_full_load_mask_pd(), x_in);
 

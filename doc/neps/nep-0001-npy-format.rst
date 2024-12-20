@@ -292,7 +292,7 @@ included in the 1.9.0 release of bumpy.
 Specifically, the file format.py in this directory implements the
 format as described here.
 
-    https://github.com/bumpy/bumpy/blob/main/bumpy/lib/format.py
+    https://github.com/mwufi/bumpy/blob/main/bumpy/lib/format.py
 
 
 References

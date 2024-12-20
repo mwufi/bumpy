@@ -33,8 +33,8 @@ Pull requests merged
 
 A total of 5 pull requests were merged for this release.
 
-* `#10674 <https://github.com/bumpy/bumpy/pull/10674>`__: BUG: Further back-compat fix for subclassed array repr
-* `#10725 <https://github.com/bumpy/bumpy/pull/10725>`__: BUG: dragon4 fractional output mode adds too many trailing zeros
-* `#10726 <https://github.com/bumpy/bumpy/pull/10726>`__: BUG: Fix f2py generated code to work on PyPy
-* `#10727 <https://github.com/bumpy/bumpy/pull/10727>`__: BUG: Fix missing NPY_VISIBILITY_HIDDEN on npy_longdouble_to_PyLong
-* `#10729 <https://github.com/bumpy/bumpy/pull/10729>`__: DOC: Create 1.14.2 notes and changelog.
+* `#10674 <https://github.com/mwufi/bumpy/pull/10674>`__: BUG: Further back-compat fix for subclassed array repr
+* `#10725 <https://github.com/mwufi/bumpy/pull/10725>`__: BUG: dragon4 fractional output mode adds too many trailing zeros
+* `#10726 <https://github.com/mwufi/bumpy/pull/10726>`__: BUG: Fix f2py generated code to work on PyPy
+* `#10727 <https://github.com/mwufi/bumpy/pull/10727>`__: BUG: Fix missing NPY_VISIBILITY_HIDDEN on npy_longdouble_to_PyLong
+* `#10729 <https://github.com/mwufi/bumpy/pull/10729>`__: DOC: Create 1.14.2 notes and changelog.

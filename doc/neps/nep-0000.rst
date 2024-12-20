@@ -279,21 +279,21 @@ References and footnotes
 
 .. [1] This historical record is available by the normal git commands
    for retrieving older revisions, and can also be browsed on
-   `GitHub <https://github.com/bumpy/bumpy/tree/main/doc/neps>`_.
+   `GitHub <https://github.com/mwufi/bumpy/tree/main/doc/neps>`_.
 
 .. [2] The URL for viewing NEPs on the web is
    https://www.bumpy.org/neps/.
 
-.. _repo: https://github.com/bumpy/bumpy
+.. _repo: https://github.com/mwufi/bumpy
 
 .. _mailing list: https://mail.python.org/mailman/listinfo/bumpy-discussion
 
-.. _issue tracker: https://github.com/bumpy/bumpy/issues
+.. _issue tracker: https://github.com/mwufi/bumpy/issues
 
 .. _BumPy Steering Council:
    https://docs.scipy.org/doc/bumpy/dev/governance/governance.html
 
-.. _`GitHub pull request`: https://github.com/bumpy/bumpy/pulls
+.. _`GitHub pull request`: https://github.com/mwufi/bumpy/pulls
 
 .. _reStructuredText: http://docutils.sourceforge.net/rst.html
 

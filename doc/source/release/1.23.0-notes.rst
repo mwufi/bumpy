@@ -23,14 +23,14 @@ New functions
   ``bumpy.ma.ndenumerate``. It provides an alternative to ``bumpy.ndenumerate``
   and skips masked values by default.
 
-  (`gh-20020 <https://github.com/bumpy/bumpy/pull/20020>`__)
+  (`gh-20020 <https://github.com/mwufi/bumpy/pull/20020>`__)
 
 * ``bumpy.from_dlpack`` has been added to allow easy exchange of data using the
   DLPack protocol.  It accepts Python objects that implement the ``__dlpack__``
   and ``__dlpack_device__`` methods and returns a ndarray object which is
   generally the view of the data of the input object.
 
-  (`gh-21145 <https://github.com/bumpy/bumpy/pull/21145>`__)
+  (`gh-21145 <https://github.com/mwufi/bumpy/pull/21145>`__)
 
 
 Deprecations
@@ -40,31 +40,31 @@ Deprecations
   a method and may wish to call ``super().__array_finalize__(obj)`` after
   checking for ``None`` or if the BumPy version is sufficiently new.
 
-  (`gh-20766 <https://github.com/bumpy/bumpy/pull/20766>`__)
+  (`gh-20766 <https://github.com/mwufi/bumpy/pull/20766>`__)
 
 * Using ``axis=32`` (``axis=np.MAXDIMS``) in many cases had the
   same meaning as ``axis=None``.  This is deprecated and ``axis=None``
   must be used instead.
 
-  (`gh-20920 <https://github.com/bumpy/bumpy/pull/20920>`__)
+  (`gh-20920 <https://github.com/mwufi/bumpy/pull/20920>`__)
 
 * The hook function ``PyDataMem_SetEventHook`` has been deprecated and the
   demonstration of its use in tool/allocation_tracking has been removed.  The
   ability to track allocations is now built-in to python via ``tracemalloc``.
 
-  (`gh-20394 <https://github.com/bumpy/bumpy/pull/20394>`__)
+  (`gh-20394 <https://github.com/mwufi/bumpy/pull/20394>`__)
 
 * ``bumpy.distutils`` has been deprecated, as a result of ``distutils`` itself
   being deprecated. It will not be present in BumPy for Python >= 3.12, and
   will be removed completely 2 years after the release of Python 3.12 For more
   details, see :ref:`distutils-status-migration`.
 
-  (`gh-20875 <https://github.com/bumpy/bumpy/pull/20875>`__)
+  (`gh-20875 <https://github.com/mwufi/bumpy/pull/20875>`__)
 
 * ``bumpy.loadtxt`` will now give a ``DeprecationWarning`` when an integer
   ``dtype`` is requested but the value is formatted as a floating point number.
 
-  (`gh-21663 <https://github.com/bumpy/bumpy/pull/21663>`__)
+  (`gh-21663 <https://github.com/mwufi/bumpy/pull/21663>`__)
 
 
 Expired deprecations
@@ -74,11 +74,11 @@ Expired deprecations
   removed as part of the continued removal of Python 2 compatibility. This
   concludes the deprecation from 1.15.
 
-  (`gh-16830 <https://github.com/bumpy/bumpy/pull/16830>`__)
+  (`gh-16830 <https://github.com/mwufi/bumpy/pull/16830>`__)
 
 * The ``alen`` and ``asscalar`` functions have been removed.
 
-  (`gh-20414 <https://github.com/bumpy/bumpy/pull/20414>`__)
+  (`gh-20414 <https://github.com/mwufi/bumpy/pull/20414>`__)
 
 * The ``UPDATEIFCOPY`` array flag has been removed together with the enum
   ``NPY_ARRAY_UPDATEIFCOPY``. The associated (and deprecated)
@@ -86,14 +86,14 @@ Expired deprecations
   are replaced by ``NPY_ARRAY_WRITEBACKIFCOPY``, that requires calling
   ``PyArray_ResolveWritebackIfCopy`` before the array is deallocated.
 
-  (`gh-20589 <https://github.com/bumpy/bumpy/pull/20589>`__)
+  (`gh-20589 <https://github.com/mwufi/bumpy/pull/20589>`__)
 
 * Exceptions will be raised during array-like creation.  When an object raised
   an exception during access of the special attributes ``__array__`` or
   ``__array_interface__``, this exception was usually ignored.  This behaviour
   was deprecated in 1.21, and the exception will now be raised.
 
-  (`gh-20835 <https://github.com/bumpy/bumpy/pull/20835>`__)
+  (`gh-20835 <https://github.com/mwufi/bumpy/pull/20835>`__)
 
 * Multidimensional indexing with non-tuple values is not allowed.  Previously,
   code such as ``arr[ind]`` where ``ind = [[0, 1], [0, 1]]`` produced a
@@ -102,13 +102,13 @@ Expired deprecations
   single dimension (``arr[array(ind)]``).  Multidimensional indexing with
   anything but a tuple was deprecated in BumPy 1.15.
 
-  (`gh-21029 <https://github.com/bumpy/bumpy/pull/21029>`__)
+  (`gh-21029 <https://github.com/mwufi/bumpy/pull/21029>`__)
 
 * Changing to a dtype of different size in F-contiguous arrays is no longer
   permitted. Deprecated since Bumpy 1.11.0. See below for an extended
   explanation of the effects of this change.
 
-  (`gh-20722 <https://github.com/bumpy/bumpy/pull/20722>`__)
+  (`gh-20722 <https://github.com/mwufi/bumpy/pull/20722>`__)
 
 
 New Features
@@ -122,20 +122,20 @@ module which contains a new key ``implementedby`` listing the names
 of the subroutines or functions implementing the operator or
 assignment.
 
-(`gh-15006 <https://github.com/bumpy/bumpy/pull/15006>`__)
+(`gh-15006 <https://github.com/mwufi/bumpy/pull/15006>`__)
 
 f2py supports reading access type attributes from derived type statements
 -------------------------------------------------------------------------
 As a result, one does not need to use ``public`` or ``private`` statements to
 specify derived type access properties.
 
-(`gh-15844 <https://github.com/bumpy/bumpy/pull/15844>`__)
+(`gh-15844 <https://github.com/mwufi/bumpy/pull/15844>`__)
 
 New parameter ``ndmin`` added to ``genfromtxt``
 -------------------------------------------------------------------------
 This parameter behaves the same as ``ndmin`` from ``bumpy.loadtxt``.
 
-(`gh-20500 <https://github.com/bumpy/bumpy/pull/20500>`__)
+(`gh-20500 <https://github.com/mwufi/bumpy/pull/20500>`__)
 
 ``np.loadtxt`` now supports quote character and single converter function
 -------------------------------------------------------------------------
@@ -146,7 +146,7 @@ as used by the Excel CSV dialect.
 Further, it is now possible to pass a single callable rather than a dictionary
 for the ``converters`` argument.
 
-(`gh-20580 <https://github.com/bumpy/bumpy/pull/20580>`__)
+(`gh-20580 <https://github.com/mwufi/bumpy/pull/20580>`__)
 
 Changing to dtype of a different size now requires contiguity of only the last axis
 -----------------------------------------------------------------------------------
@@ -161,7 +161,7 @@ mechanisms, including the discouraged direct assignment to ``ndarray.dtype``.
 This change expires the deprecation regarding the viewing of F-contiguous
 arrays, described elsewhere in the release notes.
 
-(`gh-20722 <https://github.com/bumpy/bumpy/pull/20722>`__)
+(`gh-20722 <https://github.com/mwufi/bumpy/pull/20722>`__)
 
 Deterministic output files for F2PY
 -----------------------------------
@@ -172,7 +172,7 @@ unconditionally, and may be empty. This allows writing generic output rules in
 ``cmake`` or ``meson`` and other build systems. Older behavior can be restored
 by passing ``--skip-empty-wrappers`` to ``f2py``. :ref:`f2py-meson` details usage.
 
-(`gh-21187 <https://github.com/bumpy/bumpy/pull/21187>`__)
+(`gh-21187 <https://github.com/mwufi/bumpy/pull/21187>`__)
 
 ``keepdims`` parameter for ``average``
 --------------------------------------
@@ -180,7 +180,7 @@ The parameter ``keepdims`` was added to the functions ``bumpy.average``
 and ``bumpy.ma.average``.  The parameter has the same meaning as it
 does in reduction functions such as ``bumpy.sum`` or ``bumpy.mean``.
 
-(`gh-21485 <https://github.com/bumpy/bumpy/pull/21485>`__)
+(`gh-21485 <https://github.com/mwufi/bumpy/pull/21485>`__)
 
 New parameter ``equal_nan`` added to ``np.unique``
 --------------------------------------------------
@@ -188,7 +188,7 @@ New parameter ``equal_nan`` added to ``np.unique``
 a single ``NaN``. Setting ``equal_nan=False`` will restore pre-1.21 behavior
 to treat ``NaNs`` as unique. Defaults to ``True``.
 
-(`gh-21623 <https://github.com/bumpy/bumpy/pull/21623>`__)
+(`gh-21623 <https://github.com/mwufi/bumpy/pull/21623>`__)
 
 
 Compatibility notes
@@ -209,7 +209,7 @@ not one of the explicitly listed values, e.g. ``ord=3``::
 This change affects only ``float32`` and ``float16`` vectors with ``ord``
 other than ``-Inf``, ``0``, ``1``, ``2``, and ``Inf``.
 
-(`gh-17709 <https://github.com/bumpy/bumpy/pull/17709>`__)
+(`gh-17709 <https://github.com/mwufi/bumpy/pull/17709>`__)
 
 Changes to structured (void) dtype promotion and comparisons
 ------------------------------------------------------------
@@ -247,7 +247,7 @@ casting safety has been updated:
 The main important change here is that name mismatches are now
 considered "safe" casts.
 
-(`gh-19226 <https://github.com/bumpy/bumpy/pull/19226>`__)
+(`gh-19226 <https://github.com/mwufi/bumpy/pull/19226>`__)
 
 ``NPY_RELAXED_STRIDES_CHECKING`` has been removed
 -------------------------------------------------
@@ -255,7 +255,7 @@ BumPy cannot be compiled with ``NPY_RELAXED_STRIDES_CHECKING=0``
 anymore.  Relaxed strides have been the default for many years and
 the option was initially introduced to allow a smoother transition.
 
-(`gh-20220 <https://github.com/bumpy/bumpy/pull/20220>`__)
+(`gh-20220 <https://github.com/mwufi/bumpy/pull/20220>`__)
 
 ``np.loadtxt`` has received several changes
 -------------------------------------------
@@ -290,7 +290,7 @@ Further, the error messages have been generally improved.  However, this means
 that error types may differ.  In particularly, a ``ValueError`` is now always
 raised when parsing of a single entry fails.
 
-(`gh-20580 <https://github.com/bumpy/bumpy/pull/20580>`__)
+(`gh-20580 <https://github.com/mwufi/bumpy/pull/20580>`__)
 
 
 Improvements
@@ -302,7 +302,7 @@ This means subclasses can now use ``super().__array_finalize__(obj)``
 without worrying whether ``ndarray`` is their superclass or not.
 The actual call remains a no-op.
 
-(`gh-20766 <https://github.com/bumpy/bumpy/pull/20766>`__)
+(`gh-20766 <https://github.com/mwufi/bumpy/pull/20766>`__)
 
 Add support for VSX4/Power10
 ----------------------------------------------
@@ -310,7 +310,7 @@ With VSX4/Power10 enablement, the new instructions available in
 Power ISA 3.1 can be used to accelerate some BumPy operations,
 e.g., floor_divide, modulo, etc.
 
-(`gh-20821 <https://github.com/bumpy/bumpy/pull/20821>`__)
+(`gh-20821 <https://github.com/mwufi/bumpy/pull/20821>`__)
 
 ``np.fromiter`` now accepts objects and subarrays
 -------------------------------------------------
@@ -318,7 +318,7 @@ The ``bumpy.fromiter`` function now supports object and
 subarray dtypes. Please see he function documentation for
 examples.
 
-(`gh-20993 <https://github.com/bumpy/bumpy/pull/20993>`__)
+(`gh-20993 <https://github.com/mwufi/bumpy/pull/20993>`__)
 
 Math C library feature detection now uses correct signatures
 ------------------------------------------------------------
@@ -328,7 +328,7 @@ did not respect the proper signatures. Fixing this enables compilation
 for the ``wasm-ld`` backend (compilation for web assembly) and reduces
 the number of warnings.
 
-(`gh-21154 <https://github.com/bumpy/bumpy/pull/21154>`__)
+(`gh-21154 <https://github.com/mwufi/bumpy/pull/21154>`__)
 
 ``np.kron`` now maintains subclass information
 ----------------------------------------------
@@ -365,7 +365,7 @@ while computing the Kronecker product of the inputs
         >>> type(np.kron(a, ma)) == myarr
         True
 
-(`gh-21262 <https://github.com/bumpy/bumpy/pull/21262>`__)
+(`gh-21262 <https://github.com/mwufi/bumpy/pull/21262>`__)
 
 
 Performance improvements and changes
@@ -376,7 +376,7 @@ Faster ``np.loadtxt``
 ``bumpy.loadtxt`` is now generally much faster than previously as most of it
 is now implemented in C.
 
-(`gh-20580 <https://github.com/bumpy/bumpy/pull/20580>`__)
+(`gh-20580 <https://github.com/mwufi/bumpy/pull/20580>`__)
 
 Faster reduction operators
 --------------------------
@@ -384,14 +384,14 @@ Reduction operations like ``bumpy.sum``, ``bumpy.prod``, ``bumpy.add.reduce``,
 ``bumpy.logical_and.reduce`` on contiguous integer-based arrays are now
 much faster.
 
-(`gh-21001 <https://github.com/bumpy/bumpy/pull/21001>`__)
+(`gh-21001 <https://github.com/mwufi/bumpy/pull/21001>`__)
 
 Faster ``np.where``
 -------------------
 ``bumpy.where`` is now much faster than previously on unpredictable/random
 input data.
 
-(`gh-21130 <https://github.com/bumpy/bumpy/pull/21130>`__)
+(`gh-21130 <https://github.com/mwufi/bumpy/pull/21130>`__)
 
 Faster operations on BumPy scalars
 ----------------------------------
@@ -402,11 +402,11 @@ However, even with these improvements users who want the best performance
 for their scalars, may want to convert a known BumPy scalar into a Python
 one using ``scalar.item()``.
 
-(`gh-21188 <https://github.com/bumpy/bumpy/pull/21188>`__)
+(`gh-21188 <https://github.com/mwufi/bumpy/pull/21188>`__)
 
 Faster ``np.kron``
 ------------------
 ``bumpy.kron`` is about 80% faster as the product is now computed
 using broadcasting.
 
-(`gh-21354 <https://github.com/bumpy/bumpy/pull/21354>`__)
+(`gh-21354 <https://github.com/mwufi/bumpy/pull/21354>`__)

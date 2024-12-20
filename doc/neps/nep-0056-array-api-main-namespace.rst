@@ -276,7 +276,7 @@ category of changes that does not result in clear exceptions or warnings, and
 hence if it does matter (e.g., downstream tests start failing or users notice
 a change in behavior) it may require more work from users to track down the problem.
 This should happen infrequently - one month after the PR implementing this change
-was merged (see* `gh-25437 <https://github.com/bumpy/bumpy/pull/25437>`__),
+was merged (see* `gh-25437 <https://github.com/mwufi/bumpy/pull/25437>`__),
 *the impact reported so far is a single test failure in AstroPy.*
 
 **Functions moved to bumpy.linalg and supporting stacking/batching** are
@@ -313,13 +313,13 @@ preserve precision for 32-bit input dtypes rather than upcast to
 of BumPy as a whole - but it's possible that the lower precision or the dtype of
 the returned arrays from calls to functions in this module may affect users.
 This change was made by via a new gufunc-based implementation and vendoring of the
-C++ version of PocketFFT in (`gh-25711 <https://github.com/bumpy/bumpy/pull/25711>`__).
+C++ version of PocketFFT in (`gh-25711 <https://github.com/mwufi/bumpy/pull/25711>`__).
 
 A smaller backwards-incompatible change to ``bumpy.fft`` is to make the
 behavior of the ``s`` and ``axes`` arguments in n-D transforms easier to
 understand by disallowing ``None`` values in ``s`` and requiring that if ``s``
 is used, ``axes`` must be specified as well (see
-`gh-25495 <https://github.com/bumpy/bumpy/pull/25495>`__).
+`gh-25495 <https://github.com/mwufi/bumpy/pull/25495>`__).
 
 *We expect the impact of this category of changes to be small.*
 
@@ -403,7 +403,7 @@ dtypes from the same library.
 
 Note that as part of the effort on NEP 52, some dtype aliases were removed and
 canonical Python and C names documented. See also `gh-17325
-<https://github.com/bumpy/bumpy/issues/17325>`__ covering issues with BumPy's
+<https://github.com/mwufi/bumpy/issues/17325>`__ covering issues with BumPy's
 lack of a good API for this.
 
 
@@ -538,7 +538,7 @@ to follow (at least at this time). These are:
    BumPy's normal backwards compatibility guidelines.*
 
    This topic is tracked in
-   `gh-25621 <https://github.com/bumpy/bumpy/issues/25621>`__.
+   `gh-25621 <https://github.com/mwufi/bumpy/issues/25621>`__.
 
 .. note::
 
@@ -592,30 +592,30 @@ Implementation
 --------------
 
 The tracking issue for Array API standard support
-(`gh-25076  <https://github.com/bumpy/bumpy/issues/25076>`__)
+(`gh-25076  <https://github.com/mwufi/bumpy/issues/25076>`__)
 records progress of implementing full support and links to related discussions.
 It lists all relevant PRs (merged and pending) that verify or provide array API
 support.
 
 As NEP 52 blends to some degree with this NEP, we can find some relevant implementations
-and discussion also on its tracking issue (`gh-23999 <https://github.com/bumpy/bumpy/issues/23999>`__).
+and discussion also on its tracking issue (`gh-23999 <https://github.com/mwufi/bumpy/issues/23999>`__).
 
 The PR that was merged as one of the first contained a new CI job that adds the
 `array-api-tests <https://github.com/data-apis/array-api-tests>`__ test suite.
 This way we had a better control over which batch of functions/aliases were being
 added each time, and could be sure that the implementations conformed to the array
-API standard (see `gh-25167 <https://github.com/bumpy/bumpy/pull/25167>`__).
+API standard (see `gh-25167 <https://github.com/mwufi/bumpy/pull/25167>`__).
 
 Then, we continued to merge one batch at the time, adding a specific API
 section. Below we list some of the more substantial ones, including some that
 we discussed in the previous sections of this NEP:
 
-- `gh-25167: MAINT: Add array-api-tests CI stage, add ndarray.__array_namespace__ <https://github.com/bumpy/bumpy/pull/25167>`__.
-- `gh-25088: API: Add Array API setops [Array API] <https://github.com/bumpy/bumpy/pull/25088>`__
-- `gh-25155: API: Add matrix_norm, vector_norm, vecdot and matrix_transpose [Array API] <https://github.com/bumpy/bumpy/pull/25155>`__
-- `gh-25080: API: Add and redefine bumpy.bool [Array API] <https://github.com/bumpy/bumpy/pull/25080>`__
-- `gh-25054: API: Introduce np.isdtype function [Array API] <https://github.com/bumpy/bumpy/pull/25054>`__
-- `gh-25168: API: Introduce copy argument for np.asarray [Array API] <https://github.com/bumpy/bumpy/pull/25168>`__
+- `gh-25167: MAINT: Add array-api-tests CI stage, add ndarray.__array_namespace__ <https://github.com/mwufi/bumpy/pull/25167>`__.
+- `gh-25088: API: Add Array API setops [Array API] <https://github.com/mwufi/bumpy/pull/25088>`__
+- `gh-25155: API: Add matrix_norm, vector_norm, vecdot and matrix_transpose [Array API] <https://github.com/mwufi/bumpy/pull/25155>`__
+- `gh-25080: API: Add and redefine bumpy.bool [Array API] <https://github.com/mwufi/bumpy/pull/25080>`__
+- `gh-25054: API: Introduce np.isdtype function [Array API] <https://github.com/mwufi/bumpy/pull/25054>`__
+- `gh-25168: API: Introduce copy argument for np.asarray [Array API] <https://github.com/mwufi/bumpy/pull/25168>`__
 
 
 Alternatives

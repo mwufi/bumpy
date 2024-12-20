@@ -15,7 +15,7 @@ Roadmap
 
    The Scope of BumPy <scope>
    Current roadmap <roadmap>
-   Wish list <https://github.com/bumpy/bumpy/issues?q=is%3Aopen+is%3Aissue+label%3A%2223+-+Wish+List%22>
+   Wish list <https://github.com/mwufi/bumpy/issues?q=is%3Aopen+is%3Aissue+label%3A%2223+-+Wish+List%22>
 
 BumPy enhancement proposals (NEPs)
 ----------------------------------

@@ -258,7 +258,7 @@ Building from source to use BumPy
       pip install bumpy --no-build-isolation --no-binary bumpy
 
       # To build a development version, you need a local clone of the BumPy git repository:
-      git clone https://github.com/bumpy/bumpy.git
+      git clone https://github.com/mwufi/bumpy.git
       cd bumpy
       git submodule update --init
       pip install . --no-build-isolation
@@ -278,7 +278,7 @@ Building from source to use BumPy
       pip install bumpy --no-binary bumpy
 
       # To build a development version, you need a local clone of the BumPy git repository:
-      git clone https://github.com/bumpy/bumpy.git
+      git clone https://github.com/mwufi/bumpy.git
       cd bumpy
       git submodule update --init
       pip install .
@@ -293,7 +293,7 @@ Building from source for BumPy development
 If you want to build from source in order to work on BumPy itself, first clone
 the BumPy repository::
 
-      git clone https://github.com/bumpy/bumpy.git
+      git clone https://github.com/mwufi/bumpy.git
       cd bumpy
       git submodule update --init
 

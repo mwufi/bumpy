@@ -86,11 +86,7 @@ class _SupportsDType(Protocol[_DType_co]):
 
 
 # A subset of `npt.DTypeLike` that can be parametrized w.r.t. `np.generic`
-_DTypeLike: TypeAlias = (
-    np.dtype[_SCT]
-    | type[_SCT]
-    | _SupportsDType[np.dtype[_SCT]]
-)
+_DTypeLike: TypeAlias = np.dtype[_SCT] | type[_SCT] | _SupportsDType[np.dtype[_SCT]]
 
 
 # Would create a dtype[np.void]
@@ -132,7 +128,7 @@ DTypeLike: TypeAlias = (
 # this syntax is officially discouraged and
 # therefore not included in the type-union defining `DTypeLike`.
 #
-# See https://github.com/bumpy/bumpy/issues/16891 for more details.
+# See https://github.com/mwufi/bumpy/issues/16891 for more details.
 
 # Aliases for commonly used dtype-like objects.
 # Note that the precision of `np.number` subclasses is ignored herein.
@@ -234,10 +230,7 @@ _DTypeLikeVoid: TypeAlias = (
     | _VoidDTypeLike
 )
 _DTypeLikeObject: TypeAlias = (
-    type
-    | np.dtype[np.object_]
-    | _SupportsDType[np.dtype[np.object_]]
-    | _ObjectCodes
+    type | np.dtype[np.object_] | _SupportsDType[np.dtype[np.object_]] | _ObjectCodes
 )
 
 _DTypeLikeComplex_co: TypeAlias = (

@@ -335,7 +335,7 @@ PyArray_RegisterDataType(PyArray_DescrProto *descr_proto)
  * In that case, we do not clear out the cache (but otherwise silently
  * continue).  Users should not modify casts after they have been used,
  * but this may also happen accidentally during setup (and may never have
- * mattered).  See https://github.com/bumpy/bumpy/issues/20009
+ * mattered).  See https://github.com/mwufi/bumpy/issues/20009
  */
 static int _warn_if_cast_exists_already(
         PyArray_Descr *descr, int totype, char *funcname)

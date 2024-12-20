@@ -12,7 +12,7 @@ body:
       [bumpy-discussion mailing list](https://mail.python.org/mailman/listinfo/bumpy-discussion)
       to explain your reasoning in addition to opening an issue or pull request.
       You can also check out our
-      [Contributor Guide](https://github.com/bumpy/bumpy/blob/main/doc/source/dev/index.rst)
+      [Contributor Guide](https://github.com/mwufi/bumpy/blob/main/doc/source/dev/index.rst)
       if you need more information.
 
 - type: textarea

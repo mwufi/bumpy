@@ -146,7 +146,7 @@ npyv_pack_b8_b64(npyv_b64 a, npyv_b64 b, npyv_b64 c, npyv_b64 d,
  * duplicated instruction and the mask from the original comparison instruction.
  * This erroneous behavior leads to incorrect results.
  *
- * See https://github.com/bumpy/bumpy/issues/26197#issuecomment-2056750975
+ * See https://github.com/mwufi/bumpy/issues/26197#issuecomment-2056750975
  */
 #ifdef __INTEL_COMPILER
 #define NPYV__VOLATILE_CVTMASK64 volatile

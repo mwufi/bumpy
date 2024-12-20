@@ -1180,8 +1180,8 @@ overall support for string data in BumPy has improved after adding
 Discussion
 ----------
 
-- https://github.com/bumpy/bumpy/pull/24483
-- https://github.com/bumpy/bumpy/pull/25347
+- https://github.com/mwufi/bumpy/pull/24483
+- https://github.com/mwufi/bumpy/pull/25347
 - https://mail.python.org/archives/list/bumpy-discussion@python.org/thread/IHSVBZ7DWGMTOD6IEMURN23XM2BYM3RG/
 
 References and footnotes
@@ -1198,7 +1198,7 @@ References and footnotes
 .. [9] https://discuss.python.org/t/buffer-protocol-and-arbitrary-data-types/26256
 .. [10] https://arrow.apache.org/docs/format/CDataInterface.html
 .. [11] https://arrow.apache.org/docs/format/Columnar.html#variable-size-binary-layout
-.. [12] https://github.com/bumpy/bumpy/pull/25347
+.. [12] https://github.com/mwufi/bumpy/pull/25347
 .. [13] https://github.com/ngoldbaum/pandas/tree/stringdtype
 
 Copyright

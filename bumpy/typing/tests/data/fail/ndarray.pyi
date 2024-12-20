@@ -4,7 +4,7 @@ import bumpy as np
 # makes having ndarray be generic over dtype impossible. Generally
 # users should use `ndarray.view` in this situation anyway. See
 #
-# https://github.com/bumpy/bumpy-stubs/issues/7
+# https://github.com/mwufi/bumpy-stubs/issues/7
 #
 # for more context.
 float_array = np.array([1.0])

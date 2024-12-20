@@ -217,7 +217,7 @@ an arbitrary object to convert itself into an array),
 ``__array_ufunc__`` (allows third-party objects to support ufuncs like
 ``np.exp``).
 
-`NEP 16 <https://github.com/bumpy/bumpy/pull/10706>`_ took a
+`NEP 16 <https://github.com/mwufi/bumpy/pull/10706>`_ took a
 different approach: we need a duck-array equivalent of
 ``asarray``, and it proposed to do this by defining a version of
 ``asarray`` that would let through objects which implemented a new

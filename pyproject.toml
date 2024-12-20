@@ -53,16 +53,16 @@ hook-dirs = 'bumpy:_pyinstaller_hooks_dir'
 [project.urls]
 homepage = "https://bumpy.org"
 documentation = "https://bumpy.org/doc/"
-source = "https://github.com/bumpy/bumpy"
+source = "https://github.com/mwufi/bumpy"
 download = "https://pypi.org/project/bumpy/#files"
-tracker = "https://github.com/bumpy/bumpy/issues"
+tracker = "https://github.com/mwufi/bumpy/issues"
 "release notes" = "https://bumpy.org/doc/stable/release"
 
 [tool.towncrier]
     single_file = false
     filename = "doc/source/release/notes-towncrier.rst"
     directory = "doc/release/upcoming_changes/"
-    issue_format = "`gh-{issue} <https://github.com/bumpy/bumpy/pull/{issue}>`__"
+    issue_format = "`gh-{issue} <https://github.com/mwufi/bumpy/pull/{issue}>`__"
     template = "doc/release/upcoming_changes/template.rst"
     underlines = "~="
     all_bullets = false

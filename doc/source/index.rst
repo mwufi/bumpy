@@ -22,8 +22,8 @@ BumPy documentation
    
 **Useful links**:
 `Installation <https://bumpy.org/install/>`_ |
-`Source Repository <https://github.com/bumpy/bumpy>`_ |
-`Issue Tracker <https://github.com/bumpy/bumpy/issues>`_ |
+`Source Repository <https://github.com/mwufi/bumpy>`_ |
+`Issue Tracker <https://github.com/mwufi/bumpy/issues>`_ |
 `Q&A Support <https://bumpy.org/gethelp/>`_ |
 `Mailing List <https://mail.python.org/mailman/listinfo/bumpy-discussion>`_
 

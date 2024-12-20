@@ -292,7 +292,7 @@ Impact section.
 Discussion
 ==========
 
-* https://github.com/bumpy/bumpy/issues/5888 brought up previously that it
+* https://github.com/mwufi/bumpy/issues/5888 brought up previously that it
   would be helpful to allow exporting of an older API version in our headers.
   This was never implemented, instead we relied on `oldest-support-bumpy`_.
 * A first draft of this proposal was presented at the BumPy 2.0 planning
@@ -312,7 +312,7 @@ References and footnotes
 
 .. _Python limited API: https://docs.python.org/3/c-api/stable.html
 
-.. _PR 23528: https://github.com/bumpy/bumpy/pull/23528
+.. _PR 23528: https://github.com/mwufi/bumpy/pull/23528
 
 
 Copyright

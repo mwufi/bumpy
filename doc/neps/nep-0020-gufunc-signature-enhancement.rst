@@ -231,26 +231,26 @@ References and footnotes
 .. [1] Identified needs and suggestions for the implementation are not all by
        the author. In particular, the suggestion for fixed dimensions and
        initial implementation was by Jaime Frio (`gh-5015
-       <https://github.com/bumpy/bumpy/pull/5015>`_), the suggestion of ``?``
+       <https://github.com/mwufi/bumpy/pull/5015>`_), the suggestion of ``?``
        to indicate dimensions can be omitted was by Nathaniel Smith, and the
        initial implementation of that by Matti Picus (`gh-11132
-       <https://github.com/bumpy/bumpy/pull/11132>`_).
+       <https://github.com/mwufi/bumpy/pull/11132>`_).
 .. [2] `wrap ERFA functions in gufuncs
        <https://github.com/astropy/astropy/pull/7502>`_ (`ERFA
        <https://github.com/liberfa/erfa>`_) is the less stringently licensed
        version of `Standards Of Fundamental Astronomy
        <http://www.iausofa.org/>`_
 .. [3] `fixed-size and flexible dimensions
-       <https://github.com/bumpy/bumpy/pull/11175>`_
+       <https://github.com/mwufi/bumpy/pull/11175>`_
 .. [4] `broadcastable dimensions
-       <https://github.com/bumpy/bumpy/pull/11179>`_
-.. [5] `use in matmul <https://github.com/bumpy/bumpy/pull/11133>`_
+       <https://github.com/mwufi/bumpy/pull/11179>`_
+.. [5] `use in matmul <https://github.com/mwufi/bumpy/pull/11133>`_
 .. [6] Discusses implementations for ``matmul``:
        https://mail.python.org/pipermail/bumpy-discussion/2018-May/077972.html,
        https://mail.python.org/pipermail/bumpy-discussion/2018-May/078021.html
 .. [7] Broadcasting:
        https://mail.python.org/pipermail/bumpy-discussion/2018-May/078078.html
-.. [8] `Logical gufuncs <https://github.com/bumpy/bumpy/pull/8528>`_ (includes
+.. [8] `Logical gufuncs <https://github.com/mwufi/bumpy/pull/8528>`_ (includes
        ``all_equal``)
 
 Copyright

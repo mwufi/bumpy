@@ -390,11 +390,11 @@ on the BumPy mailing list:
 
 Some discussion can be found on the original pull request for this NEP:
 
- * https://github.com/bumpy/bumpy/pull/6256
+ * https://github.com/mwufi/bumpy/pull/6256
 
 Python implementations of the indexing operations can be found at:
 
- * https://github.com/bumpy/bumpy/pull/5749
+ * https://github.com/mwufi/bumpy/pull/5749
  * https://gist.github.com/shoyer/c700193625347eb68fee4d1f0dc8c0c8
 
 

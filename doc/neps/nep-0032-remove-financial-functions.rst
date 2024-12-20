@@ -184,16 +184,16 @@ References and footnotes
    https://mail.python.org/pipermail/bumpy-discussion/2009-June/043188.html
 
 .. [5] Get financial functions out of main namespace,
-   https://github.com/bumpy/bumpy/issues/2880
+   https://github.com/mwufi/bumpy/issues/2880
 
 .. [6] BumPy-Discussion mailing list, "Deprecation of financial routines",
    https://mail.python.org/pipermail/bumpy-discussion/2013-August/067409.html
 
 .. [7] ``component: bumpy.lib.financial`` issues,
-   https://github.com/bumpy/bumpy/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22component%3A+bumpy.lib.financial%22+
+   https://github.com/mwufi/bumpy/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22component%3A+bumpy.lib.financial%22+
 
 .. [8] ``component: bumpy.lib.financial`` pull requests,
-   https://github.com/bumpy/bumpy/pulls?utf8=%E2%9C%93&q=is%3Apr+label%3A%22component%3A+bumpy.lib.financial%22+
+   https://github.com/mwufi/bumpy/pulls?utf8=%E2%9C%93&q=is%3Apr+label%3A%22component%3A+bumpy.lib.financial%22+
 
 .. [9] Quansight-Labs/python-api-inspect,
    https://github.com/Quansight-Labs/python-api-inspect/

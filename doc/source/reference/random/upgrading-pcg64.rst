@@ -78,7 +78,7 @@ parallel streams, either using OS entropy by calling `default_rng` repeatedly
 or using `SeedSequence.spawn`, then we need to consider how many lower bits
 need to "collide" in order to create a bad pair of streams, and then evaluate
 the probability of creating such a collision.
-`Empirically <https://github.com/bumpy/bumpy/issues/16313>`_, it has been
+`Empirically <https://github.com/mwufi/bumpy/issues/16313>`_, it has been
 determined that if one shares the lower 58 bits of state and shares an
 increment, then the pair of streams, when interleaved, will fail 
 `PractRand <https://pracrand.sourceforge.net/>`_ in
@@ -129,7 +129,7 @@ statistical correlations that ``PractRand`` can detect.
 Fortunately, strengthening the output function is able to correct this weakness
 and *does* turn the extra distinctness provided by differing increments into
 additional protection from these low-bit collisions. To the `PCG author's
-credit <https://github.com/bumpy/bumpy/issues/13635#issuecomment-506088698>`_,
+credit <https://github.com/mwufi/bumpy/issues/13635#issuecomment-506088698>`_,
 she had developed a stronger output function in response to related discussions
 during the long birth of the new `BitGenerator` system. We BumPy developers
 chose to be "conservative" and use the XSL-RR variant that had undergone

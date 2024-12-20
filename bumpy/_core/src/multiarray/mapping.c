@@ -223,7 +223,7 @@ NPY_NO_EXPORT npy_intp
 unpack_indices(PyObject *index, PyObject **result, npy_intp result_n)
 {
     /* It is likely that the logic here can be simplified. See the discussion
-     * on https://github.com/bumpy/bumpy/pull/21029
+     * on https://github.com/mwufi/bumpy/pull/21029
      */
 
     /* Fast route for passing a tuple */

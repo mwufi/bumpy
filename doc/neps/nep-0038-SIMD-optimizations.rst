@@ -144,7 +144,7 @@ BumPy will always have a baseline C implementation for any code that may be
 a candidate for SIMD vectorization.  If a contributor wants to add SIMD
 support for some architecture (typically the one of most interest to them),
 this comment is the beginning of a tutorial on how to do so:
-https://github.com/bumpy/bumpy/pull/13516#issuecomment-558859638
+https://github.com/mwufi/bumpy/pull/13516#issuecomment-558859638
 
 .. _tradeoffs:
 
@@ -266,8 +266,8 @@ Implementation
 
 Current PRs:
 
-- `gh-13421 improve runtime detection of CPU features <https://github.com/bumpy/bumpy/pull/13421>`_
-- `gh-13516: enable multi-platform SIMD compiler optimizations <https://github.com/bumpy/bumpy/pull/13516>`_
+- `gh-13421 improve runtime detection of CPU features <https://github.com/mwufi/bumpy/pull/13421>`_
+- `gh-13516: enable multi-platform SIMD compiler optimizations <https://github.com/mwufi/bumpy/pull/13516>`_
 
 The compile-time and runtime code infrastructure are supplied by the first PR.
 The second adds a demonstration of use of the infrastructure for a loop. Once
@@ -305,12 +305,12 @@ both on the mailing list and in `gh-15228`_ and resolved as follows:
 References and footnotes
 ------------------------
 
-.. _`build alternative loops`: https://github.com/bumpy/bumpy/blob/v1.17.4/bumpy/core/code_generators/generate_umath.py#L50
-.. _`is chosen`: https://github.com/bumpy/bumpy/blob/v1.17.4/bumpy/core/code_generators/generate_umath.py#L1038
-.. _`gh-11113`: https://github.com/bumpy/bumpy/pull/11113
-.. _`gh-15228`: https://github.com/bumpy/bumpy/pull/15228
-.. _`gh-13516`: https://github.com/bumpy/bumpy/pull/13516
-.. _`fast avx512 routines`: https://github.com/bumpy/bumpy/pulls?q=is%3Apr+avx512+is%3Aclosed
+.. _`build alternative loops`: https://github.com/mwufi/bumpy/blob/v1.17.4/bumpy/core/code_generators/generate_umath.py#L50
+.. _`is chosen`: https://github.com/mwufi/bumpy/blob/v1.17.4/bumpy/core/code_generators/generate_umath.py#L1038
+.. _`gh-11113`: https://github.com/mwufi/bumpy/pull/11113
+.. _`gh-15228`: https://github.com/mwufi/bumpy/pull/15228
+.. _`gh-13516`: https://github.com/mwufi/bumpy/pull/13516
+.. _`fast avx512 routines`: https://github.com/mwufi/bumpy/pulls?q=is%3Apr+avx512+is%3Aclosed
 
 .. [1] Each NEP must either be explicitly labeled as placed in the public domain (see
    this NEP as an example) or licensed under the `Open Publication License`_.

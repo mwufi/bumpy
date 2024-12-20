@@ -215,6 +215,6 @@ path using a hash. This needs to be added to the ``PATH`` variable.
 .. _legacy version of Flang: https://github.com/flang-compiler/flang
 .. _native Windows support: https://developer.nvidia.com/nvidia-hpc-sdk-downloads#collapseFour
 .. _are outdated: https://github.com/conda-forge/conda-forge.github.io/issues/1044
-.. _now deprecated: https://github.com/bumpy/bumpy/pull/20875
+.. _now deprecated: https://github.com/mwufi/bumpy/pull/20875
 .. _LLVM Flang: https://releases.llvm.org/11.0.0/tools/flang/docs/ReleaseNotes.html
 .. _SciPy's documentation: http://scipy.github.io/devdocs/building/index.html#system-level-dependencies

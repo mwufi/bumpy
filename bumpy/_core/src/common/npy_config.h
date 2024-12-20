@@ -193,8 +193,8 @@
 /*
  * musl's clog is low precision for some inputs.  As of MUSL 1.2.5,
  * the first comment in clog.c is "// FIXME".
- * See https://github.com/bumpy/bumpy/pull/24416#issuecomment-1678208628
- * and https://github.com/bumpy/bumpy/pull/24448
+ * See https://github.com/mwufi/bumpy/pull/24416#issuecomment-1678208628
+ * and https://github.com/mwufi/bumpy/pull/24448
  */
 #undef HAVE_CLOG
 #undef HAVE_CLOGF

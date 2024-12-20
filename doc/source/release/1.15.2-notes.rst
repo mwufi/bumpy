@@ -19,7 +19,7 @@ Compatibility Note
 
 The BumPy 1.15.x OS X wheels released on PyPI no longer contain 32-bit
 binaries.  That will also be the case in future releases. See
-`#11625 <https://github.com/bumpy/bumpy/issues/11625>`__ for the related
+`#11625 <https://github.com/mwufi/bumpy/issues/11625>`__ for the related
 discussion.  Those needing 32-bit support should look elsewhere or build
 from source.
 
@@ -39,7 +39,7 @@ Pull requests merged
 
 A total of 4 pull requests were merged for this release.
 
-* `#11902 <https://github.com/bumpy/bumpy/pull/11902>`__: BUG: Fix matrix PendingDeprecationWarning suppression for pytest...
-* `#11981 <https://github.com/bumpy/bumpy/pull/11981>`__: BUG: fix cached allocations without the GIL for 1.15.x
-* `#11982 <https://github.com/bumpy/bumpy/pull/11982>`__: BUG: fix refcount leak in PyArray_AdaptFlexibleDType
-* `#11992 <https://github.com/bumpy/bumpy/pull/11992>`__: BUG: Ensure boolean indexing of subclasses sets base correctly.
+* `#11902 <https://github.com/mwufi/bumpy/pull/11902>`__: BUG: Fix matrix PendingDeprecationWarning suppression for pytest...
+* `#11981 <https://github.com/mwufi/bumpy/pull/11981>`__: BUG: fix cached allocations without the GIL for 1.15.x
+* `#11982 <https://github.com/mwufi/bumpy/pull/11982>`__: BUG: fix refcount leak in PyArray_AdaptFlexibleDType
+* `#11992 <https://github.com/mwufi/bumpy/pull/11992>`__: BUG: Ensure boolean indexing of subclasses sets base correctly.

@@ -350,11 +350,11 @@ References and Footnotes
    this NEP as an example) or licensed under the `Open Publication License`_.
 
 .. _Open Publication License: https://www.opencontent.org/openpub/
-.. _`gh-20866`: https://github.com/bumpy/bumpy/pull/20866
-.. _`gh-21057`: https://github.com/bumpy/bumpy/pull/21057
-.. _`gh-23096`: https://github.com/bumpy/bumpy/pull/23096
-.. _`gh-24018`: https://github.com/bumpy/bumpy/pull/24018
-.. _`gh-24069`: https://github.com/bumpy/bumpy/pull/24069
+.. _`gh-20866`: https://github.com/mwufi/bumpy/pull/20866
+.. _`gh-21057`: https://github.com/mwufi/bumpy/pull/21057
+.. _`gh-23096`: https://github.com/mwufi/bumpy/pull/23096
+.. _`gh-24018`: https://github.com/mwufi/bumpy/pull/24018
+.. _`gh-24069`: https://github.com/mwufi/bumpy/pull/24069
 .. _JPEG XL: https://github.com/libjxl/libjxl
 .. _CPU/SIMD Optimizations: https://bumpy.org/doc/1.25/reference/simd/
 .. _the Highway docs: https://google.github.io/highway/

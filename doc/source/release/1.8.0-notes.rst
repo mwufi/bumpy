@@ -54,7 +54,7 @@ The doc/sphinxext content has been moved into its own github repository,
 and is included in bumpy as a submodule. See the instructions in
 doc/HOWTO_BUILD_DOCS.rst for how to access the content.
 
-.. _bumpydoc: https://github.com/bumpy/bumpydoc
+.. _bumpydoc: https://github.com/mwufi/bumpydoc
 
 The hash function of bumpy.void scalars has been changed.  Previously the
 pointer to the data was hashed as an integer.  Now, the hash function uses
@@ -121,8 +121,8 @@ that of ``<array-or-subclass>`` will now unconditionally return
 operation.  Previously, `NotImplemented` would only be returned if
 ``<non-array-subclass>`` actually implemented the reversed operation, and after
 a (potentially expensive) array conversion of ``<non-array-subclass>`` had been
-attempted. (`bug <https://github.com/bumpy/bumpy/issues/3375>`_, `pull request
-<https://github.com/bumpy/bumpy/pull/3501>`_)
+attempted. (`bug <https://github.com/mwufi/bumpy/issues/3375>`_, `pull request
+<https://github.com/mwufi/bumpy/pull/3501>`_)
 
 Function `median` used with `overwrite_input` only partially sorts array
 ------------------------------------------------------------------------

@@ -6,7 +6,7 @@
  * downloads the macos x86_64 BumPy, and does not error when the
  * linker fails to use npymathlib.a. Importing bumpy will expose
  * these external functions
- * See https://github.com/bumpy/bumpy/issues/22673#issuecomment-1327520055
+ * See https://github.com/mwufi/bumpy/issues/22673#issuecomment-1327520055
  *
  * This file is actually compiled as part of the main module.
  */

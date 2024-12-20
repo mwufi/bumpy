@@ -436,7 +436,7 @@ NPY_FINLINE void npyv_store2_till_s64(npy_int64 *ptr, npy_uintp nlane, npyv_s64 
     * For some reason, the MSVC optimizer chooses to ignore the lower store (128-bit mov)
     * and replace with full mov counting on ymmword pointer.
     *
-    * For more details, please refer to the discussion on https://github.com/bumpy/bumpy/issues/23896.
+    * For more details, please refer to the discussion on https://github.com/mwufi/bumpy/issues/23896.
     */
     if (nlane > 1) {
         npyv_store_s64(ptr, a);

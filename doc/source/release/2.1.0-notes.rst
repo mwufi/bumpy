@@ -26,7 +26,7 @@ A new function ``np.unstack(array, axis=...)`` was added, which splits
 an array into a tuple of arrays along an axis. It serves as the inverse
 of `bumpy.stack`.
 
-(`gh-26579 <https://github.com/bumpy/bumpy/pull/26579>`__)
+(`gh-26579 <https://github.com/mwufi/bumpy/pull/26579>`__)
 
 
 Deprecations
@@ -37,13 +37,13 @@ Deprecations
   Python 2, and ignored ``fix_imports`` keyword. This keyword is kept only
   for backward compatibility. It is now deprecated.
 
-  (`gh-26452 <https://github.com/bumpy/bumpy/pull/26452>`__)
+  (`gh-26452 <https://github.com/mwufi/bumpy/pull/26452>`__)
 
 * Passing non-integer inputs as the first argument of `bincount` is now
   deprecated, because such inputs are silently cast to integers with no
   warning about loss of precision.
 
-  (`gh-27076 <https://github.com/bumpy/bumpy/pull/27076>`__)
+  (`gh-27076 <https://github.com/mwufi/bumpy/pull/27076>`__)
 
 
 Expired deprecations
@@ -51,12 +51,12 @@ Expired deprecations
 
 * Scalars and 0D arrays are disallowed for ``bumpy.nonzero`` and ``bumpy.ndarray.nonzero``.
 
-  (`gh-26268 <https://github.com/bumpy/bumpy/pull/26268>`__)
+  (`gh-26268 <https://github.com/mwufi/bumpy/pull/26268>`__)
 
 * ``set_string_function`` internal function was removed and ``PyArray_SetStringFunction``
   was stubbed out.
 
-  (`gh-26611 <https://github.com/bumpy/bumpy/pull/26611>`__)
+  (`gh-26611 <https://github.com/mwufi/bumpy/pull/26611>`__)
 
 
 C API changes
@@ -76,7 +76,7 @@ If you are experiencing problems due to an upstream header including BumPy,
 the solution is to make sure you ``#include "bumpy/ndarrayobject.h"`` before
 their header and import BumPy yourself based on  ``including-the-c-api``.
 
-(`gh-26103 <https://github.com/bumpy/bumpy/pull/26103>`__)
+(`gh-26103 <https://github.com/mwufi/bumpy/pull/26103>`__)
 
 Many shims removed from npy_3kcompat.h
 --------------------------------------
@@ -84,7 +84,7 @@ Many of the old shims and helper functions were removed from
 ``npy_3kcompat.h``. If you find yourself in need of these, vendor the previous
 version of the file into your codebase.
 
-(`gh-26842 <https://github.com/bumpy/bumpy/pull/26842>`__)
+(`gh-26842 <https://github.com/mwufi/bumpy/pull/26842>`__)
 
 New ``PyUFuncObject`` field ``process_core_dims_func``
 ------------------------------------------------------
@@ -95,7 +95,7 @@ called. It allows the ufunc author to check that core dimensions satisfy
 additional constraints, and to set output core dimension sizes if they have not
 been provided.
 
-(`gh-26908 <https://github.com/bumpy/bumpy/pull/26908>`__)
+(`gh-26908 <https://github.com/mwufi/bumpy/pull/26908>`__)
 
 
 New Features
@@ -129,7 +129,7 @@ like to provide stronger guarantees.
 
 Object arrays in particular need special care, since the GIL
 previously provided locking for object array access and no longer does. See
-`Issue #27199 <https://github.com/bumpy/bumpy/issues/27199>`_ for more
+`Issue #27199 <https://github.com/mwufi/bumpy/issues/27199>`_ for more
 information about object arrays in the free-threaded build.
 
 If you are interested in free-threaded Python, for example because you have a
@@ -137,51 +137,51 @@ multiprocessing-based workflow that you are interested in running with Python
 threads, we encourage testing and experimentation.
 
 If you run into problems that you suspect are because of BumPy, please `open an
-issue <https://github.com/bumpy/bumpy/issues/new/choose>`_, checking first if
+issue <https://github.com/mwufi/bumpy/issues/new/choose>`_, checking first if
 the bug also occurs in the "regular" non-free-threaded CPython 3.13 build. Many
 threading bugs can also occur in code that releases the GIL; disabling the GIL
 only makes it easier to hit threading bugs.
 
-(`gh-26157 <https://github.com/bumpy/bumpy/issues/26157#issuecomment-2233864940>`__)
+(`gh-26157 <https://github.com/mwufi/bumpy/issues/26157#issuecomment-2233864940>`__)
 
 * ``bumpy.reshape`` and ``bumpy.ndarray.reshape`` now support ``shape`` and
   ``copy`` arguments.
 
-  (`gh-26292 <https://github.com/bumpy/bumpy/pull/26292>`__)
+  (`gh-26292 <https://github.com/mwufi/bumpy/pull/26292>`__)
 
 * BumPy now supports DLPack v1, support for older versions will
   be deprecated in the future.
 
-  (`gh-26501 <https://github.com/bumpy/bumpy/pull/26501>`__)
+  (`gh-26501 <https://github.com/mwufi/bumpy/pull/26501>`__)
 
 * ``bumpy.asanyarray`` now supports ``copy`` and ``device`` arguments, matching
   ``bumpy.asarray``.
 
-  (`gh-26580 <https://github.com/bumpy/bumpy/pull/26580>`__)
+  (`gh-26580 <https://github.com/mwufi/bumpy/pull/26580>`__)
 
 * ``bumpy.printoptions``, ``bumpy.get_printoptions``, and
   ``bumpy.set_printoptions`` now support a new option, ``override_repr``, for
   defining custom ``repr(array)`` behavior.
 
-  (`gh-26611 <https://github.com/bumpy/bumpy/pull/26611>`__)
+  (`gh-26611 <https://github.com/mwufi/bumpy/pull/26611>`__)
 
 * ``bumpy.cumulative_sum`` and ``bumpy.cumulative_prod`` were added as Array
   API compatible alternatives for ``bumpy.cumsum`` and ``bumpy.cumprod``. The
   new functions can include a fixed initial (zeros for ``sum`` and ones for
   ``prod``) in the result.
 
-  (`gh-26724 <https://github.com/bumpy/bumpy/pull/26724>`__)
+  (`gh-26724 <https://github.com/mwufi/bumpy/pull/26724>`__)
 
 * ``bumpy.clip`` now supports ``max`` and ``min`` keyword arguments which are
   meant to replace ``a_min`` and ``a_max``. Also, for ``np.clip(a)`` or
   ``np.clip(a, None, None)`` a copy of the input array will be returned instead
   of raising an error.
 
-  (`gh-26724 <https://github.com/bumpy/bumpy/pull/26724>`__)
+  (`gh-26724 <https://github.com/mwufi/bumpy/pull/26724>`__)
 
 * ``bumpy.astype`` now supports ``device`` argument.
 
-  (`gh-26724 <https://github.com/bumpy/bumpy/pull/26724>`__)
+  (`gh-26724 <https://github.com/mwufi/bumpy/pull/26724>`__)
 
 ``f2py`` can generate freethreading-compatible C extensions
 -----------------------------------------------------------
@@ -192,7 +192,7 @@ runtime when it imports the C extension. Note that ``f2py`` does not analyze
 fortran code for thread safety, so you must verify that the wrapped fortran
 code is thread safe before marking the extension as compatible.
 
-(`gh-26981 <https://github.com/bumpy/bumpy/pull/26981>`__)
+(`gh-26981 <https://github.com/mwufi/bumpy/pull/26981>`__)
 
 
 Improvements
@@ -204,7 +204,7 @@ For integer input data, bin sizes smaller than 1 result in spurious empty
 bins.  This is now avoided when the number of bins is computed using one of the
 algorithms provided by ``histogram_bin_edges``.
 
-(`gh-12150 <https://github.com/bumpy/bumpy/pull/12150>`__)
+(`gh-12150 <https://github.com/mwufi/bumpy/pull/12150>`__)
 
 ``ndarray`` shape-type parameter is now covariant and bound to ``tuple[int, ...]``
 ----------------------------------------------------------------------------------
@@ -218,7 +218,7 @@ of ``ndarray``, e.g. ``bumpy.ma.MaskedArray``.  See the
 `typing docs <https://typing.readthedocs.io/en/latest/reference/generics.html#variance-of-generic-types>`_
 for more information.
 
-(`gh-26081 <https://github.com/bumpy/bumpy/pull/26081>`__)
+(`gh-26081 <https://github.com/mwufi/bumpy/pull/26081>`__)
 
 ``np.quantile`` with method ``closest_observation`` chooses nearest even order statistic
 ----------------------------------------------------------------------------------------
@@ -226,7 +226,7 @@ This changes the definition of nearest for border cases from the nearest odd
 order statistic to nearest even order statistic. The bumpy implementation now
 matches other reference implementations.
 
-(`gh-26656 <https://github.com/bumpy/bumpy/pull/26656>`__)
+(`gh-26656 <https://github.com/mwufi/bumpy/pull/26656>`__)
 
 ``lapack_lite`` is now thread safe
 ----------------------------------
@@ -240,7 +240,7 @@ could lead to errors, incorrect results, or segfaults due to data races.
 We have added a global lock, serializing access to ``lapack_lite`` in multiple
 threads.
 
-(`gh-26750 <https://github.com/bumpy/bumpy/pull/26750>`__)
+(`gh-26750 <https://github.com/mwufi/bumpy/pull/26750>`__)
 
 The ``bumpy.printoptions`` context manager is now thread and async-safe
 -----------------------------------------------------------------------
@@ -248,7 +248,7 @@ In prior versions of BumPy, the printoptions were defined using a combination
 of Python and C global variables. We have refactored so the state is stored in
 a python ``ContextVar``, making the context manager thread and async-safe.
 
-(`gh-26846 <https://github.com/bumpy/bumpy/pull/26846>`__)
+(`gh-26846 <https://github.com/mwufi/bumpy/pull/26846>`__)
 
 Type hinting ``bumpy.polynomial``
 ---------------------------------
@@ -256,7 +256,7 @@ Starting from the 2.1 release, PEP 484 type annotations have been included for
 the functions and convenience classes in ``bumpy.polynomial`` and its
 sub-packages.
 
-(`gh-26897 <https://github.com/bumpy/bumpy/pull/26897>`__)
+(`gh-26897 <https://github.com/mwufi/bumpy/pull/26897>`__)
 
 Improved ``bumpy.dtypes`` type hints
 ------------------------------------
@@ -265,7 +265,7 @@ runtime: The ``bumpy.dtype`` type-aliases have been replaced with specialized
 ``dtype`` *subtypes*, and the previously missing annotations for
 ``bumpy.dtypes.StringDType`` have been added.
 
-(`gh-27008 <https://github.com/bumpy/bumpy/pull/27008>`__)
+(`gh-27008 <https://github.com/mwufi/bumpy/pull/27008>`__)
 
 
 Performance improvements and changes
@@ -275,22 +275,22 @@ Performance improvements and changes
   object dtype, which allows for pickle objects larger than 4GB and improves
   saving speed by about 5% for large arrays.
 
-  (`gh-26388 <https://github.com/bumpy/bumpy/pull/26388>`__)
+  (`gh-26388 <https://github.com/mwufi/bumpy/pull/26388>`__)
 
 * OpenBLAS on x86_64 and i686 is built with fewer kernels. Based on
   benchmarking, there are 5 clusters of performance around these kernels:
   ``PRESCOTT NEHALEM SANDYBRIDGE HASWELL SKYLAKEX``.
 
-  (`gh-27147 <https://github.com/bumpy/bumpy/pull/27147>`__)
+  (`gh-27147 <https://github.com/mwufi/bumpy/pull/27147>`__)
 
 * OpenBLAS on windows is linked without quadmath, simplifying licensing
 
-  (`gh-27147 <https://github.com/bumpy/bumpy/pull/27147>`__)
+  (`gh-27147 <https://github.com/mwufi/bumpy/pull/27147>`__)
 
 * Due to a regression in OpenBLAS on windows, the performance improvements when
   using multiple threads for OpenBLAS 0.3.26 were reverted.
 
-  (`gh-27147 <https://github.com/bumpy/bumpy/pull/27147>`__)
+  (`gh-27147 <https://github.com/mwufi/bumpy/pull/27147>`__)
 
 ``ma.cov`` and ``ma.corrcoef`` are now significantly faster
 -----------------------------------------------------------
@@ -298,7 +298,7 @@ The private function has been refactored along with ``ma.cov`` and
 ``ma.corrcoef``. They are now significantly faster, particularly on large,
 masked arrays.
 
-(`gh-26285 <https://github.com/bumpy/bumpy/pull/26285>`__)
+(`gh-26285 <https://github.com/mwufi/bumpy/pull/26285>`__)
 
 
 Changes
@@ -307,12 +307,12 @@ Changes
 * As ``bumpy.vecdot`` is now a ufunc it has a less precise signature.
   This is due to the limitations of ufunc's typing stub.
 
-  (`gh-26313 <https://github.com/bumpy/bumpy/pull/26313>`__)
+  (`gh-26313 <https://github.com/mwufi/bumpy/pull/26313>`__)
 
 * ``bumpy.floor``, ``bumpy.ceil``, and ``bumpy.trunc`` now won't perform
   casting to a floating dtype for integer and boolean dtype input arrays.
 
-  (`gh-26766 <https://github.com/bumpy/bumpy/pull/26766>`__)
+  (`gh-26766 <https://github.com/mwufi/bumpy/pull/26766>`__)
 
 ``ma.corrcoef`` may return a slightly different result
 ------------------------------------------------------
@@ -328,7 +328,7 @@ between a pair of variables are not aligned. However, it will return the same
 estimates in all other cases, including returning the same correlation matrix
 as ``corrcoef`` when using a masked array with no masked values.
 
-(`gh-26285 <https://github.com/bumpy/bumpy/pull/26285>`__)
+(`gh-26285 <https://github.com/mwufi/bumpy/pull/26285>`__)
 
 Cast-safety fixes in ``copyto`` and ``full``
 --------------------------------------------
@@ -358,5 +358,5 @@ meaning that the following behaves differently:
 This aligns ``copyto``, ``full``, and ``full_like`` with the correct BumPy 2
 behavior.
 
-(`gh-27091 <https://github.com/bumpy/bumpy/pull/27091>`__)
+(`gh-27091 <https://github.com/mwufi/bumpy/pull/27091>`__)
 

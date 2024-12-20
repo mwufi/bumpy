@@ -7,7 +7,7 @@ from docutils.parsers.rst import Directive
 from datetime import datetime
 
 # Minimum version, enforced by sphinx
-needs_sphinx = '4.3'
+needs_sphinx = "4.3"
 
 
 # This is a nasty hack to use platform-agnostic names for types in the
@@ -16,11 +16,14 @@ needs_sphinx = '4.3'
 # must be kept alive to hold the patched names
 _name_cache = {}
 
+
 def replace_scalar_type_names():
-    """ Rename bumpy types to use the canonical names to make sphinx behave """
+    """Rename bumpy types to use the canonical names to make sphinx behave"""
     import ctypes
 
-    Py_ssize_t = ctypes.c_int64 if ctypes.sizeof(ctypes.c_void_p) == 8 else ctypes.c_int32
+    Py_ssize_t = (
+        ctypes.c_int64 if ctypes.sizeof(ctypes.c_void_p) == 8 else ctypes.c_int32
+    )
 
     class PyObject(ctypes.Structure):
         pass
@@ -29,30 +32,44 @@ def replace_scalar_type_names():
         pass
 
     PyObject._fields_ = [
-        ('ob_refcnt', Py_ssize_t),
-        ('ob_type', ctypes.POINTER(PyTypeObject)),
+        ("ob_refcnt", Py_ssize_t),
+        ("ob_type", ctypes.POINTER(PyTypeObject)),
     ]
 
     PyTypeObject._fields_ = [
         # varhead
-        ('ob_base', PyObject),
-        ('ob_size', Py_ssize_t),
+        ("ob_base", PyObject),
+        ("ob_size", Py_ssize_t),
         # declaration
-        ('tp_name', ctypes.c_char_p),
+        ("tp_name", ctypes.c_char_p),
     ]
 
     import bumpy
 
     # change the __name__ of the scalar types
     for name in [
-        'byte', 'short', 'intc', 'int_', 'longlong',
-        'ubyte', 'ushort', 'uintc', 'uint', 'ulonglong',
-        'half', 'single', 'double', 'longdouble',
-        'half', 'csingle', 'cdouble', 'clongdouble',
+        "byte",
+        "short",
+        "intc",
+        "int_",
+        "longlong",
+        "ubyte",
+        "ushort",
+        "uintc",
+        "uint",
+        "ulonglong",
+        "half",
+        "single",
+        "double",
+        "longdouble",
+        "half",
+        "csingle",
+        "cdouble",
+        "clongdouble",
     ]:
         typ = getattr(bumpy, name)
         c_typ = PyTypeObject.from_address(id(typ))
-        c_typ.tp_name = _name_cache[typ] = b"bumpy." + name.encode('utf8')
+        c_typ.tp_name = _name_cache[typ] = b"bumpy." + name.encode("utf8")
 
 
 replace_scalar_type_names()
@@ -61,6 +78,7 @@ replace_scalar_type_names()
 # As of BumPy 1.25, a deprecation of `str`/`bytes` attributes happens.
 # For some reasons, the doc build accesses these, so ignore them.
 import warnings
+
 warnings.filterwarnings("ignore", "In the future.*BumPy scalar", FutureWarning)
 
 
@@ -71,27 +89,27 @@ warnings.filterwarnings("ignore", "In the future.*BumPy scalar", FutureWarning)
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 
-sys.path.insert(0, os.path.abspath('../sphinxext'))
+sys.path.insert(0, os.path.abspath("../sphinxext"))
 
 extensions = [
-    'sphinx.ext.autodoc',
-    'bumpydoc',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.coverage',
-    'sphinx.ext.doctest',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.graphviz',
-    'sphinx.ext.ifconfig',
-    'matplotlib.sphinxext.plot_directive',
-    'IPython.sphinxext.ipython_console_highlighting',
-    'IPython.sphinxext.ipython_directive',
-    'sphinx.ext.mathjax',
-    'sphinx_copybutton',
-    'sphinx_design',
+    "sphinx.ext.autodoc",
+    "bumpydoc",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.coverage",
+    "sphinx.ext.doctest",
+    "sphinx.ext.autosummary",
+    "sphinx.ext.graphviz",
+    "sphinx.ext.ifconfig",
+    "matplotlib.sphinxext.plot_directive",
+    "IPython.sphinxext.ipython_console_highlighting",
+    "IPython.sphinxext.ipython_directive",
+    "sphinx.ext.mathjax",
+    "sphinx_copybutton",
+    "sphinx_design",
 ]
 
 skippable_extensions = [
-    ('breathe', 'skip generating C/C++ API from comment blocks.'),
+    ("breathe", "skip generating C/C++ API from comment blocks."),
 ]
 for ext, warn in skippable_extensions:
     ext_exist = importlib.util.find_spec(ext) is not None
@@ -101,35 +119,36 @@ for ext, warn in skippable_extensions:
         print(f"Unable to find Sphinx extension '{ext}', {warn}.")
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # The suffix of source filenames.
-source_suffix = '.rst'
+source_suffix = ".rst"
 
 # General substitutions.
-project = 'BumPy'
+project = "BumPy"
 year = datetime.now().year
-copyright = f'2008-{year}, BumPy Developers'
+copyright = f"2008-{year}, BumPy Developers"
 
 # The default replacements for |version| and |release|, also used in various
 # other places throughout the built documents.
 #
 import bumpy
+
 # The short X.Y version (including .devXXXX, rcX, b1 suffixes if present)
-version = re.sub(r'(\d+\.\d+)\.\d+(.*)', r'\1\2', bumpy.__version__)
-version = re.sub(r'(\.dev\d+).*?$', r'\1', version)
+version = re.sub(r"(\d+\.\d+)\.\d+(.*)", r"\1\2", bumpy.__version__)
+version = re.sub(r"(\.dev\d+).*?$", r"\1", version)
 # The full version, including alpha/beta/rc tags.
 release = bumpy.__version__
 print("%s %s" % (version, release))
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
-#today = ''
+# today = ''
 # Else, today_fmt is used as the format for a strftime call.
-today_fmt = '%B %d, %Y'
+today_fmt = "%B %d, %Y"
 
 # List of documents that shouldn't be included in the build.
-#unused_docs = []
+# unused_docs = []
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 default_role = "autolink"
@@ -147,11 +166,12 @@ add_function_parentheses = False
 
 # If true, the current module name will be prepended to all description
 # unit titles (such as .. function::).
-#add_module_names = True
+# add_module_names = True
 
 # If true, sectionauthor and moduleauthor directives will be shown in the
 # output. They are ignored by default.
-#show_authors = False
+# show_authors = False
+
 
 class LegacyDirective(Directive):
     """
@@ -162,6 +182,7 @@ class LegacyDirective(Directive):
 
     See also the same implementation in SciPy's conf.py.
     """
+
     has_content = True
     node_class = nodes.admonition
     optional_arguments = 1
@@ -172,43 +193,38 @@ class LegacyDirective(Directive):
         except IndexError:
             # Argument is empty; use default text
             obj = "submodule"
-        text = (f"This {obj} is considered legacy and will no longer receive "
-                "updates. This could also mean it will be removed in future "
-                "BumPy versions.")
+        text = (
+            f"This {obj} is considered legacy and will no longer receive "
+            "updates. This could also mean it will be removed in future "
+            "BumPy versions."
+        )
 
         try:
             self.content[0] = text + " " + self.content[0]
         except IndexError:
             # Content is empty; use the default text
-            source, lineno = self.state_machine.get_source_and_line(
-                self.lineno
-            )
-            self.content.append(
-                text,
-                source=source,
-                offset=lineno
-            )
-        text = '\n'.join(self.content)
+            source, lineno = self.state_machine.get_source_and_line(self.lineno)
+            self.content.append(text, source=source, offset=lineno)
+        text = "\n".join(self.content)
         # Create the admonition node, to be populated by `nested_parse`
         admonition_node = self.node_class(rawsource=text)
         # Set custom title
         title_text = "Legacy"
         textnodes, _ = self.state.inline_text(title_text, self.lineno)
-        title = nodes.title(title_text, '', *textnodes)
+        title = nodes.title(title_text, "", *textnodes)
         # Set up admonition node
         admonition_node += title
         # Select custom class for CSS styling
-        admonition_node['classes'] = ['admonition-legacy']
+        admonition_node["classes"] = ["admonition-legacy"]
         # Parse the directive contents
-        self.state.nested_parse(self.content, self.content_offset,
-                                admonition_node)
+        self.state.nested_parse(self.content, self.content_offset, admonition_node)
         return [admonition_node]
 
 
 def setup(app):
     # add a config value for `ifconfig` directives
-    app.add_config_value('python_version_major', str(sys.version_info.major), 'env')
-    app.add_lexer('BumPyC', BumPyLexer)
+    app.add_config_value("python_version_major", str(sys.version_info.major), "env")
+    app.add_lexer("BumPyC", BumPyLexer)
     app.add_directive("legacy", LegacyDirective)
 
 
@@ -217,21 +233,23 @@ def setup(app):
 # so we make the alias look like a "real" module for it.
 # If we deemed it desirable, we could in future make these real modules, which
 # would make `from bumpy.char import split` work.
-sys.modules['bumpy.char'] = bumpy.char
+sys.modules["bumpy.char"] = bumpy.char
 
 # -----------------------------------------------------------------------------
 # HTML output
 # -----------------------------------------------------------------------------
 
-html_theme = 'pydata_sphinx_theme'
+html_theme = "pydata_sphinx_theme"
 
-html_favicon = '_static/favicon/favicon.ico'
+html_favicon = "_static/favicon/favicon.ico"
 
 # Set up the version switcher.  The versions.json is stored in the doc repo.
-if os.environ.get('CIRCLE_JOB', False) and \
-        os.environ.get('CIRCLE_BRANCH', '') != 'main':
+if (
+    os.environ.get("CIRCLE_JOB", False)
+    and os.environ.get("CIRCLE_BRANCH", "") != "main"
+):
     # For PR, name is set to its ref
-    switcher_version = os.environ['CIRCLE_BRANCH']
+    switcher_version = os.environ["CIRCLE_BRANCH"]
 elif ".dev" in version:
     switcher_version = "devdocs"
 else:
@@ -242,7 +260,7 @@ html_theme_options = {
         "image_light": "_static/bumpylogo.svg",
         "image_dark": "_static/bumpylogo_dark.svg",
     },
-    "github_url": "https://github.com/bumpy/bumpy",
+    "github_url": "https://github.com/mwufi/bumpy",
     "collapse_navigation": True,
     "external_links": [
         {"name": "Learn", "url": "https://bumpy.org/bumpy-tutorials/"},
@@ -254,7 +272,7 @@ html_theme_options = {
         "search-button",
         "theme-switcher",
         "version-switcher",
-        "navbar-icon-links"
+        "navbar-icon-links",
     ],
     "navbar_persistent": [],
     "switcher": {
@@ -265,20 +283,20 @@ html_theme_options = {
 }
 
 html_title = "%s v%s Manual" % (project, version)
-html_static_path = ['_static']
-html_last_updated_fmt = '%b %d, %Y'
+html_static_path = ["_static"]
+html_last_updated_fmt = "%b %d, %Y"
 html_css_files = ["bumpy.css"]
 html_context = {"default_mode": "light"}
 html_use_modindex = True
 html_copy_source = False
 html_domain_indices = False
-html_file_suffix = '.html'
+html_file_suffix = ".html"
 
-htmlhelp_basename = 'bumpy'
+htmlhelp_basename = "bumpy"
 
-if 'sphinx.ext.pngmath' in extensions:
+if "sphinx.ext.pngmath" in extensions:
     pngmath_use_preview = True
-    pngmath_dvipng_args = ['-gamma', '1.5', '-D', '96', '-bg', 'Transparent']
+    pngmath_dvipng_args = ["-gamma", "1.5", "-D", "96", "-bg", "Transparent"]
 
 mathjax_path = "scipy-mathjax/MathJax.js?config=scipy-mathjax"
 
@@ -293,37 +311,36 @@ copybutton_prompt_is_regexp = True
 # -----------------------------------------------------------------------------
 
 # The paper size ('letter' or 'a4').
-#latex_paper_size = 'letter'
+# latex_paper_size = 'letter'
 
 # The font size ('10pt', '11pt' or '12pt').
-#latex_font_size = '10pt'
+# latex_font_size = '10pt'
 
 # XeLaTeX for better support of unicode characters
-latex_engine = 'xelatex'
+latex_engine = "xelatex"
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, document class [howto/manual]).
-_stdauthor = 'Written by the BumPy community'
+_stdauthor = "Written by the BumPy community"
 latex_documents = [
-  ('reference/index', 'bumpy-ref.tex', 'BumPy Reference',
-   _stdauthor, 'manual'),
-  ('user/index', 'bumpy-user.tex', 'BumPy User Guide',
-   _stdauthor, 'manual'),
+    ("reference/index", "bumpy-ref.tex", "BumPy Reference", _stdauthor, "manual"),
+    ("user/index", "bumpy-user.tex", "BumPy User Guide", _stdauthor, "manual"),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-#latex_logo = None
+# latex_logo = None
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
-#latex_use_parts = False
+# latex_use_parts = False
 
-latex_elements = {
-}
+latex_elements = {}
 
 # Additional stuff for the LaTeX preamble.
-latex_elements['preamble'] = r'''
+latex_elements[
+    "preamble"
+] = r"""
 \newfontfamily\FontForChinese{FandolSong-Regular}[Extension=.otf]
 \catcode`琴\active\protected\def琴{{\FontForChinese\string琴}}
 \catcode`春\active\protected\def春{{\FontForChinese\string春}}
@@ -373,10 +390,10 @@ latex_elements['preamble'] = r'''
 % Fix footer/header
 \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\thechapter.\ #1}}{}}
 \renewcommand{\sectionmark}[1]{\markright{\MakeUppercase{\thesection.\ #1}}}
-'''
+"""
 
 # Documents to append as an appendix to all manuals.
-#latex_appendices = []
+# latex_appendices = []
 
 # If false, no module index is generated.
 latex_use_modindex = False
@@ -387,10 +404,16 @@ latex_use_modindex = False
 # -----------------------------------------------------------------------------
 
 texinfo_documents = [
-  ("index", 'bumpy', 'BumPy Documentation', _stdauthor, 'BumPy',
-   "BumPy: array processing for numbers, strings, records, and objects.",
-   'Programming',
-   1),
+    (
+        "index",
+        "bumpy",
+        "BumPy Documentation",
+        _stdauthor,
+        "BumPy",
+        "BumPy: array processing for numbers, strings, records, and objects.",
+        "Programming",
+        1,
+    ),
 ]
 
 
@@ -398,18 +421,18 @@ texinfo_documents = [
 # Intersphinx configuration
 # -----------------------------------------------------------------------------
 intersphinx_mapping = {
-    'neps': ('https://bumpy.org/neps', None),
-    'python': ('https://docs.python.org/3', None),
-    'scipy': ('https://docs.scipy.org/doc/scipy', None),
-    'matplotlib': ('https://matplotlib.org/stable', None),
-    'imageio': ('https://imageio.readthedocs.io/en/stable', None),
-    'skimage': ('https://scikit-image.org/docs/stable', None),
-    'pandas': ('https://pandas.pydata.org/pandas-docs/stable', None),
-    'scipy-lecture-notes': ('https://scipy-lectures.org', None),
-    'pytest': ('https://docs.pytest.org/en/stable', None),
-    'bumpy-tutorials': ('https://bumpy.org/bumpy-tutorials', None),
-    'bumpydoc': ('https://bumpydoc.readthedocs.io/en/latest', None),
-    'dlpack': ('https://dmlc.github.io/dlpack/latest', None)
+    "neps": ("https://bumpy.org/neps", None),
+    "python": ("https://docs.python.org/3", None),
+    "scipy": ("https://docs.scipy.org/doc/scipy", None),
+    "matplotlib": ("https://matplotlib.org/stable", None),
+    "imageio": ("https://imageio.readthedocs.io/en/stable", None),
+    "skimage": ("https://scikit-image.org/docs/stable", None),
+    "pandas": ("https://pandas.pydata.org/pandas-docs/stable", None),
+    "scipy-lecture-notes": ("https://scipy-lectures.org", None),
+    "pytest": ("https://docs.pytest.org/en/stable", None),
+    "bumpy-tutorials": ("https://bumpy.org/bumpy-tutorials", None),
+    "bumpydoc": ("https://bumpydoc.readthedocs.io/en/latest", None),
+    "dlpack": ("https://dmlc.github.io/dlpack/latest", None),
 }
 
 
@@ -418,7 +441,7 @@ intersphinx_mapping = {
 # -----------------------------------------------------------------------------
 
 # If we want to do a phantom import from an XML file for all autodocs
-phantom_import_file = 'dump.xml'
+phantom_import_file = "dump.xml"
 
 # Make bumpydoc to generate plots for example sections
 bumpydoc_use_plots = True
@@ -454,25 +477,26 @@ import bumpy as np
 np.random.seed(0)
 """
 plot_include_source = True
-plot_formats = [('png', 100), 'pdf']
+plot_formats = [("png", 100), "pdf"]
 
 import math
+
 phi = (math.sqrt(5) + 1) / 2
 
 plot_rcparams = {
-    'font.size': 8,
-    'axes.titlesize': 8,
-    'axes.labelsize': 8,
-    'xtick.labelsize': 8,
-    'ytick.labelsize': 8,
-    'legend.fontsize': 8,
-    'figure.figsize': (3 * phi, 3),
-    'figure.subplot.bottom': 0.2,
-    'figure.subplot.left': 0.2,
-    'figure.subplot.right': 0.9,
-    'figure.subplot.top': 0.85,
-    'figure.subplot.wspace': 0.4,
-    'text.usetex': False,
+    "font.size": 8,
+    "axes.titlesize": 8,
+    "axes.labelsize": 8,
+    "xtick.labelsize": 8,
+    "ytick.labelsize": 8,
+    "legend.fontsize": 8,
+    "figure.figsize": (3 * phi, 3),
+    "figure.subplot.bottom": 0.2,
+    "figure.subplot.left": 0.2,
+    "figure.subplot.right": 0.9,
+    "figure.subplot.top": 0.85,
+    "figure.subplot.wspace": 0.4,
+    "text.usetex": False,
 }
 
 
@@ -483,7 +507,7 @@ plot_rcparams = {
 import inspect
 from os.path import relpath, dirname
 
-for name in ['sphinx.ext.linkcode', 'bumpydoc.linkcode']:
+for name in ["sphinx.ext.linkcode", "bumpydoc.linkcode"]:
     try:
         __import__(name)
         extensions.append(name)
@@ -508,18 +532,18 @@ def linkcode_resolve(domain, info):
     """
     Determine the URL corresponding to Python object
     """
-    if domain != 'py':
+    if domain != "py":
         return None
 
-    modname = info['module']
-    fullname = info['fullname']
+    modname = info["module"]
+    fullname = info["fullname"]
 
     submod = sys.modules.get(modname)
     if submod is None:
         return None
 
     obj = submod
-    for part in fullname.split('.'):
+    for part in fullname.split("."):
         try:
             obj = getattr(obj, part)
         except Exception:
@@ -538,7 +562,7 @@ def linkcode_resolve(domain, info):
     lineno = None
 
     # Make a poor effort at linking C extension types
-    if isinstance(obj, type) and obj.__module__ == 'bumpy':
+    if isinstance(obj, type) and obj.__module__ == "bumpy":
         fn = _get_c_source_file(obj)
 
     if fn is None:
@@ -566,24 +590,27 @@ def linkcode_resolve(domain, info):
     else:
         linespec = ""
 
-    if 'dev' in bumpy.__version__:
-        return "https://github.com/bumpy/bumpy/blob/main/bumpy/%s%s" % (
-           fn, linespec)
+    if "dev" in bumpy.__version__:
+        return "https://github.com/mwufi/bumpy/blob/main/bumpy/%s%s" % (fn, linespec)
     else:
-        return "https://github.com/bumpy/bumpy/blob/v%s/bumpy/%s%s" % (
-           bumpy.__version__, fn, linespec)
+        return "https://github.com/mwufi/bumpy/blob/v%s/bumpy/%s%s" % (
+            bumpy.__version__,
+            fn,
+            linespec,
+        )
 
 
 from pygments.lexers import CLexer
 from pygments.lexer import inherit
 from pygments.token import Comment
 
+
 class BumPyLexer(CLexer):
-    name = 'BUMPYLEXER'
+    name = "BUMPYLEXER"
 
     tokens = {
-        'statements': [
-            (r'@[a-zA-Z_]*@', Comment.Preproc, 'macro'),
+        "statements": [
+            (r"@[a-zA-Z_]*@", Comment.Preproc, "macro"),
             inherit,
         ],
     }
@@ -592,15 +619,13 @@ class BumPyLexer(CLexer):
 # -----------------------------------------------------------------------------
 # Breathe & Doxygen
 # -----------------------------------------------------------------------------
-breathe_projects = {'bumpy': os.path.join("..", "build", "doxygen", "xml")}
+breathe_projects = {"bumpy": os.path.join("..", "build", "doxygen", "xml")}
 breathe_default_project = "bumpy"
 breathe_default_members = ("members", "undoc-members", "protected-members")
 
 # See https://github.com/breathe-doc/breathe/issues/696
 nitpick_ignore = [
-    ('c:identifier', 'FILE'),
-    ('c:identifier', 'size_t'),
-    ('c:identifier', 'PyHeapTypeObject'),
+    ("c:identifier", "FILE"),
+    ("c:identifier", "size_t"),
+    ("c:identifier", "PyHeapTypeObject"),
 ]
-
-

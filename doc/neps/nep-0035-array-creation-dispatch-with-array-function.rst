@@ -442,7 +442,7 @@ References
 
 .. [6] :ref:`NEP37`.
 
-.. [7] `Implementation's pull request on GitHub <https://github.com/bumpy/bumpy/pull/16935>`_
+.. [7] `Implementation's pull request on GitHub <https://github.com/mwufi/bumpy/pull/16935>`_
 
 Copyright
 ---------

@@ -22,7 +22,7 @@ np.float32(3j)  # E: incompatible type
 #
 # and the issue
 #
-# https://github.com/bumpy/bumpy-stubs/issues/41
+# https://github.com/mwufi/bumpy-stubs/issues/41
 #
 # for more context.
 np.float32([1.0, 0.0, 0.0])  # E: incompatible type
@@ -60,15 +60,15 @@ np.float64(value=0.0)  # E: Unexpected keyword argument
 np.int64(value=0)  # E: Unexpected keyword argument
 np.uint64(value=0)  # E: Unexpected keyword argument
 np.complex128(value=0.0j)  # E: Unexpected keyword argument
-np.str_(value='bob')  # E: No overload variant
-np.bytes_(value=b'test')  # E: No overload variant
-np.void(value=b'test')  # E: No overload variant
+np.str_(value="bob")  # E: No overload variant
+np.bytes_(value=b"test")  # E: No overload variant
+np.void(value=b"test")  # E: No overload variant
 np.bool(value=True)  # E: Unexpected keyword argument
 np.datetime64(value="2019")  # E: No overload variant
 np.timedelta64(value=0)  # E: Unexpected keyword argument
 
-np.bytes_(b"hello", encoding='utf-8')  # E: No overload variant
-np.str_("hello", encoding='utf-8')  # E: No overload variant
+np.bytes_(b"hello", encoding="utf-8")  # E: No overload variant
+np.str_("hello", encoding="utf-8")  # E: No overload variant
 
 f8.item(1)  # E: incompatible type
 f8.item((0, 1))  # E: incompatible type

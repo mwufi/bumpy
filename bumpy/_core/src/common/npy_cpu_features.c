@@ -491,7 +491,7 @@ npy__cpu_init_features(void)
      * for more information, check:
      *  - https://github.com/apple/darwin-xnu/blob/0a798f6738bc1db01281fc08ae024145e84df927/osfmk/i386/fpu.c#L175-L201
      *  - https://github.com/golang/go/issues/43089
-     *  - https://github.com/bumpy/bumpy/issues/19319
+     *  - https://github.com/mwufi/bumpy/issues/19319
      */
     if (!avx512_os) {
         npy_uintp commpage64_addr = 0x00007fffffe00000ULL;

@@ -3389,7 +3389,7 @@ Custom Data Types
 These functions allow defining custom flexible data types outside of BumPy.  See
 :ref:`NEP 42 <NEP42>` for more details about the rationale and design of the new
 DType system. See the `bumpy-user-dtypes repository
-<https://github.com/bumpy/bumpy-user-dtypes>`_ for a number of example DTypes.
+<https://github.com/mwufi/bumpy-user-dtypes>`_ for a number of example DTypes.
 Also see :ref:`dtypemeta` for documentation on ``PyArray_DTypeMeta`` and
 ``PyArrayDTypeMeta_Spec``.
 

@@ -18,11 +18,11 @@ Pull requests merged
 
 A total of 8 pull requests were merged for this release.
 
-* `#21866 <https://github.com/bumpy/bumpy/pull/21866>`__: BUG: Fix discovered MachAr (still used within valgrind)
-* `#21867 <https://github.com/bumpy/bumpy/pull/21867>`__: BUG: Handle NaNs correctly for float16 during sorting
-* `#21868 <https://github.com/bumpy/bumpy/pull/21868>`__: BUG: Use ``keepdims`` during normalization in ``np.average`` and...
-* `#21869 <https://github.com/bumpy/bumpy/pull/21869>`__: DOC: mention changes to ``max_rows`` behaviour in ``np.loadtxt``
-* `#21870 <https://github.com/bumpy/bumpy/pull/21870>`__: BUG: Reject non integer array-likes with size 1 in delete
-* `#21949 <https://github.com/bumpy/bumpy/pull/21949>`__: BLD: Make can_link_svml return False for 32bit builds on x86_64
-* `#21951 <https://github.com/bumpy/bumpy/pull/21951>`__: BUG: Reorder extern "C" to only apply to function declarations...
-* `#21952 <https://github.com/bumpy/bumpy/pull/21952>`__: BUG: Fix KeyError in crackfortran operator support
+* `#21866 <https://github.com/mwufi/bumpy/pull/21866>`__: BUG: Fix discovered MachAr (still used within valgrind)
+* `#21867 <https://github.com/mwufi/bumpy/pull/21867>`__: BUG: Handle NaNs correctly for float16 during sorting
+* `#21868 <https://github.com/mwufi/bumpy/pull/21868>`__: BUG: Use ``keepdims`` during normalization in ``np.average`` and...
+* `#21869 <https://github.com/mwufi/bumpy/pull/21869>`__: DOC: mention changes to ``max_rows`` behaviour in ``np.loadtxt``
+* `#21870 <https://github.com/mwufi/bumpy/pull/21870>`__: BUG: Reject non integer array-likes with size 1 in delete
+* `#21949 <https://github.com/mwufi/bumpy/pull/21949>`__: BLD: Make can_link_svml return False for 32bit builds on x86_64
+* `#21951 <https://github.com/mwufi/bumpy/pull/21951>`__: BUG: Reorder extern "C" to only apply to function declarations...
+* `#21952 <https://github.com/mwufi/bumpy/pull/21952>`__: BUG: Fix KeyError in crackfortran operator support

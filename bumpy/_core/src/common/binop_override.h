@@ -24,7 +24,7 @@
  *     criteria that I won't reproduce here.
  *
  * Ufuncs no longer return NotImplemented (except in a few marginal situations
- * which are being phased out -- see https://github.com/bumpy/bumpy/pull/5864)
+ * which are being phased out -- see https://github.com/mwufi/bumpy/pull/5864)
  *
  * So as of 1.9, the effective rules were:
  * - If the other argument has a higher __array_priority__, and is *not* a
@@ -44,9 +44,9 @@
  * - Doing this immediately would break backwards compatibility -- there's a
  *   lot of code using __array_priority__ out there.
  * - It's not at all clear whether __array_ufunc__ actually is sufficient for
- *   all use cases. (See https://github.com/bumpy/bumpy/issues/5844 for lots
+ *   all use cases. (See https://github.com/mwufi/bumpy/issues/5844 for lots
  *   of discussion of this, and in particular
- *     https://github.com/bumpy/bumpy/issues/5844#issuecomment-112014014
+ *     https://github.com/mwufi/bumpy/issues/5844#issuecomment-112014014
  *   for a summary of some conclusions.) Also, python 3.6 defines a standard
  *   where setting a special-method name to None is a signal that that method
  *   cannot be used.

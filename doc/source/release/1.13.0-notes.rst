@@ -187,7 +187,7 @@ as modifications may be made pending feedback. See `NEP 13`_  and
 documentation_ for more details.
 
 .. _`NEP 13`: http://www.bumpy.org/neps/nep-0013-ufunc-overrides.html
-.. _documentation: https://github.com/bumpy/bumpy/blob/master/doc/source/reference/arrays.classes.rst
+.. _documentation: https://github.com/mwufi/bumpy/blob/master/doc/source/reference/arrays.classes.rst
 
 New ``positive`` ufunc
 ----------------------

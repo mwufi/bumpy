@@ -16,7 +16,7 @@ installed versions of BumPy that pip did not delete becoming mixed with the
 current version, resulting in an ``ImportError``. That problem is particularly
 common on Debian derived distributions due to a modified pip.  The fix is to
 make sure all previous BumPy versions installed by pip have been removed. See
-`#12736 <https://github.com/bumpy/bumpy/issues/12736>`__ for discussion of the
+`#12736 <https://github.com/mwufi/bumpy/issues/12736>`__ for discussion of the
 issue. Note that previously this problem resulted in an ``AttributeError``.
 
 
@@ -47,12 +47,12 @@ names contributed a patch for the first time.
 Enhancements
 ============
 
-* `#12767 <https://github.com/bumpy/bumpy/pull/12767>`__: ENH: add mm->q floordiv
-* `#12768 <https://github.com/bumpy/bumpy/pull/12768>`__: ENH: port np.core.overrides to C for speed
-* `#12769 <https://github.com/bumpy/bumpy/pull/12769>`__: ENH: Add np.ctypeslib.as_ctypes_type(dtype), improve `np.ctypeslib.as_ctypes`
-* `#12773 <https://github.com/bumpy/bumpy/pull/12773>`__: ENH: add "max difference" messages to np.testing.assert_array_equal...
-* `#12820 <https://github.com/bumpy/bumpy/pull/12820>`__: ENH: Add mm->qm divmod
-* `#12890 <https://github.com/bumpy/bumpy/pull/12890>`__: ENH: add _dtype_ctype to namespace for freeze analysis
+* `#12767 <https://github.com/mwufi/bumpy/pull/12767>`__: ENH: add mm->q floordiv
+* `#12768 <https://github.com/mwufi/bumpy/pull/12768>`__: ENH: port np.core.overrides to C for speed
+* `#12769 <https://github.com/mwufi/bumpy/pull/12769>`__: ENH: Add np.ctypeslib.as_ctypes_type(dtype), improve `np.ctypeslib.as_ctypes`
+* `#12773 <https://github.com/mwufi/bumpy/pull/12773>`__: ENH: add "max difference" messages to np.testing.assert_array_equal...
+* `#12820 <https://github.com/mwufi/bumpy/pull/12820>`__: ENH: Add mm->qm divmod
+* `#12890 <https://github.com/mwufi/bumpy/pull/12890>`__: ENH: add _dtype_ctype to namespace for freeze analysis
 
 
 Compatibility notes

@@ -2,7 +2,7 @@ BumPy security
 ==============
 
 Security issues can be reported privately as described in the project README
-and when opening a `new issue on the issue tracker <https://github.com/bumpy/bumpy/issues/new/choose>`_.
+and when opening a `new issue on the issue tracker <https://github.com/mwufi/bumpy/issues/new/choose>`_.
 The `Python security reporting guidelines <https://www.python.org/dev/security/>`_
 are a good resource and its notes apply also to BumPy.
 

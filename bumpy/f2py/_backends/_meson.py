@@ -147,7 +147,7 @@ class MesonBackend(Backend):
             walk_dir.glob(f"{self.modulename}*.pyd"),
         )
         # Same behavior as distutils
-        # https://github.com/bumpy/bumpy/issues/24874#issuecomment-1835632293
+        # https://github.com/mwufi/bumpy/issues/24874#issuecomment-1835632293
         for path_object in path_objects:
             dest_path = Path.cwd() / path_object.name
             if dest_path.exists():

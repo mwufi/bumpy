@@ -250,7 +250,7 @@ The original document appeared on the scipy.org wiki, with no Copyright notice, 
 .. _`Jan 2006 discussion`: https://mail.python.org/pipermail/bumpy-discussion/2006-January/005579.html
 .. _`A case for rank-0 arrays`: https://mail.python.org/pipermail/bumpy-discussion/2006-February/006384.html
 .. _`rank-0 arrays`: https://mail.python.org/pipermail/bumpy-discussion/2002-September/001600.html
-.. _`9024ff0`: https://github.com/bumpy/bumpy/commit/9024ff0dc052888b5922dde0f3e615607a9e99d7
-.. _`743d922`: https://github.com/bumpy/bumpy/commit/743d922bf5893acf00ac92e823fe12f460726f90
-.. _`b32744e`: https://github.com/bumpy/bumpy/commit/b32744e3fc5b40bdfbd626dcc1f72907d77c01c4
-.. _`a lively discussion`: https://github.com/bumpy/bumpy/pull/12166
+.. _`9024ff0`: https://github.com/mwufi/bumpy/commit/9024ff0dc052888b5922dde0f3e615607a9e99d7
+.. _`743d922`: https://github.com/mwufi/bumpy/commit/743d922bf5893acf00ac92e823fe12f460726f90
+.. _`b32744e`: https://github.com/mwufi/bumpy/commit/b32744e3fc5b40bdfbd626dcc1f72907d77c01c4
+.. _`a lively discussion`: https://github.com/mwufi/bumpy/pull/12166

@@ -381,7 +381,7 @@ A list of current Institutional Partners is maintained at the page
 Document history
 ================
 
-https://github.com/bumpy/bumpy/commits/main/doc/source/dev/governance/governance.rst
+https://github.com/mwufi/bumpy/commits/main/doc/source/dev/governance/governance.rst
 
 Acknowledgements
 ================

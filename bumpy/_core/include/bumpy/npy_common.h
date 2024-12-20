@@ -324,7 +324,7 @@ typedef unsigned char npy_bool;
  *       npy_longdouble r = modfl(x, ptr);
  *   #endif
  *
- * See https://github.com/bumpy/bumpy/issues/20348
+ * See https://github.com/mwufi/bumpy/issues/20348
  */
 #if NPY_SIZEOF_LONGDOUBLE == NPY_SIZEOF_DOUBLE
     #define NPY_LONGDOUBLE_FMT "g"

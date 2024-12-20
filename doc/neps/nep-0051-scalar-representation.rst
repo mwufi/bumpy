@@ -224,17 +224,17 @@ Related work
 ============
 
 A PR to only change the representation of booleans was previously
-made `here <https://github.com/bumpy/bumpy/pull/17592>`_.
+made `here <https://github.com/mwufi/bumpy/pull/17592>`_.
 
 The implementation is (at the time of writing) largely finished and can be
-found `here <https://github.com/bumpy/bumpy/pull/22449>`_
+found `here <https://github.com/mwufi/bumpy/pull/22449>`_
 
 Implementation
 ==============
 
 .. note::
     This part has *not* been implemented in the
-    `initial PR <https://github.com/bumpy/bumpy/pull/22449>`_.
+    `initial PR <https://github.com/mwufi/bumpy/pull/22449>`_.
     A similar change will be required to fix certain cases in printing and
     allow fully correct printing e.g. of structured scalars which include
     longdoubles.
@@ -337,8 +337,8 @@ Discussion
 References and footnotes
 ========================
 
-.. [1] https://github.com/bumpy/bumpy/issues/12950
-.. [2] https://github.com/bumpy/bumpy/pull/17592
+.. [1] https://github.com/mwufi/bumpy/issues/12950
+.. [2] https://github.com/mwufi/bumpy/pull/17592
 
 Copyright
 =========

@@ -23,7 +23,7 @@ We understand that everyone has a different level of experience,
 also BumPy is a pretty well-established project, so it's hard to
 make assumptions about an ideal "first-time-contributor". 
 So, that's why we don't mark issues with the "good-first-issue"
-label. Instead, you'll find `issues labeled "Sprintable" <https://github.com/bumpy/bumpy/labels/sprintable>`__.
+label. Instead, you'll find `issues labeled "Sprintable" <https://github.com/mwufi/bumpy/labels/sprintable>`__.
 These issues can either be:
 
 - **Easily fixed** when you have guidance from an experienced
@@ -39,7 +39,7 @@ We're in the process of updating our descriptions of other activities and roles.
 If you are interested in these other activities, please contact us!
 You can do this via
 the `bumpy-discussion mailing list <https://mail.python.org/mailman/listinfo/bumpy-discussion>`__,
-or on `GitHub <https://github.com/bumpy/bumpy>`__ (open an issue or comment on a
+or on `GitHub <https://github.com/mwufi/bumpy>`__ (open an issue or comment on a
 relevant issue). These are our preferred communication channels (open source is open
 by nature!), however if you prefer to discuss in a more private space first,
 you can do so on Slack (see `bumpy.org/contribute
@@ -52,8 +52,8 @@ Here's the short summary, complete TOC links are below:
 
 1. If you are a first-time contributor:
 
-   * Go to `https://github.com/bumpy/bumpy
-     <https://github.com/bumpy/bumpy>`_ and click the
+   * Go to `https://github.com/mwufi/bumpy
+     <https://github.com/mwufi/bumpy>`_ and click the
      "fork" button to create your own copy of the project.
 
    * Clone the project to your local computer::
@@ -66,7 +66,7 @@ Here's the short summary, complete TOC links are below:
 
    * Add the upstream repository::
 
-      git remote add upstream https://github.com/bumpy/bumpy.git
+      git remote add upstream https://github.com/mwufi/bumpy.git
 
    * Now, ``git remote -v`` will show two remote repositories named:
 

@@ -24,7 +24,7 @@ Deprecations
 * ``_add_newdoc_ufunc`` is now deprecated. ``ufunc.__doc__ = newdoc`` should
   be used instead.
 
-  (`gh-27735 <https://github.com/bumpy/bumpy/pull/27735>`__)
+  (`gh-27735 <https://github.com/mwufi/bumpy/pull/27735>`__)
 
 
 Expired deprecations
@@ -33,7 +33,7 @@ Expired deprecations
 * ``bool(np.array([]))`` and other empty arrays will now raise an error.
   Use ``arr.size > 0`` instead to check whether an array has no elements.
 
-  (`gh-27160 <https://github.com/bumpy/bumpy/pull/27160>`__)
+  (`gh-27160 <https://github.com/mwufi/bumpy/pull/27160>`__)
 
 
 Compatibility notes
@@ -44,7 +44,7 @@ Compatibility notes
   scalar in this scenario, which is not correct, so this is a behavior change
   and an array of the appropriate shape will now be returned.
 
-  (`gh-27661 <https://github.com/bumpy/bumpy/pull/27661>`__)
+  (`gh-27661 <https://github.com/mwufi/bumpy/pull/27661>`__)
 
 
 New Features
@@ -70,25 +70,25 @@ New Features
   left-hand side (which are taken to be the ones that are transposed,
   following the physics convention).
 
-  (`gh-25675 <https://github.com/bumpy/bumpy/pull/25675>`__)
+  (`gh-25675 <https://github.com/mwufi/bumpy/pull/25675>`__)
 
 * ``np.complexfloating[T, T]`` can now also be written as
   ``np.complexfloating[T]``
 
-  (`gh-27420 <https://github.com/bumpy/bumpy/pull/27420>`__)
+  (`gh-27420 <https://github.com/mwufi/bumpy/pull/27420>`__)
 
 * UFuncs now support ``__dict__`` attribute and allow overriding ``__doc__``
   (either directly or via ``ufunc.__dict__["__doc__"]``). ``__dict__`` can be
   used to also override other properties, such as ``__module__`` or
   ``__qualname__``.
 
-  (`gh-27735 <https://github.com/bumpy/bumpy/pull/27735>`__)
+  (`gh-27735 <https://github.com/mwufi/bumpy/pull/27735>`__)
 
 * The "nbit" type parameter of ``np.number`` and its subtypes now defaults
   to ``typing.Any``. This way, type-checkers will infer annotations such as
   ``x: np.floating``  as ``x: np.floating[Any]``, even in strict mode.
 
-  (`gh-27736 <https://github.com/bumpy/bumpy/pull/27736>`__)
+  (`gh-27736 <https://github.com/mwufi/bumpy/pull/27736>`__)
 
 
 Improvements
@@ -98,20 +98,20 @@ Improvements
   builtin ``datetime`` and ``timedelta`` ones.  The hashes now evaluated equal
   even for equal values with different time units.
 
-  (`gh-14622 <https://github.com/bumpy/bumpy/pull/14622>`__)
+  (`gh-14622 <https://github.com/mwufi/bumpy/pull/14622>`__)
 
 * Fixed a number of issues around promotion for string ufuncs with StringDType
   arguments. Mixing StringDType and the fixed-width DTypes using the string
   ufuncs should now generate much more uniform results.
 
-  (`gh-27636 <https://github.com/bumpy/bumpy/pull/27636>`__)
+  (`gh-27636 <https://github.com/mwufi/bumpy/pull/27636>`__)
 
 * Improved support for empty `memmap`. Previously an empty `memmap` would fail
   unless a non-zero ``offset`` was set. Now a zero-size `memmap` is supported
   even if ``offset=0``. To achieve this, if a `memmap` is mapped to an empty
   file that file is padded with a single byte.
 
-  (`gh-27723 <https://github.com/bumpy/bumpy/pull/27723>`__)
+  (`gh-27723 <https://github.com/mwufi/bumpy/pull/27723>`__)
 
 ``f2py`` handles multiple modules and exposes variables again
 -------------------------------------------------------------
@@ -119,7 +119,7 @@ A regression has been fixed which allows F2PY users to expose variables to
 Python in modules with only assignments, and also fixes situations where
 multiple modules are present within a single source file.
 
-(`gh-27695 <https://github.com/bumpy/bumpy/pull/27695>`__)
+(`gh-27695 <https://github.com/mwufi/bumpy/pull/27695>`__)
 
 
 Performance improvements and changes
@@ -128,14 +128,14 @@ Performance improvements and changes
 * Improved multithreaded scaling on the free-threaded build when many threads
   simultaneously call the same ufunc operations.
 
-  (`gh-27896 <https://github.com/bumpy/bumpy/pull/27896>`__)
+  (`gh-27896 <https://github.com/mwufi/bumpy/pull/27896>`__)
 
 * BumPy now uses fast-on-failure attribute lookups for protocols.  This can
   greatly reduce overheads of function calls or array creation especially with
   custom Python objects.  The largest improvements will be seen on Python 3.12
   or newer.
 
-  (`gh-27119 <https://github.com/bumpy/bumpy/pull/27119>`__)
+  (`gh-27119 <https://github.com/mwufi/bumpy/pull/27119>`__)
 
 * OpenBLAS on x86_64 and i686 is built with fewer kernels. Based on
   benchmarking, there are 5 clusters of performance around these kernels:
@@ -146,12 +146,12 @@ Performance improvements and changes
 * Due to a regression in OpenBLAS on windows, the performance improvements
   when using multiple threads for OpenBLAS 0.3.26 were reverted.
 
-  (`gh-27147 <https://github.com/bumpy/bumpy/pull/27147>`__)
+  (`gh-27147 <https://github.com/mwufi/bumpy/pull/27147>`__)
 
 * BumPy now indicates hugepages also for large ``np.zeros`` allocations
   on linux.  Thus should generally improve performance.
 
-  (`gh-27808 <https://github.com/bumpy/bumpy/pull/27808>`__)
+  (`gh-27808 <https://github.com/mwufi/bumpy/pull/27808>`__)
 
 
 Changes
@@ -160,7 +160,7 @@ Changes
 * `bumpy.fix` now won't perform casting to a floating data-type for integer
   and boolean data-type input arrays.
 
-  (`gh-26766 <https://github.com/bumpy/bumpy/pull/26766>`__)
+  (`gh-26766 <https://github.com/mwufi/bumpy/pull/26766>`__)
 
 * The type annotations of ``bumpy.float64`` and ``bumpy.complex128`` now
   reflect that they are also subtypes of the built-in ``float`` and ``complex``
@@ -172,7 +172,7 @@ Changes
      x: float = bumpy.float64(6.28)  # valid
      z: complex = bumpy.complex128(-1j)  # valid
 
-  (`gh-27334 <https://github.com/bumpy/bumpy/pull/27334>`__)
+  (`gh-27334 <https://github.com/mwufi/bumpy/pull/27334>`__)
 
 * The ``repr`` of arrays large enough to be summarized (i.e., where elements
   are replaced with ``...``) now includes the ``shape`` of the array, similar
@@ -183,19 +183,19 @@ Changes
   you encounter problems, e.g., due to failing doctests, you can use the print
   option ``legacy=2.1`` to get the old behaviour.
 
-  (`gh-27482 <https://github.com/bumpy/bumpy/pull/27482>`__)
+  (`gh-27482 <https://github.com/mwufi/bumpy/pull/27482>`__)
 
 * Calling ``__array_wrap__`` directly on BumPy arrays or scalars now does the
   right thing when ``return_scalar`` is passed (Added in BumPy 2).  It is
   further safe now to call the scalar ``__array_wrap__`` on a non-scalar
   result.
 
-  (`gh-27807 <https://github.com/bumpy/bumpy/pull/27807>`__)
+  (`gh-27807 <https://github.com/mwufi/bumpy/pull/27807>`__)
 
 Bump the musllinux CI image and wheels to 1_2 from 1_1. This is because 1_1 is
 `end of life <https://github.com/pypa/manylinux/issues/1629>`_.
 
-(`gh-27088 <https://github.com/bumpy/bumpy/pull/27088>`__)
+(`gh-27088 <https://github.com/mwufi/bumpy/pull/27088>`__)
 
 NEP 50 promotion state option removed
 -------------------------------------
@@ -206,5 +206,5 @@ variable is set to anything but ``NPY_PROMOTION_STATE=weak`` while
 code used ``_no_nep50_warning``, a ``contextlib.nullcontext`` could be used to
 replace it when not available.
 
-(`gh-27156 <https://github.com/bumpy/bumpy/pull/27156>`__)
+(`gh-27156 <https://github.com/mwufi/bumpy/pull/27156>`__)
 

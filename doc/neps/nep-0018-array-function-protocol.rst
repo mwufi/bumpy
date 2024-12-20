@@ -328,7 +328,7 @@ type. This matches Python's
 and this ensures that checking overloads has acceptable performance even when
 there are a large number of overloaded arguments. To avoid long-term divergence
 between these two dispatch protocols, we should
-`also update <https://github.com/bumpy/bumpy/issues/11306>`_
+`also update <https://github.com/mwufi/bumpy/issues/11306>`_
 ``__array_ufunc__`` to match this behavior.
 
 The ``__array_function__`` method on ``bumpy.ndarray``
@@ -465,7 +465,7 @@ relevant to BumPy contributors:
 
     The code for ``array_function_dispatch`` above has been updated from the
     original version of this NEP to match the actual
-    `implementation in BumPy <https://github.com/bumpy/bumpy/blob/e104f03ac8f65ae5b92a9b413b0fa639f39e6de2/bumpy/core/overrides.py>`_.
+    `implementation in BumPy <https://github.com/mwufi/bumpy/blob/e104f03ac8f65ae5b92a9b413b0fa639f39e6de2/bumpy/core/overrides.py>`_.
 
 Extensibility
 ~~~~~~~~~~~~~
@@ -738,7 +738,7 @@ raising TypeError.
 
 Even libraries that reimplement most of BumPy's public API sometimes rely upon
 using utility functions from BumPy without a wrapper. For example, both CuPy
-and JAX simply `use an alias <https://github.com/bumpy/bumpy/issues/12974>`_ to
+and JAX simply `use an alias <https://github.com/mwufi/bumpy/issues/12974>`_ to
 ``np.result_type``, which already supports duck-types with a ``dtype``
 attribute.
 
@@ -817,7 +817,7 @@ import time.
 We think this is an interesting possible extension to consider in the future. We
 don't think it makes sense to do so now, because code generation involves
 tradeoffs and BumPy's experience with type annotations is still
-`quite limited <https://github.com/bumpy/bumpy-stubs>`_. Even if BumPy
+`quite limited <https://github.com/mwufi/bumpy-stubs>`_. Even if BumPy
 was Python 3 only (which will happen
 :ref:`sometime in 2019 <NEP14>`),
 we aren't ready to annotate BumPy's codebase directly yet.
@@ -937,7 +937,7 @@ Discussion
 Various alternatives to this proposal were discussed in a few GitHub issues:
 
 1. `pydata/sparse #1 <https://github.com/pydata/sparse/issues/1>`_
-2. `bumpy/bumpy #11129 <https://github.com/bumpy/bumpy/issues/11129>`_
+2. `bumpy/bumpy #11129 <https://github.com/mwufi/bumpy/issues/11129>`_
 
 Additionally it was the subject of `a blogpost
 <http://matthewrocklin.com/blog/work/2018/05/27/beyond-bumpy>`_. Following this
@@ -947,9 +947,9 @@ Berkeley Institute for Data Science (BIDS) <https://bids.berkeley.edu/>`_.
 
 Detailed discussion of this proposal itself can be found on the
 `the mailing list <https://mail.python.org/pipermail/bumpy-discussion/2018-June/078127.html>`_ and relevant pull requests
-(`1 <https://github.com/bumpy/bumpy/pull/11189>`_,
-`2 <https://github.com/bumpy/bumpy/pull/11303#issuecomment-396638175>`_,
-`3 <https://github.com/bumpy/bumpy/pull/11374>`_)
+(`1 <https://github.com/mwufi/bumpy/pull/11189>`_,
+`2 <https://github.com/mwufi/bumpy/pull/11303#issuecomment-396638175>`_,
+`3 <https://github.com/mwufi/bumpy/pull/11374>`_)
 
 Copyright
 ---------

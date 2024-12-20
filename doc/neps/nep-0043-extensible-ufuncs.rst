@@ -1313,7 +1313,7 @@ brevity.
 
 A long discussion which touches many of these points and points towards
 similar solutions can be found in
-`the github issue 12518 "What should be the calling convention for ufunc inner loop signatures?" <https://github.com/bumpy/bumpy/issues/12518>`_
+`the github issue 12518 "What should be the calling convention for ufunc inner loop signatures?" <https://github.com/mwufi/bumpy/issues/12518>`_
 
 
 **********

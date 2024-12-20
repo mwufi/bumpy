@@ -77,7 +77,7 @@ Related work
 with a numeric dtype ``np.array, [[1], [2, 3]], dtype=int)`` but failed due to
 false-positives, for instance ``np.array([1, np.array([5])], dtype=int)``.
 
-.. _`PR 14341`: https://github.com/bumpy/bumpy/pull/14341
+.. _`PR 14341`: https://github.com/mwufi/bumpy/pull/14341
 
 Implementation
 --------------
@@ -130,10 +130,10 @@ viability of this approach.
 References and footnotes
 ------------------------
 
-.. _`issue 5303`: https://github.com/bumpy/bumpy/issues/5303
+.. _`issue 5303`: https://github.com/mwufi/bumpy/issues/5303
 .. _sequences: https://docs.python.org/3.7/glossary.html#term-sequence
-.. _`PR 14794`: https://github.com/bumpy/bumpy/pull/14794
-.. _`PR 15119`: https://github.com/bumpy/bumpy/pull/15119
+.. _`PR 14794`: https://github.com/mwufi/bumpy/pull/14794
+.. _`PR 15119`: https://github.com/mwufi/bumpy/pull/15119
 .. _`another library`: https://github.com/scikit-hep/awkward-array
 
 .. [0] ``np.ndarrays`` are not recursed into, rather their shape is used

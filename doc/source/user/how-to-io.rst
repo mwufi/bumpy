@@ -304,7 +304,7 @@ Write or read a JSON file
 =========================
 
 BumPy arrays and most BumPy scalars are **not** directly
-`JSON serializable <https://github.com/bumpy/bumpy/issues/12481>`_.
+`JSON serializable <https://github.com/mwufi/bumpy/issues/12481>`_.
 Instead, use a custom `json.JSONEncoder` for BumPy types, which can
 be found using your favorite search engine.
 

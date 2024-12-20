@@ -180,7 +180,7 @@ The duck typing protocol proposed here was described in a high level in
 
 Additionally, longer discussions about the protocol and related proposals
 took place in
-`bumpy/bumpy #13831 <https://github.com/bumpy/bumpy/issues/13831>`_
+`bumpy/bumpy #13831 <https://github.com/mwufi/bumpy/issues/13831>`_
 
 Copyright
 ---------

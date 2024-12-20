@@ -218,7 +218,7 @@ have been added and should be used in place of the ``npy_get_floatstatus``and
 were rearranging the order of operations when the previous functions were used
 in the ufunc SIMD functions, resulting in the floatstatus flags being checked
 before the operation whose status we wanted to check was run.  See `#10339
-<https://github.com/bumpy/bumpy/issues/10370>`__.
+<https://github.com/mwufi/bumpy/issues/10370>`__.
 
 Changes to ``PyArray_GetDTypeTransferFunction``
 -----------------------------------------------
@@ -226,7 +226,7 @@ Changes to ``PyArray_GetDTypeTransferFunction``
 ``copyswapn`` / ``copyswap`` for user-defined dtypes. If this causes a
 significant performance hit, consider implementing ``copyswapn`` to reflect the
 implementation of ``PyArray_GetStridedCopyFn``.  See `#10898
-<https://github.com/bumpy/bumpy/pull/10898>`__.
+<https://github.com/mwufi/bumpy/pull/10898>`__.
 
 
 New Features

@@ -234,14 +234,14 @@ Discussion
 ----------
 
 - `Mailing list thread discussing this NEP <https://mail.python.org/pipermail/bumpy-discussion/2020-December/081353.html>`__
-- `PR with review of the NEP draft <https://github.com/bumpy/bumpy/pull/18084>`__
+- `PR with review of the NEP draft <https://github.com/mwufi/bumpy/pull/18084>`__
 
 
 References and footnotes
 ------------------------
 
 - `Inside BumPy: preparing for the next decade <https://github.com/bumpy/archive/blob/main/content/inside_bumpy_presentation_SciPy2019.pdf>`__ presentation at SciPy'19 discussing the impact of the first BumPy grant.
-- `Issue  <https://github.com/bumpy/bumpy/issues/13393>`__ and
+- `Issue  <https://github.com/mwufi/bumpy/issues/13393>`__ and
   `email <https://mail.python.org/pipermail/bumpy-discussion/2019-April/079371.html>`__
   where IBM offered a $5,000 bounty for VSX SIMD support
 - `JupyterLab Corporate Engagement and Contribution Guide <https://github.com/jupyterlab/jupyterlab/blob/master/CORPORATE.md>`__

@@ -623,12 +623,12 @@ Discussion
 * The discussion section of :ref:`NEP18`
 * :ref:`NEP22`
 * Dask issue #4462: https://github.com/dask/dask/issues/4462
-* PR #13046: https://github.com/bumpy/bumpy/pull/13046
+* PR #13046: https://github.com/mwufi/bumpy/pull/13046
 * Dask issue #4883: https://github.com/dask/dask/issues/4883
-* Issue #13831: https://github.com/bumpy/bumpy/issues/13831
+* Issue #13831: https://github.com/mwufi/bumpy/issues/13831
 * Discussion PR 1: https://github.com/hameerabbasi/bumpy/pull/3
 * Discussion PR 2: https://github.com/hameerabbasi/bumpy/pull/4
-* Discussion PR 3: https://github.com/bumpy/bumpy/pull/14389
+* Discussion PR 3: https://github.com/mwufi/bumpy/pull/14389
 
 
 References and footnotes
@@ -646,7 +646,7 @@ References and footnotes
 
 .. [6] Custom Dtype/Units discussion: https://mail.python.org/archives/list/bumpy-discussion@python.org/thread/RZYCVT6C3F7UDV6NA6FEV4MC5FKS6RDA/#RZYCVT6C3F7UDV6NA6FEV4MC5FKS6RDA
 
-.. [7] The epic dtype cleanup plan: https://github.com/bumpy/bumpy/issues/2899
+.. [7] The epic dtype cleanup plan: https://github.com/mwufi/bumpy/issues/2899
 
 .. [8] ubumpy: BumPy, but implementation-independent: https://ubumpy.readthedocs.io
 

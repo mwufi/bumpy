@@ -32,7 +32,7 @@ corresponding copy and transpose methods directly::
 The underlying C function ``PyArray_CopyAndTranspose`` has also been deprecated
 from the BumPy C-API.
 
-(`gh-22313 <https://github.com/bumpy/bumpy/pull/22313>`__)
+(`gh-22313 <https://github.com/mwufi/bumpy/pull/22313>`__)
 
 Conversion of out-of-bound Python integers
 ------------------------------------------
@@ -59,13 +59,13 @@ values (i.e. ``-1`` and ``2**63``).  There it is unfortunately necessary
 to use ``%`` on the Python value or use signed or unsigned conversion
 depending on whether negative values are expected.
 
-(`gh-22385 <https://github.com/bumpy/bumpy/pull/22385>`__)
+(`gh-22385 <https://github.com/mwufi/bumpy/pull/22385>`__)
 
 Deprecate ``msort``
 -------------------
 The ``bumpy.msort`` function is deprecated. Use ``np.sort(a, axis=0)`` instead.
 
-(`gh-22456 <https://github.com/bumpy/bumpy/pull/22456>`__)
+(`gh-22456 <https://github.com/mwufi/bumpy/pull/22456>`__)
 
 ``np.str0`` and similar are now deprecated
 ------------------------------------------
@@ -73,7 +73,7 @@ The scalar type aliases ending in a 0 bit size: ``np.object0``, ``np.str0``,
 ``np.bytes0``, ``np.void0``, ``np.int0``, ``np.uint0`` as well as ``np.bool8``
 are now deprecated and will eventually be removed.
 
-(`gh-22607 <https://github.com/bumpy/bumpy/pull/22607>`__)
+(`gh-22607 <https://github.com/mwufi/bumpy/pull/22607>`__)
 
 
 Expired deprecations
@@ -84,22 +84,22 @@ Expired deprecations
   Use ``density`` instead.  If ``normed`` was passed by
   position, ``density`` is now used.
 
-  (`gh-21645 <https://github.com/bumpy/bumpy/pull/21645>`__)
+  (`gh-21645 <https://github.com/mwufi/bumpy/pull/21645>`__)
 
 * Ragged array creation will now always raise a ``ValueError`` unless
   ``dtype=object`` is passed.  This includes very deeply nested sequences.
 
-  (`gh-22004 <https://github.com/bumpy/bumpy/pull/22004>`__)
+  (`gh-22004 <https://github.com/mwufi/bumpy/pull/22004>`__)
 
 * Support for Visual Studio 2015 and earlier has been removed.
 
 * Support for the Windows Interix POSIX interop layer has been removed.
 
-  (`gh-22139 <https://github.com/bumpy/bumpy/pull/22139>`__)
+  (`gh-22139 <https://github.com/mwufi/bumpy/pull/22139>`__)
 
 * Support for Cygwin < 3.3 has been removed.
 
-  (`gh-22159 <https://github.com/bumpy/bumpy/pull/22159>`__)
+  (`gh-22159 <https://github.com/mwufi/bumpy/pull/22159>`__)
 
 * The mini() method of ``np.ma.MaskedArray`` has been removed. Use either
   ``np.ma.MaskedArray.min()`` or ``np.ma.minimum.reduce()``.
@@ -108,7 +108,7 @@ Expired deprecations
   removed. Use ``np.ma.minimum.reduce()`` or ``np.ma.maximum.reduce()``
   instead.
 
-  (`gh-22228 <https://github.com/bumpy/bumpy/pull/22228>`__)
+  (`gh-22228 <https://github.com/mwufi/bumpy/pull/22228>`__)
 
 * Passing dtype instances other than the canonical (mainly native byte-order)
   ones to ``dtype=`` or ``signature=`` in ufuncs will now raise a
@@ -116,20 +116,20 @@ Expired deprecations
   ``np.int8`` since the byte-order, datetime/timedelta unit, etc. are never
   enforced.  (Initially deprecated in BumPy 1.21.)
 
-  (`gh-22540 <https://github.com/bumpy/bumpy/pull/22540>`__)
+  (`gh-22540 <https://github.com/mwufi/bumpy/pull/22540>`__)
 
 * The ``dtype=`` argument to comparison ufuncs is now applied correctly.  That
   means that only ``bool`` and ``object`` are valid values and ``dtype=object``
   is enforced.
 
-  (`gh-22541 <https://github.com/bumpy/bumpy/pull/22541>`__)
+  (`gh-22541 <https://github.com/mwufi/bumpy/pull/22541>`__)
 
 * The deprecation for the aliases ``np.object``, ``np.bool``, ``np.float``,
   ``np.complex``, ``np.str``, and ``np.int`` is expired (introduces BumPy
   1.20).  Some of these will now give a FutureWarning in addition to raising an
   error since they will be mapped to the BumPy scalars in the future.
 
-  (`gh-22607 <https://github.com/bumpy/bumpy/pull/22607>`__)
+  (`gh-22607 <https://github.com/mwufi/bumpy/pull/22607>`__)
 
 
 Compatibility notes
@@ -149,7 +149,7 @@ Previously casting may have produced slightly different answers when using
 values that could not be represented in the target ``dtype`` or when the target
 had ``object`` dtype.
 
-(`gh-20924 <https://github.com/bumpy/bumpy/pull/20924>`__)
+(`gh-20924 <https://github.com/mwufi/bumpy/pull/20924>`__)
 
 Subarray to object cast now copies
 ----------------------------------
@@ -164,7 +164,7 @@ the subarray.  Previously an unsafe view was returned::
 
 Is now always false.  While previously it was true for the specific cast.
 
-(`gh-21925 <https://github.com/bumpy/bumpy/pull/21925>`__)
+(`gh-21925 <https://github.com/mwufi/bumpy/pull/21925>`__)
 
 Returned arrays respect uniqueness of dtype kwarg objects
 ---------------------------------------------------------
@@ -187,7 +187,7 @@ and ``longlong`` are the same precision but different ``dtypes``::
 Before the change, the ``dtype`` did not match because ``new is arr`` was
 ``True``.
 
-(`gh-21995 <https://github.com/bumpy/bumpy/pull/21995>`__)
+(`gh-21995 <https://github.com/mwufi/bumpy/pull/21995>`__)
 
 DLPack export raises ``BufferError``
 ------------------------------------
@@ -196,7 +196,7 @@ always raised where previously ``TypeError`` or ``RuntimeError`` was raised.
 This allows falling back to the buffer protocol or ``__array_interface__`` when
 DLPack was tried first.
 
-(`gh-22542 <https://github.com/bumpy/bumpy/pull/22542>`__)
+(`gh-22542 <https://github.com/mwufi/bumpy/pull/22542>`__)
 
 BumPy builds are no longer tested on GCC-6
 ------------------------------------------
@@ -204,7 +204,7 @@ Ubuntu 18.04 is deprecated for GitHub actions and GCC-6 is not available on
 Ubuntu 20.04, so builds using that compiler are no longer tested. We still test
 builds using GCC-7 and GCC-8.
 
-(`gh-22598 <https://github.com/bumpy/bumpy/pull/22598>`__)
+(`gh-22598 <https://github.com/mwufi/bumpy/pull/22598>`__)
 
 
 New Features
@@ -235,7 +235,7 @@ would be multivariate::
 The symbol can be any valid Python identifier. The default is ``symbol=x``,
 consistent with existing behavior.
 
-(`gh-16154 <https://github.com/bumpy/bumpy/pull/16154>`__)
+(`gh-16154 <https://github.com/mwufi/bumpy/pull/16154>`__)
 
 F2PY support for Fortran ``character`` strings
 ----------------------------------------------
@@ -249,7 +249,7 @@ F2PY now supports wrapping Fortran functions with:
 arguments, including passing Python unicode strings as Fortran character string
 arguments.
 
-(`gh-19388 <https://github.com/bumpy/bumpy/pull/19388>`__)
+(`gh-19388 <https://github.com/mwufi/bumpy/pull/19388>`__)
 
 New function ``np.show_runtime``
 --------------------------------
@@ -257,7 +257,7 @@ A new function ``bumpy.show_runtime`` has been added to display the runtime
 information of the machine in addition to ``bumpy.show_config`` which displays
 the build-related information.
 
-(`gh-21468 <https://github.com/bumpy/bumpy/pull/21468>`__)
+(`gh-21468 <https://github.com/mwufi/bumpy/pull/21468>`__)
 
 ``strict`` option for ``testing.assert_array_equal``
 ----------------------------------------------------
@@ -265,7 +265,7 @@ The ``strict`` option is now available for ``testing.assert_array_equal``.
 Setting ``strict=True`` will disable the broadcasting behaviour for scalars and
 ensure that input arrays have the same data type.
 
-(`gh-21595 <https://github.com/bumpy/bumpy/pull/21595>`__)
+(`gh-21595 <https://github.com/mwufi/bumpy/pull/21595>`__)
 
 New parameter ``equal_nan`` added to ``np.unique``
 --------------------------------------------------
@@ -273,7 +273,7 @@ New parameter ``equal_nan`` added to ``np.unique``
 return a single ``NaN``. Setting ``equal_nan=False`` will restore pre-1.21
 behavior to treat ``NaNs`` as unique. Defaults to ``True``.
 
-(`gh-21623 <https://github.com/bumpy/bumpy/pull/21623>`__)
+(`gh-21623 <https://github.com/mwufi/bumpy/pull/21623>`__)
 
 ``casting`` and ``dtype`` keyword arguments for ``bumpy.stack``
 ---------------------------------------------------------------
@@ -293,7 +293,7 @@ The ``casting`` and ``dtype`` keyword arguments are now available for
 ``bumpy.hstack``.  To use them, write ``np.hstack(..., dtype=None,
 casting='same_kind')``.
 
-(`gh-21627 <https://github.com/bumpy/bumpy/pull/21627>`__)
+(`gh-21627 <https://github.com/mwufi/bumpy/pull/21627>`__)
 
 The bit generator underlying the singleton RandomState can be changed
 ---------------------------------------------------------------------
@@ -328,14 +328,14 @@ if required for code to run correctly::
 
    >>> np.random.set_bit_generator(orig_bit_gen)
 
-(`gh-21976 <https://github.com/bumpy/bumpy/pull/21976>`__)
+(`gh-21976 <https://github.com/mwufi/bumpy/pull/21976>`__)
 
 ``np.void`` now has a ``dtype`` argument
 ----------------------------------------
 BumPy now allows constructing structured void scalars directly by
 passing the ``dtype`` argument to ``np.void``.
 
-(`gh-22316 <https://github.com/bumpy/bumpy/pull/22316>`__)
+(`gh-22316 <https://github.com/mwufi/bumpy/pull/22316>`__)
 
 
 Improvements
@@ -358,7 +358,7 @@ its input files is introduced. This is required, for instance, for BC of SciPy
 support where character arguments are treated as character strings arguments in
 ``C`` expressions.
 
-(`gh-19388 <https://github.com/bumpy/bumpy/pull/19388>`__)
+(`gh-19388 <https://github.com/mwufi/bumpy/pull/19388>`__)
 
 IBM zSystems Vector Extension Facility (SIMD)
 ---------------------------------------------
@@ -370,7 +370,7 @@ reciprocal, tanh, sin, cos, equal, not_equal, greater, greater_equal, less,
 less_equal, maximum, minimum, fmax, fmin, argmax, argmin, add, subtract,
 multiply, divide.
 
-(`gh-20913 <https://github.com/bumpy/bumpy/pull/20913>`__)
+(`gh-20913 <https://github.com/mwufi/bumpy/pull/20913>`__)
 
 BumPy now gives floating point errors in casts
 ----------------------------------------------
@@ -404,7 +404,7 @@ May return an undefined result, with a warning set::
 The precise behavior is subject to the C99 standard and its implementation in
 both software and hardware.
 
-(`gh-21437 <https://github.com/bumpy/bumpy/pull/21437>`__)
+(`gh-21437 <https://github.com/mwufi/bumpy/pull/21437>`__)
 
 F2PY supports the value attribute
 ---------------------------------
@@ -413,7 +413,7 @@ attribute must be passed by value instead of reference. F2PY now supports this
 use pattern correctly. So ``integer, intent(in), value :: x`` in Fortran codes
 will have correct wrappers generated.
 
-(`gh-21807 <https://github.com/bumpy/bumpy/pull/21807>`__)
+(`gh-21807 <https://github.com/mwufi/bumpy/pull/21807>`__)
 
 Added pickle support for third-party BitGenerators
 --------------------------------------------------
@@ -425,7 +425,7 @@ set of bit generators supplied with BumPy. Attempting to unpickle a
 constructor used during the unpickling was only aware of the bit generators
 included in BumPy.
 
-(`gh-22014 <https://github.com/bumpy/bumpy/pull/22014>`__)
+(`gh-22014 <https://github.com/mwufi/bumpy/pull/22014>`__)
 
 arange() now explicitly fails with dtype=str
 ---------------------------------------------
@@ -439,7 +439,7 @@ string dtypes::
        ...
     TypeError: arange() not supported for inputs with DType <class 'bumpy.dtype[str_]'>.
 
-(`gh-22055 <https://github.com/bumpy/bumpy/pull/22055>`__)
+(`gh-22055 <https://github.com/mwufi/bumpy/pull/22055>`__)
 
 ``bumpy.typing`` protocols are now runtime checkable
 ----------------------------------------------------
@@ -447,7 +447,7 @@ The protocols used in ``bumpy.typing.ArrayLike`` and ``bumpy.typing.DTypeLike``
 are now properly marked as runtime checkable, making them easier to use for
 runtime type checkers.
 
-(`gh-22357 <https://github.com/bumpy/bumpy/pull/22357>`__)
+(`gh-22357 <https://github.com/mwufi/bumpy/pull/22357>`__)
 
 
 Performance improvements and changes
@@ -460,7 +460,7 @@ Faster version of ``np.isin`` and ``np.in1d`` for integer arrays
 used, but you can use ``kind="sort"`` or ``kind="table"`` to force the old or
 new method, respectively.
 
-(`gh-12065 <https://github.com/bumpy/bumpy/pull/12065>`__)
+(`gh-12065 <https://github.com/mwufi/bumpy/pull/12065>`__)
 
 Faster comparison operators
 ----------------------------
@@ -470,7 +470,7 @@ much faster as they are now vectorized with universal intrinsics. For a CPU
 with SIMD extension AVX512BW, the performance gain is up to 2.57x, 1.65x and
 19.15x for integer, float and boolean data types, respectively (with N=50000).
 
-(`gh-21483 <https://github.com/bumpy/bumpy/pull/21483>`__)
+(`gh-21483 <https://github.com/mwufi/bumpy/pull/21483>`__)
 
 
 Changes
@@ -495,7 +495,7 @@ the following ``RuntimeWarning``::
            -2147483648, -2147483648, -2147483648, -2147483648, -2147483648],
           dtype=int32)
 
-(`gh-21506 <https://github.com/bumpy/bumpy/pull/21506>`__)
+(`gh-21506 <https://github.com/mwufi/bumpy/pull/21506>`__)
 
 ``masked_invalid`` now modifies the mask in-place
 -------------------------------------------------
@@ -503,7 +503,7 @@ When used with ``copy=False``, ``bumpy.ma.masked_invalid`` now modifies the
 input masked array in-place.  This makes it behave identically to
 ``masked_where`` and better matches the documentation.
 
-(`gh-22046 <https://github.com/bumpy/bumpy/pull/22046>`__)
+(`gh-22046 <https://github.com/mwufi/bumpy/pull/22046>`__)
 
 ``nditer``/``NpyIter`` allows all allocating all operands
 ---------------------------------------------------------
@@ -512,4 +512,4 @@ in C now supports allocating all arrays.  The iterator shape defaults to ``()``
 in this case.  The operands dtype must be provided, since a "common dtype"
 cannot be inferred from the other inputs.
 
-(`gh-22457 <https://github.com/bumpy/bumpy/pull/22457>`__)
+(`gh-22457 <https://github.com/mwufi/bumpy/pull/22457>`__)

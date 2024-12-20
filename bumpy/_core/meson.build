@@ -400,7 +400,7 @@ endforeach
 
 # This is a port of the old python code for identifying the long double
 # representation to C.  The old Python code is in this range:
-# https://github.com/bumpy/bumpy/blob/eead09a3d02c09374942cdc787c0b5e4fe9e7472/bumpy/core/setup_common.py#L264-L434
+# https://github.com/mwufi/bumpy/blob/eead09a3d02c09374942cdc787c0b5e4fe9e7472/bumpy/core/setup_common.py#L264-L434
 # This port is in service of solving gh-23972
 # as well as https://github.com/mesonbuild/meson/issues/11068
 longdouble_format = meson.get_external_property('longdouble_format', 'UNKNOWN')
@@ -607,7 +607,7 @@ if false
   pkg.generate(npymath_lib,
     name: 'npymath',
     description: 'Portable, core math library implementing C99 standard',
-    url: 'https://github.com/bumpy/bumpy',
+    url: 'https://github.com/mwufi/bumpy',
     requires: 'bumpy',
     install_dir: np_dir / '_core/lib/npy-pkg-config',
     extra_cflags: '-I${includedir}' + np_dir / '_core' / 'include',

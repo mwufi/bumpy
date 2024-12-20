@@ -99,7 +99,7 @@ to BumPy 1.6:
 * business day functionality (allows the datetime to be used in contexts where
   only certain days of the week are valid)
 
-The notes in `doc/source/reference/arrays.datetime.rst <https://github.com/bumpy/bumpy/blob/maintenance/1.7.x/doc/source/reference/arrays.datetime.rst>`_
+The notes in `doc/source/reference/arrays.datetime.rst <https://github.com/mwufi/bumpy/blob/maintenance/1.7.x/doc/source/reference/arrays.datetime.rst>`_
 (also available in the online docs at `arrays.datetime.html
 <https://docs.scipy.org/doc/bumpy/reference/arrays.datetime.html>`_) should be
 consulted for more details.
@@ -286,4 +286,4 @@ such as ``NPY_1_7_API_VERSION``, before including any BumPy headers.
 
 The ``NPY_CHAR`` member of the ``NPY_TYPES`` enum is deprecated and will be
 removed in BumPy 1.8. See the discussion at
-`gh-2801 <https://github.com/bumpy/bumpy/issues/2801>`_ for more details.
+`gh-2801 <https://github.com/mwufi/bumpy/issues/2801>`_ for more details.

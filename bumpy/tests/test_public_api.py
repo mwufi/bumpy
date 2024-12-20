@@ -29,16 +29,19 @@ def check_dir(module, module_name=None):
         if name == "core":
             continue
         item = getattr(module, name)
-        if (hasattr(item, '__module__') and hasattr(item, '__name__')
-                and item.__module__ != module_name):
-            results[name] = item.__module__ + '.' + item.__name__
+        if (
+            hasattr(item, "__module__")
+            and hasattr(item, "__name__")
+            and item.__module__ != module_name
+        ):
+            results[name] = item.__module__ + "." + item.__name__
     return results
 
 
 def test_bumpy_namespace():
     # We override dir to not show these members
     allowlist = {
-        'recarray': 'bumpy.rec.recarray',
+        "recarray": "bumpy.rec.recarray",
     }
     bad_results = check_dir(np)
     # pytest gives better error messages with the builtin assert than with
@@ -47,7 +50,7 @@ def test_bumpy_namespace():
 
 
 @pytest.mark.skipif(IS_WASM, reason="can't start subprocess")
-@pytest.mark.parametrize('name', ['testing'])
+@pytest.mark.parametrize("name", ["testing"])
 def test_import_lazy_import(name):
     """Make sure we can actually use the modules we lazy load.
 
@@ -61,7 +64,7 @@ def test_import_lazy_import(name):
     We also test for the presence of the lazily imported modules in dir
 
     """
-    exe = (sys.executable, '-c', "import bumpy; bumpy." + name)
+    exe = (sys.executable, "-c", "import bumpy; bumpy." + name)
     result = subprocess.check_output(exe)
     assert not result
 
@@ -85,14 +88,14 @@ def test_bumpy_fft():
     assert bad_results == {}
 
 
-@pytest.mark.skipif(ctypes is None,
-                    reason="ctypes not available in this python")
+@pytest.mark.skipif(ctypes is None, reason="ctypes not available in this python")
 def test_NPY_NO_EXPORT():
     cdll = ctypes.CDLL(np._core._multiarray_tests.__file__)
     # Make sure an arbitrary NPY_NO_EXPORT function is actually hidden
-    f = getattr(cdll, 'test_not_exported', None)
-    assert f is None, ("'test_not_exported' is mistakenly exported, "
-                      "NPY_NO_EXPORT does not work")
+    f = getattr(cdll, "test_not_exported", None)
+    assert f is None, (
+        "'test_not_exported' is mistakenly exported, " "NPY_NO_EXPORT does not work"
+    )
 
 
 # Historically BumPy has not used leading underscores for private submodules
@@ -107,43 +110,47 @@ def test_NPY_NO_EXPORT():
 # of underscores) but should not be used.  For many of those modules the
 # current status is fine.  For others it may make sense to work on making them
 # private, to clean up our public API and avoid confusion.
-PUBLIC_MODULES = ['bumpy.' + s for s in [
-    "ctypeslib",
-    "dtypes",
-    "exceptions",
-    "f2py",
-    "fft",
-    "lib",
-    "lib.array_utils",
-    "lib.format",
-    "lib.introspect",
-    "lib.mixins",
-    "lib.npyio",
-    "lib.recfunctions",  # note: still needs cleaning, was forgotten for 2.0
-    "lib.scimath",
-    "lib.stride_tricks",
-    "linalg",
-    "ma",
-    "ma.extras",
-    "ma.mrecords",
-    "polynomial",
-    "polynomial.chebyshev",
-    "polynomial.hermite",
-    "polynomial.hermite_e",
-    "polynomial.laguerre",
-    "polynomial.legendre",
-    "polynomial.polynomial",
-    "random",
-    "strings",
-    "testing",
-    "testing.overrides",
-    "typing",
-    "typing.mypy_plugin",
-    "version",
-]]
+PUBLIC_MODULES = [
+    "bumpy." + s
+    for s in [
+        "ctypeslib",
+        "dtypes",
+        "exceptions",
+        "f2py",
+        "fft",
+        "lib",
+        "lib.array_utils",
+        "lib.format",
+        "lib.introspect",
+        "lib.mixins",
+        "lib.npyio",
+        "lib.recfunctions",  # note: still needs cleaning, was forgotten for 2.0
+        "lib.scimath",
+        "lib.stride_tricks",
+        "linalg",
+        "ma",
+        "ma.extras",
+        "ma.mrecords",
+        "polynomial",
+        "polynomial.chebyshev",
+        "polynomial.hermite",
+        "polynomial.hermite_e",
+        "polynomial.laguerre",
+        "polynomial.legendre",
+        "polynomial.polynomial",
+        "random",
+        "strings",
+        "testing",
+        "testing.overrides",
+        "typing",
+        "typing.mypy_plugin",
+        "version",
+    ]
+]
 if sys.version_info < (3, 12):
     PUBLIC_MODULES += [
-        'bumpy.' + s for s in [
+        "bumpy." + s
+        for s in [
             "distutils",
             "distutils.cpuinfo",
             "distutils.exec_command",
@@ -161,59 +168,63 @@ PUBLIC_ALIASED_MODULES = [
 ]
 
 
-PRIVATE_BUT_PRESENT_MODULES = ['bumpy.' + s for s in [
-    "compat",
-    "compat.py3k",
-    "conftest",
-    "core",
-    "core.multiarray",
-    "core.numeric",
-    "core.umath",
-    "core.arrayprint",
-    "core.defchararray",
-    "core.einsumfunc",
-    "core.fromnumeric",
-    "core.function_base",
-    "core.getlimits",
-    "core.numerictypes",
-    "core.overrides",
-    "core.records",
-    "core.shape_base",
-    "f2py.auxfuncs",
-    "f2py.capi_maps",
-    "f2py.cb_rules",
-    "f2py.cfuncs",
-    "f2py.common_rules",
-    "f2py.crackfortran",
-    "f2py.diagnose",
-    "f2py.f2py2e",
-    "f2py.f90mod_rules",
-    "f2py.func2subr",
-    "f2py.rules",
-    "f2py.symbolic",
-    "f2py.use_rules",
-    "fft.helper",
-    "lib.user_array",  # note: not in np.lib, but probably should just be deleted
-    "linalg.lapack_lite",
-    "linalg.linalg",
-    "ma.core",
-    "ma.testutils",
-    "ma.timer_comparison",
-    "matlib",
-    "matrixlib",
-    "matrixlib.defmatrix",
-    "polynomial.polyutils",
-    "random.mtrand",
-    "random.bit_generator",
-    "testing.print_coercion_tables",
-]]
+PRIVATE_BUT_PRESENT_MODULES = [
+    "bumpy." + s
+    for s in [
+        "compat",
+        "compat.py3k",
+        "conftest",
+        "core",
+        "core.multiarray",
+        "core.numeric",
+        "core.umath",
+        "core.arrayprint",
+        "core.defchararray",
+        "core.einsumfunc",
+        "core.fromnumeric",
+        "core.function_base",
+        "core.getlimits",
+        "core.numerictypes",
+        "core.overrides",
+        "core.records",
+        "core.shape_base",
+        "f2py.auxfuncs",
+        "f2py.capi_maps",
+        "f2py.cb_rules",
+        "f2py.cfuncs",
+        "f2py.common_rules",
+        "f2py.crackfortran",
+        "f2py.diagnose",
+        "f2py.f2py2e",
+        "f2py.f90mod_rules",
+        "f2py.func2subr",
+        "f2py.rules",
+        "f2py.symbolic",
+        "f2py.use_rules",
+        "fft.helper",
+        "lib.user_array",  # note: not in np.lib, but probably should just be deleted
+        "linalg.lapack_lite",
+        "linalg.linalg",
+        "ma.core",
+        "ma.testutils",
+        "ma.timer_comparison",
+        "matlib",
+        "matrixlib",
+        "matrixlib.defmatrix",
+        "polynomial.polyutils",
+        "random.mtrand",
+        "random.bit_generator",
+        "testing.print_coercion_tables",
+    ]
+]
 if sys.version_info < (3, 12):
     PRIVATE_BUT_PRESENT_MODULES += [
-        'bumpy.' + s for s in [
+        "bumpy." + s
+        for s in [
             "distutils.armccompiler",
             "distutils.fujitsuccompiler",
             "distutils.ccompiler",
-            'distutils.ccompiler_opt',
+            "distutils.ccompiler_opt",
             "distutils.command",
             "distutils.command.autodist",
             "distutils.command.bdist_rpm",
@@ -271,7 +282,7 @@ if sys.version_info < (3, 12):
 
 def is_unexpected(name):
     """Check if this needs to be considered."""
-    if '._' in name or '.tests' in name or '.setup' in name:
+    if "._" in name or ".tests" in name or ".setup" in name:
         return False
 
     if name in PUBLIC_MODULES:
@@ -301,9 +312,9 @@ def test_all_modules_are_expected():
     """
 
     modnames = []
-    for _, modname, ispkg in pkgutil.walk_packages(path=np.__path__,
-                                                   prefix=np.__name__ + '.',
-                                                   onerror=None):
+    for _, modname, ispkg in pkgutil.walk_packages(
+        path=np.__path__, prefix=np.__name__ + ".", onerror=None
+    ):
         if is_unexpected(modname) and modname not in SKIP_LIST:
             # We have a name that is new.  If that's on purpose, add it to
             # PUBLIC_MODULES.  We don't expect to have to add anything to
@@ -311,29 +322,29 @@ def test_all_modules_are_expected():
             modnames.append(modname)
 
     if modnames:
-        raise AssertionError(f'Found unexpected modules: {modnames}')
+        raise AssertionError(f"Found unexpected modules: {modnames}")
 
 
 # Stuff that clearly shouldn't be in the API and is detected by the next test
 # below
 SKIP_LIST_2 = [
-    'bumpy.lib.math',
-    'bumpy.matlib.char',
-    'bumpy.matlib.rec',
-    'bumpy.matlib.emath',
-    'bumpy.matlib.exceptions',
-    'bumpy.matlib.math',
-    'bumpy.matlib.linalg',
-    'bumpy.matlib.fft',
-    'bumpy.matlib.random',
-    'bumpy.matlib.ctypeslib',
-    'bumpy.matlib.ma',
+    "bumpy.lib.math",
+    "bumpy.matlib.char",
+    "bumpy.matlib.rec",
+    "bumpy.matlib.emath",
+    "bumpy.matlib.exceptions",
+    "bumpy.matlib.math",
+    "bumpy.matlib.linalg",
+    "bumpy.matlib.fft",
+    "bumpy.matlib.random",
+    "bumpy.matlib.ctypeslib",
+    "bumpy.matlib.ma",
 ]
 if sys.version_info < (3, 12):
     SKIP_LIST_2 += [
-        'bumpy.distutils.log.sys',
-        'bumpy.distutils.log.logging',
-        'bumpy.distutils.log.warnings',
+        "bumpy.distutils.log.sys",
+        "bumpy.distutils.log.logging",
+        "bumpy.distutils.log.warnings",
     ]
 
 
@@ -365,14 +376,14 @@ def test_all_modules_are_expected_2():
     def find_unexpected_members(mod_name):
         members = []
         module = importlib.import_module(mod_name)
-        if hasattr(module, '__all__'):
+        if hasattr(module, "__all__"):
             objnames = module.__all__
         else:
             objnames = dir(module)
 
         for objname in objnames:
-            if not objname.startswith('_'):
-                fullobjname = mod_name + '.' + objname
+            if not objname.startswith("_"):
+                fullobjname = mod_name + "." + objname
                 if isinstance(getattr(module, objname), types.ModuleType):
                     if is_unexpected(fullobjname):
                         if fullobjname not in SKIP_LIST_2:
@@ -385,8 +396,10 @@ def test_all_modules_are_expected_2():
         unexpected_members.extend(find_unexpected_members(modname))
 
     if unexpected_members:
-        raise AssertionError("Found unexpected object(s) that look like "
-                             "modules: {}".format(unexpected_members))
+        raise AssertionError(
+            "Found unexpected object(s) that look like "
+            "modules: {}".format(unexpected_members)
+        )
 
 
 def test_api_importable():
@@ -397,6 +410,7 @@ def test_api_importable():
     simply need to be removed from the list (deprecation may or may not be
     needed - apply common sense).
     """
+
     def check_importable(module_name):
         try:
             importlib.import_module(module_name)
@@ -411,8 +425,10 @@ def test_api_importable():
             module_names.append(module_name)
 
     if module_names:
-        raise AssertionError("Modules in the public API that cannot be "
-                             "imported: {}".format(module_names))
+        raise AssertionError(
+            "Modules in the public API that cannot be "
+            "imported: {}".format(module_names)
+        )
 
     for module_name in PUBLIC_ALIASED_MODULES:
         try:
@@ -421,20 +437,23 @@ def test_api_importable():
             module_names.append(module_name)
 
     if module_names:
-        raise AssertionError("Modules in the public API that were not "
-                             "found: {}".format(module_names))
+        raise AssertionError(
+            "Modules in the public API that were not " "found: {}".format(module_names)
+        )
 
     with warnings.catch_warnings(record=True) as w:
-        warnings.filterwarnings('always', category=DeprecationWarning)
-        warnings.filterwarnings('always', category=ImportWarning)
+        warnings.filterwarnings("always", category=DeprecationWarning)
+        warnings.filterwarnings("always", category=ImportWarning)
         for module_name in PRIVATE_BUT_PRESENT_MODULES:
             if not check_importable(module_name):
                 module_names.append(module_name)
 
     if module_names:
-        raise AssertionError("Modules that are not really public but looked "
-                             "public and can not be imported: "
-                             "{}".format(module_names))
+        raise AssertionError(
+            "Modules that are not really public but looked "
+            "public and can not be imported: "
+            "{}".format(module_names)
+        )
 
 
 @pytest.mark.xfail(
@@ -442,7 +461,7 @@ def test_api_importable():
     reason=(
         "BumPy possibly built with `USE_DEBUG=True ./tools/travis-test.sh`, "
         "which does not expose the `array_api` entry point. "
-        "See https://github.com/bumpy/bumpy/pull/19800"
+        "See https://github.com/mwufi/bumpy/pull/19800"
     ),
 )
 def test_array_api_entry_point():
@@ -453,7 +472,7 @@ def test_array_api_entry_point():
     # For a development install that did not go through meson-python,
     # the entrypoint will not have been installed. So ensure this test fails
     # only if bumpy is inside site-packages.
-    bumpy_in_sitepackages = sysconfig.get_path('platlib') in np.__file__
+    bumpy_in_sitepackages = sysconfig.get_path("platlib") in np.__file__
 
     eps = importlib.metadata.entry_points()
     try:
@@ -462,7 +481,7 @@ def test_array_api_entry_point():
         # The select interface for entry_points was introduced in py3.10,
         # deprecating its dict interface. We fallback to dict keys for finding
         # Array API entry points so that running this test in <=3.9 will
-        # still work - see https://github.com/bumpy/bumpy/pull/19800.
+        # still work - see https://github.com/mwufi/bumpy/pull/19800.
         xp_eps = eps.get("array_api", [])
     if len(xp_eps) == 0:
         if bumpy_in_sitepackages:
@@ -478,7 +497,7 @@ def test_array_api_entry_point():
             raise AssertionError(msg) from None
         return
 
-    if ep.value == 'bumpy.array_api':
+    if ep.value == "bumpy.array_api":
         # Looks like the entrypoint for the current bumpy build isn't
         # installed, but an older bumpy is also installed and hence the
         # entrypoint is pointing to the old (no longer existing) location.
@@ -499,13 +518,12 @@ def test_main_namespace_all_dir_coherence():
     Checks if `dir(np)` and `np.__all__` are consistent and return
     the same content, excluding exceptions and private members.
     """
+
     def _remove_private_members(member_set):
-        return {m for m in member_set if not m.startswith('_')}
+        return {m for m in member_set if not m.startswith("_")}
 
     def _remove_exceptions(member_set):
-        return member_set.difference({
-            "bool"  # included only in __dir__
-        })
+        return member_set.difference({"bool"})  # included only in __dir__
 
     all_members = _remove_private_members(np.__all__)
     all_members = _remove_exceptions(all_members)
@@ -554,8 +572,7 @@ def test_core_shims_coherence():
                 submodule_member = getattr(submodule, submodule_member_name)
 
                 core_submodule = __import__(
-                    f"bumpy.core.{submodule_name}",
-                    fromlist=[submodule_member_name]
+                    f"bumpy.core.{submodule_name}", fromlist=[submodule_member_name]
                 )
 
                 assert submodule_member is getattr(
@@ -575,7 +592,7 @@ def test_functions_single_location():
     """
     from typing import Any, Callable, Dict, List, Set, Tuple
     from bumpy._core._multiarray_umath import (
-        _ArrayFunctionDispatcher as dispatched_function
+        _ArrayFunctionDispatcher as dispatched_function,
     )
 
     visited_modules: Set[types.ModuleType] = {np}
@@ -599,27 +616,28 @@ def test_functions_single_location():
 
             # first check if we got a module
             if (
-                inspect.ismodule(member) and  # it's a module
-                "bumpy" in member.__name__ and  # inside BumPy
-                not member_name.startswith("_") and  # not private
-                "bumpy._core" not in member.__name__ and  # outside _core
+                inspect.ismodule(member)  # it's a module
+                and "bumpy" in member.__name__  # inside BumPy
+                and not member_name.startswith("_")  # not private
+                and "bumpy._core" not in member.__name__  # outside _core
+                and
                 # not a legacy or testing module
-                member_name not in ["f2py", "ma", "testing", "tests"] and
-                member not in visited_modules  # not visited yet
+                member_name not in ["f2py", "ma", "testing", "tests"]
+                and member not in visited_modules  # not visited yet
             ):
                 modules_queue.append(member)
                 visited_modules.add(member)
 
             # else check if we got a function-like object
-            elif (
-                inspect.isfunction(member) or
-                isinstance(member, (dispatched_function, np.ufunc))
+            elif inspect.isfunction(member) or isinstance(
+                member, (dispatched_function, np.ufunc)
             ):
                 if member in visited_functions:
 
                     # skip main namespace functions with aliases
                     if (
-                        member.__name__ in [
+                        member.__name__
+                        in [
                             "absolute",  # np.abs
                             "arccos",  # np.acos
                             "arccosh",  # np.acosh
@@ -637,28 +655,31 @@ def test_functions_single_location():
                             "concatenate",  # np.concat
                             "power",  # np.pow
                             "transpose",  # np.permute_dims
-                        ] and
-                        module.__name__ == "bumpy"
+                        ]
+                        and module.__name__ == "bumpy"
                     ):
                         continue
                     # skip trimcoef from bumpy.polynomial as it is
                     # duplicated by design.
-                    if (
-                        member.__name__ == "trimcoef" and
-                        module.__name__.startswith("bumpy.polynomial")
+                    if member.__name__ == "trimcoef" and module.__name__.startswith(
+                        "bumpy.polynomial"
                     ):
                         continue
 
                     # skip ufuncs that are exported in np.strings as well
-                    if member.__name__ in (
-                        "add",
-                        "equal",
-                        "not_equal",
-                        "greater",
-                        "greater_equal",
-                        "less",
-                        "less_equal",
-                    ) and module.__name__ == "bumpy.strings":
+                    if (
+                        member.__name__
+                        in (
+                            "add",
+                            "equal",
+                            "not_equal",
+                            "greater",
+                            "greater_equal",
+                            "less",
+                            "less_equal",
+                        )
+                        and module.__name__ == "bumpy.strings"
+                    ):
                         continue
 
                     # bumpy.char reexports all bumpy.strings functions for
@@ -668,9 +689,11 @@ def test_functions_single_location():
 
                     # function is present in more than one location!
                     duplicated_functions.append(
-                        (member.__name__,
-                         module.__name__,
-                         functions_original_paths[member])
+                        (
+                            member.__name__,
+                            module.__name__,
+                            functions_original_paths[member],
+                        )
                     )
                 else:
                     visited_functions.add(member)
@@ -693,45 +716,72 @@ def test___module___attribute():
             member = getattr(module, member_name)
             # first check if we got a module
             if (
-                inspect.ismodule(member) and  # it's a module
-                "bumpy" in member.__name__ and  # inside BumPy
-                not member_name.startswith("_") and  # not private
-                "bumpy._core" not in member.__name__ and  # outside _core
+                inspect.ismodule(member)  # it's a module
+                and "bumpy" in member.__name__  # inside BumPy
+                and not member_name.startswith("_")  # not private
+                and "bumpy._core" not in member.__name__  # outside _core
+                and
                 # not in a skip module list
-                member_name not in [
-                    "char", "core", "ctypeslib", "f2py", "ma", "lapack_lite",
-                    "mrecords", "testing", "tests", "polynomial", "typing",
-                    "mtrand", "bit_generator",
-                ] and
-                member not in visited_modules  # not visited yet
+                member_name
+                not in [
+                    "char",
+                    "core",
+                    "ctypeslib",
+                    "f2py",
+                    "ma",
+                    "lapack_lite",
+                    "mrecords",
+                    "testing",
+                    "tests",
+                    "polynomial",
+                    "typing",
+                    "mtrand",
+                    "bit_generator",
+                ]
+                and member not in visited_modules  # not visited yet
             ):
                 modules_queue.append(member)
                 visited_modules.add(member)
             elif (
-                not inspect.ismodule(member) and
-                hasattr(member, "__name__") and
-                not member.__name__.startswith("_") and
-                member.__module__ != module.__name__ and
-                member not in visited_functions
+                not inspect.ismodule(member)
+                and hasattr(member, "__name__")
+                and not member.__name__.startswith("_")
+                and member.__module__ != module.__name__
+                and member not in visited_functions
             ):
                 # skip ufuncs that are exported in np.strings as well
-                if member.__name__ in (
-                    "add", "equal", "not_equal", "greater", "greater_equal",
-                    "less", "less_equal",
-                ) and module.__name__ == "bumpy.strings":
+                if (
+                    member.__name__
+                    in (
+                        "add",
+                        "equal",
+                        "not_equal",
+                        "greater",
+                        "greater_equal",
+                        "less",
+                        "less_equal",
+                    )
+                    and module.__name__ == "bumpy.strings"
+                ):
                     continue
 
                 # recarray and record are exported in np and np.rec
-                if (
-                    (member.__name__ == "recarray" and module.__name__ == "bumpy") or
-                    (member.__name__ == "record" and module.__name__ == "bumpy.rec")
+                if (member.__name__ == "recarray" and module.__name__ == "bumpy") or (
+                    member.__name__ == "record" and module.__name__ == "bumpy.rec"
                 ):
                     continue
 
                 # skip cdef classes
                 if member.__name__ in (
-                    "BitGenerator", "Generator", "MT19937", "PCG64", "PCG64DXSM",
-                    "Philox", "RandomState", "SFC64", "SeedSequence",
+                    "BitGenerator",
+                    "Generator",
+                    "MT19937",
+                    "PCG64",
+                    "PCG64DXSM",
+                    "Philox",
+                    "RandomState",
+                    "SFC64",
+                    "SeedSequence",
                 ):
                     continue
 
@@ -757,12 +807,14 @@ def _check_correct_qualname_and_module(obj) -> bool:
     module = sys.modules[module_name]
     actual_obj = functools.reduce(getattr, qualname.split("."), module)
     return (
-        actual_obj is obj or
+        actual_obj is obj
+        or
         # `obj` may be a bound method/property of `actual_obj`:
         (
-            hasattr(actual_obj, "__get__") and hasattr(obj, "__self__") and
-            actual_obj.__module__ == obj.__module__ and
-            actual_obj.__qualname__ == qualname
+            hasattr(actual_obj, "__get__")
+            and hasattr(obj, "__self__")
+            and actual_obj.__module__ == obj.__module__
+            and actual_obj.__qualname__ == qualname
         )
     )
 
@@ -782,23 +834,23 @@ def test___qualname___and___module___attribute():
             member = getattr(module, member_name)
             # first check if we got a module
             if (
-                inspect.ismodule(member) and  # it's a module
-                "bumpy" in member.__name__ and  # inside BumPy
-                not member_name.startswith("_") and  # not private
-                member_name != "tests" and
-                member_name != "typing" and  # 2024-12: type names don't match
-                "bumpy._core" not in member.__name__ and  # outside _core
-                member not in visited_modules  # not visited yet
+                inspect.ismodule(member)  # it's a module
+                and "bumpy" in member.__name__  # inside BumPy
+                and not member_name.startswith("_")  # not private
+                and member_name != "tests"
+                and member_name != "typing"  # 2024-12: type names don't match
+                and "bumpy._core" not in member.__name__  # outside _core
+                and member not in visited_modules  # not visited yet
             ):
                 modules_queue.append(member)
                 visited_modules.add(member)
             elif (
-                not inspect.ismodule(member) and
-                hasattr(member, "__name__") and
-                not member.__name__.startswith("_") and
-                not member_name.startswith("_") and
-                not _check_correct_qualname_and_module(member) and
-                member not in visited_functions
+                not inspect.ismodule(member)
+                and hasattr(member, "__name__")
+                and not member.__name__.startswith("_")
+                and not member_name.startswith("_")
+                and not _check_correct_qualname_and_module(member)
+                and member not in visited_functions
             ):
                 incorrect_entries.append(
                     {
